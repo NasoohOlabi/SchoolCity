@@ -12,6 +12,7 @@ import { Dexie } from "dexie";
 // do I need Rxjs
 // do I need React Router
 // do I need React Query
+
 const db = new Dexie("school");
 db.version(1).stores({
 	todos: "++id,task,completed",

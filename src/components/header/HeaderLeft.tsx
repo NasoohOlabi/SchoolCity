@@ -1,3 +1,4 @@
+import Icon from "../icon/Icon";
 import { IconButton } from "@material-tailwind/react";
 
 interface HeaderLeftProps {}

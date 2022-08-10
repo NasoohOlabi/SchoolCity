@@ -1,13 +1,11 @@
-import MaterialIcon from "@material-tailwind/react/Icon";
-
 interface IconProps {
 	name: string;
-	size: string;
+	size?: string;
 	color?: string;
 }
 
 const Icon: React.FC<IconProps> = ({ name, size, color }) => {
-	return <MaterialIcon name={name} size={size} color={color} />;
+	return <i className={"fa-" + name} color={color} />;
 };
 
 export default Icon;
