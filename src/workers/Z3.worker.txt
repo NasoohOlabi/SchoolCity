@@ -1,0 +1,33 @@
+// export default {} as typeof Worker & { new(): Worker };
+// import { init } from 'z3-solver'
+
+
+// // Your code ...
+// // Respond to message from parent thread
+// self.onmessage = async (ev) => {
+// 	let message: string = ev.data;
+// 	console.log(message);
+// 	// if (SharedArrayBuffer) {
+// 	console.log('message z3 rules');
+
+// 	// const { init } = require('z3-solver');
+// 	const { Context } = await init();
+// 	const c = Context as any;
+// 	const { Solver, Int, And } = new c('main') as any;
+
+// 	const x = Int.const('x');
+
+// 	const solver = new Solver();
+// 	solver.add(And(x.ge(0), x.le(9)));
+// 	console.log(await solver.check());
+
+// 	// }
+
+// 	for (let word of ['badWords']) {
+// 		message = message.replace(new RegExp(word, "gi"), "*".repeat(word.length));
+// 	}
+// 	self.postMessage(message);
+// };
+
+
+
