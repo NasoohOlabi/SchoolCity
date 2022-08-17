@@ -1,18 +1,24 @@
+import { ThemeProvider } from "@material-tailwind/react";
+import SchoolCityDBContextProvider from "DB/IDBProvider";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.css";
-import "./font-awesome.min.css";
-import { ThemeProvider } from "@material-tailwind/react";
-import store from "./Model/Model";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import SchoolCityRouter from "Routes/SchoolCityRouter";
+import "./font-awesome.css";
+import "./index.css";
+import store from "./Model/Model";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
-		<Provider store={store}>
-			<ThemeProvider>
-				<App />
-			</ThemeProvider>
-		</Provider>
+		<BrowserRouter>
+			<SchoolCityDBContextProvider>
+				<Provider store={store}>
+					<ThemeProvider>
+						<SchoolCityRouter />
+					</ThemeProvider>
+				</Provider>
+			</SchoolCityDBContextProvider>
+		</BrowserRouter>
 	</React.StrictMode>
 );

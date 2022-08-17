@@ -1,11 +1,16 @@
 {
   "compilerOptions": {
+    "types": [
+      "gapi",
+      "gapi.client.drive"
+    ],
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": [
       "DOM",
       "DOM.Iterable",
-      "ESNext"
+      "ESNext",
+      "WebWorker"
     ],
     "allowJs": false,
     "skipLibCheck": true,
