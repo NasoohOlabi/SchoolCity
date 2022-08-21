@@ -9,7 +9,6 @@ import { IStore } from "Model/Store";
 import { collapse } from "Model/View/ExpandTemplates";
 import useTitle from "Model/View/Layout/useTitle";
 import { useDispatch, useSelector } from "react-redux";
-import TemplatesSection from "./components/Home/Templates/TemplatesSection";
 
 // do I need Rxjs
 
@@ -73,88 +72,7 @@ function App() {
 
 	// w.postMessage("fart");
 	// w.postMessage({ data: "fart" });
-	return (
-		<div className="App h-full">
-			<TemplatesSection />
-			{!expanded && (
-				<>
-					<h1 className="text-3xl font-bold underline">Hello world!</h1>
-					<h1>Vite + React</h1>
-					<div className="card">
-						<button onClick={() => setCount((count) => count + 1)}>
-							count is {count}
-						</button>
-						<p>
-							Edit <code>src/App.tsx</code> and save to test HMR
-						</p>
-					</div>
-					<p className="read-the-docs">
-						Click on the Vite and React logos to learn more
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Incidunt dicta facere modi architecto placeat tenetur
-						inventore soluta dignissimos ullam? Ullam iste rem officia
-						aperiam porro excepturi illo officiis ea laudantium!
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Incidunt dicta facere modi architecto placeat tenetur
-						inventore soluta dignissimos ullam? Ullam iste rem officia
-						aperiam porro excepturi illo officiis ea laudantium!
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Incidunt dicta facere modi architecto placeat tenetur
-						inventore soluta dignissimos ullam? Ullam iste rem officia
-						aperiam porro excepturi illo officiis ea laudantium!
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Incidunt dicta facere modi architecto placeat tenetur
-						inventore soluta dignissimos ullam? Ullam iste rem officia
-						aperiam porro excepturi illo officiis ea laudantium!
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Incidunt dicta facere modi architecto placeat tenetur
-						inventore soluta dignissimos ullam? Ullam iste rem officia
-						aperiam porro excepturi illo officiis ea laudantium!
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Incidunt dicta facere modi architecto placeat tenetur
-						inventore soluta dignissimos ullam? Ullam iste rem officia
-						aperiam porro excepturi illo officiis ea laudantium!
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Incidunt dicta facere modi architecto placeat tenetur
-						inventore soluta dignissimos ullam? Ullam iste rem officia
-						aperiam porro excepturi illo officiis ea laudantium!
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Incidunt dicta facere modi architecto placeat tenetur
-						inventore soluta dignissimos ullam? Ullam iste rem officia
-						aperiam porro excepturi illo officiis ea laudantium!
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Incidunt dicta facere modi architecto placeat tenetur
-						inventore soluta dignissimos ullam? Ullam iste rem officia
-						aperiam porro excepturi illo officiis ea laudantium!
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Incidunt dicta facere modi architecto placeat tenetur
-						inventore soluta dignissimos ullam? Ullam iste rem officia
-						aperiam porro excepturi illo officiis ea laudantium!
-					</p>
-				</>
-			)}
-		</div>
-	);
+	return <h1>home</h1>;
 }
 
 export default App;

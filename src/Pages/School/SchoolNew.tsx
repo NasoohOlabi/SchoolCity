@@ -9,7 +9,7 @@ const SchoolNew: React.FC<SchoolNewProps> = ({}) => {
 		<Details
 			title={t("New School")}
 			table="school"
-			selector={{ type: "new", instance: new School("", "", [1, 2]) }}
+			selector={{ type: "new", instance: new School("", "", [1, 2], 1) }}
 		/>
 	);
 };

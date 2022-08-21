@@ -22,11 +22,11 @@ const importableDemo = (
 		return {
 			// school: new School(demoSchool.name, demoSchool.description, demoSchool.sectionIds, demoSchool.vicePrincipalId)
 			// , sectionSubjectTeacher: new SectionSubject(demoSectionSubjectTeacher.name, demoSectionSubjectTeacher.teacherIds)
-			subject: Subject.fromJSONArray(demoSubjects)
-			, teacher: Teacher.fromJSONArray(demoTeachers)
-			, administrator: Administrator.fromJSONArray(demoAdministrators)
-			, section: Section.fromJSONArray(demoSections)
-			, grade: Grade.fromJSONArray(demoGrades)
+			// subject: Subject.fromJSONArray(demoSubjects)
+			// , teacher: Teacher.fromJSONArray(demoTeachers)
+			// , administrator: Administrator.fromJSONArray(demoAdministrators)
+			// , section: Section.fromJSONArray(demoSections)
+			// , grade: Grade.fromJSONArray(demoGrades)
 		}
 	} catch (error) {
 		console.log(error)

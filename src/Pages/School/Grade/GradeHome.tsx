@@ -22,7 +22,7 @@ const GradeHome: React.FC<GradeHomeProps> = ({}) => {
 
 	return (
 		<div className="App h-full">
-			<TemplatesSection />
+			<TemplatesSection table="gradeTemplates" />
 			{!expanded && (
 				<>
 					<h1 className="text-3xl font-bold underline">
