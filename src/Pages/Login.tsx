@@ -1,6 +1,6 @@
 import { Button } from "@material-tailwind/react";
 import { GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
-import { IStore } from "Model/Model";
+import { IStore } from "Model/Store";
 import { useCallback, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { auth } from "../firebase/firebase";

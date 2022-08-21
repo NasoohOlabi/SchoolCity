@@ -1,8 +1,10 @@
-
 export interface ITemplate {
 	id: number,
-	title: string,
+	name: string,
 	description: string,
 }
 
-export interface ICurrentUser { uuid: string | null }
+export interface ISchool {
+	name: string,
+
+}

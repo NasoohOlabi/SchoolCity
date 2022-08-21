@@ -1,14 +1,12 @@
 import { faToiletPaperSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconButton } from "@material-tailwind/react";
-import { getCurrentUser } from "Model/Auth/getCurrentUser";
-import { useState } from "react";
+import { useUser } from "Model/Auth/hooks/useUser";
 
 interface HeaderRightProps {}
 
-const HeaderRight: React.FC<HeaderRightProps> = () => {
-	const [currentUser, _] = useState(getCurrentUser());
-
+const HeaderRight: ({}: HeaderRightProps) => JSX.Element = () => {
+	const { currentUser } = useUser();
 	return (
 		<>
 			<IconButton className="hidden md:inline-flex h-20 w-20 ml-5 md:ml-20 rounded ">

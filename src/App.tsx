@@ -5,8 +5,9 @@ import TryWorker from "./workers/try.worker?worker";
 // import z3 from "./workers/Z3.worker?worker";
 import SchoolCityDBContext from "DB/SchoolCityDBContext";
 import {} from "dexie-react-hooks";
-import { IStore } from "Model/Model";
+import { IStore } from "Model/Store";
 import { collapse } from "Model/View/ExpandTemplates";
+import useTitle from "Model/View/Layout/useTitle";
 import { useDispatch, useSelector } from "react-redux";
 import TemplatesSection from "./components/Home/Templates/TemplatesSection";
 
@@ -46,6 +47,8 @@ const f = async () => {
 
 function App() {
 	// gapi.load("client", init);
+
+	useTitle("app");
 
 	const [count, setCount] = useState(0);
 

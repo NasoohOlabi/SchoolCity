@@ -8,6 +8,8 @@ const SchoolCityDBContextProvider: React.FC<{ children: any }> = ({
 	const db = useRef(initalizeDB());
 
 	useEffect(() => {
+		// @ts-ignore
+		window["db"] = db;
 		return () => {
 			db.current.close();
 		};

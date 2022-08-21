@@ -9,28 +9,119 @@ import {
 	Switch,
 	Typography,
 } from "@material-tailwind/react";
-import { useState } from "react";
-import MySwitch from "./MySwitch";
+import { myCrud, SchoolCityIDBTable, SchoolCityObjectModel } from "DB/schema";
+import SchoolCityDBContext from "DB/SchoolCityDBContext";
+import { IndexableType } from "dexie";
+import { useLiveQuery } from "dexie-react-hooks";
+import { t } from "Language/t";
+import React, { useCallback, useContext, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import OneToMany from "./OneToMany";
 
 interface DetailsProps {
 	title: string;
-	[index: string]: any;
+	table: SchoolCityIDBTable;
+	selector: IndexableType | { type: "new"; instance: SchoolCityObjectModel };
+	query?: any;
+	initalEditingState?: boolean;
 }
 
-const Details: React.FC<DetailsProps> = (obj) => {
-	const { title } = obj;
-	const [editing, setEditing] = useState(false);
+const Details: React.FC<DetailsProps> = ({
+	title,
+	table,
+	selector,
+	initalEditingState = false,
+}) => {
+	const db = useContext(SchoolCityDBContext);
+	let state = useRef({} as any).current;
+	if (
+		typeof selector === "object" &&
+		Object.keys(selector).length === 2 &&
+		Object.keys(selector).includes("instance") &&
+		Object.keys(selector).includes("type")
+	) {
+		state = (selector as { type: "new"; instance: SchoolCityObjectModel })
+			.instance;
+		initalEditingState = true;
+	} else {
+		const id = selector as IndexableType;
+		state = useLiveQuery(() => db && myCrud.get(table, db, id), [id]);
+	}
 
-	const myInput = (key: string, obj: DetailsProps) => {
-		const type = typeof obj[key];
+	const [editing, setEditing] = useState(initalEditingState);
+
+	const myInput = (key: string) => {
+		const handler: React.ChangeEventHandler<HTMLInputElement> = (evt) => {
+			const newVal = evt.target.value;
+			state[key] = newVal;
+			db && myCrud.update(table, db, state);
+		};
+		const type = typeof state[key];
 		switch (type) {
 			case "string":
-				return <Input label={key} disabled={!editing} value={obj[key]} />;
+				const valWrapper = useRef(state);
+				return (
+					<Input
+						label={key}
+						disabled={!editing}
+						onChange={(evt) => {
+							valWrapper.current[key] = evt.target.value;
+							console.log("state = ", state);
+						}}
+						defaultValue={valWrapper.current.key}
+					/>
+				);
+			case "number":
+				return (
+					<Input
+						label={key}
+						disabled={!editing}
+						value={state[key]}
+						onChange={(evt) => !isNaN(+evt.target.value)}
+					/>
+				);
 			case "boolean":
-				return <MySwitch checked={obj[key]} />;
+				return (
+					<Switch
+						disabled={!editing}
+						checked={state[key]}
+						onChange={handler}
+						className="-ml-4"
+					/>
+				);
+			case "object":
+				if (state[key].length !== undefined) {
+					let [lst, setLst] = useState(state[key]);
+					setLst = useCallback((lst: any[]) => {
+						setLst(lst);
+						state[key] = lst;
+						db && myCrud.update(table, db, state);
+					}, []);
+					console.log("lst = ", lst);
+					console.log("state = ", state);
+					console.log("key = ", key);
+					return (
+						<OneToMany
+							disabled={!editing}
+							lst={lst}
+							setLst={setLst}
+							oneTable={table}
+							manyTable={
+								key.substring(0, key.length - 3) as SchoolCityIDBTable
+							}
+						/>
+					);
+				} else return <p>Unsupported Type</p>;
 			default:
 				return <p>Unsupported Type</p>;
 		}
+	};
+	const navigate = useNavigate();
+	const saveHandler: React.MouseEventHandler<HTMLButtonElement> = (evt) => {
+		console.log("evt = ", evt);
+		console.log("state = ", state);
+		db && myCrud.update(table, db, state);
+		navigate("../");
 	};
 
 	return (
@@ -46,22 +137,24 @@ const Details: React.FC<DetailsProps> = (obj) => {
 						<FontAwesomeIcon icon={faPencil} />
 					</IconButton>
 				</div>
-				{Object.keys(obj)
-					.filter((key) => key !== "title")
+				{Object.keys(state)
+					.filter((key) => key !== "title" && key !== "id")
 					.map((key) => (
-						<div className="flex m-4  content-center">
+						<div key={key} className="flex m-4  content-center">
 							<Typography
 								className="flex justify-center items-center mr-4"
 								variant="h6"
 							>
 								{key}
 							</Typography>
-							{myInput(key, obj)}
+							{myInput(key)}
 						</div>
 					))}
 				<CardFooter>
 					<div className="flex justify-between items-center flex-row-reverse h-12">
-						{editing && <Button>save</Button>}
+						{editing && (
+							<Button onClick={saveHandler}>{t("save")}</Button>
+						)}
 					</div>
 				</CardFooter>
 			</Card>

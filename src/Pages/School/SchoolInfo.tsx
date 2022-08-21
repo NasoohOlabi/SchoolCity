@@ -1,7 +1,8 @@
 interface SchoolInfoProps {}
 
-const SchoolInfo: React.FC<SchoolInfoProps> = ({}) => {
-	return <div></div>;
+const SchoolInfo: ({}: SchoolInfoProps) => JSX.Element = ({}) => {
+	return <p>school info</p>;
+	// return <Details table="school" />;
 };
 
 export default SchoolInfo;

@@ -1,4 +1,4 @@
-import useTitle from "Model/View/Header/useTitle";
+import useTitle from "Model/View/Layout/useTitle";
 
 interface ScheduleHomeProps {}
 

@@ -1,7 +1,7 @@
 import TemplatesSection from "components/Home/Templates/TemplatesSection";
-import { IStore } from "Model/Model";
-import { setTitle } from "Model/View/Header/title";
-import useTitle from "Model/View/Header/useTitle";
+import { IStore } from "Model/Store";
+import { setTitle } from "Model/View/Layout/title";
+import useTitle from "Model/View/Layout/useTitle";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";

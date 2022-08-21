@@ -1,9 +1,8 @@
-import type { ITemplate } from "../../../Model/Types";
-
 import { Card, CardBody, Typography } from "@material-tailwind/react";
+import { IndexableType } from "dexie";
 import { Link } from "react-router-dom";
 
-// const TemplateTile: React.FC<ITemplate> = () => {
+// const Tile: React.FC<ITemplate> = () => {
 // 	return (
 // 		// <Link to="./new">
 // 		<div className="mb-4 mr-4 w-28 h-36 cursor-pointer shadow-m">
@@ -24,20 +23,35 @@ import { Link } from "react-router-dom";
 // 	);
 // };
 
-const TemplateTile: React.FC<ITemplate> = ({ id, title, description }) => {
+export interface ITitleInstance {
+	id?: IndexableType;
+	name: string;
+	description: string;
+}
+
+export interface ITile {
+	instance: ITitleInstance;
+	link?: (instance: ITitleInstance) => string;
+}
+
+const Tile: ({ instance, link }: ITile) => JSX.Element = ({
+	instance,
+	link,
+}) => {
+	const { id, name, description } = instance;
 	return (
-		<Link to="./new">
+		<Link to={`./${link ? link(instance) : id}`}>
 			<Card className="w-32 h-40 cursor-pointer">
 				{/* <CardHeader color="blue" className="relative h-1/2">
 			</CardHeader> */}
 				<img
-					src="/img/blog.jpg"
+					// src={getCurrentUser()?.photoURL || ""}
 					alt="img-blur-shadow"
 					className="h-1/2 w-full"
 				/>
 				<CardBody className="p-3 text-center h-1/2">
 					<Typography variant="paragraph" className="">
-						{title}
+						{name}
 					</Typography>
 					<Typography variant="small">{description}</Typography>
 				</CardBody>
@@ -45,4 +59,4 @@ const TemplateTile: React.FC<ITemplate> = ({ id, title, description }) => {
 		</Link>
 	);
 };
-export default TemplateTile;
+export default Tile;
