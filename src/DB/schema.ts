@@ -1,5 +1,7 @@
 import type { IndexableType, Table } from "dexie";
 import Dexie from "dexie";
+import initializeSettings from "./initializeSettings";
+import initializeTemplates from "./initializeTemplates";
 import { Setting } from "./Settings";
 
 const stores = {
@@ -53,8 +55,8 @@ export const initalizeDB = (): SchoolCityIDB & Dexie => {
 
 	const mydb = db as SchoolCityIDB;
 
-	// initializeTemplates(mydb);
-	// initializeSettings(mydb);
+	initializeTemplates(mydb);
+	initializeSettings(mydb);
 
 	return mydb;
 };
