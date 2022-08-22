@@ -7,7 +7,7 @@ import { myCrud, SchoolCityIDB, SchoolCityIDBTable } from "./schema";
 // 	school: new School("Demo", "This is a demo school for tutorials", []),
 // };
 
-const blankSchool = {
+const blank = {
 	name: "Blank",
 	description: "This is a blank template",
 };
@@ -25,7 +25,7 @@ const h = async (
 };
 
 const initializeTemplates = async (db: SchoolCityIDB) => {
-	h(db, "schoolTemplates", blankSchool.name, blankSchool);
+	h(db, "template", blank.name, blank);
 	// if ((await db.settings.get("withTemplates")) === false) return;
 	// if (db.schoolTemplates.where({ title: demoSchool.title }) === undefined)
 	// 	myCrud.add("schoolTemplates", db, demoSchool);

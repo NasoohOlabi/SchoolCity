@@ -1,15 +1,9 @@
 import { myCrud, SchoolCityIDB } from "./schema";
-import { Setting } from "./Settings";
+import { SettingName as Setting } from "./Settings";
 
 const h = async (db: SchoolCityIDB, name: Setting, defaultValue: any) => {
 	db.transaction("rw", "settings", async () => {
 		let v = await myCrud.get("settings", db, name);
-		console.log(
-			"checking v = ",
-			v,
-			" and v === undefined = ",
-			v === undefined
-		);
 		if (v === undefined) myCrud.add("settings", db, defaultValue);
 	});
 };

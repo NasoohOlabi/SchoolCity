@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
-import { initalizeDB } from "./schema";
+import { initializeDB } from "./schema";
 import SchoolCityDBContext from "./SchoolCityDBContext";
 
 const SchoolCityDBContextProvider: React.FC<{ children: any }> = ({
 	children,
 }) => {
-	const db = useRef(initalizeDB());
+	const db = useRef(initializeDB());
 
 	useEffect(() => {
 		// @ts-ignore

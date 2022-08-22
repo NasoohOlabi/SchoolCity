@@ -2,7 +2,7 @@ import type { IndexableType, Table } from "dexie";
 import Dexie from "dexie";
 import initializeSettings from "./initializeSettings";
 import initializeTemplates from "./initializeTemplates";
-import { Setting } from "./Settings";
+import { SettingName } from "./Settings";
 
 const stores = {
 	student: "++id,firstName,lastName,fatherName,motherName,schoolId", // section, guardianPhoneNumber, studentPhoneNumber
@@ -24,11 +24,11 @@ const stores = {
 	// you can either just use teachers and say this teacher is in this section 
 	// or you can say that this section is having math and it's this teacher teaching it
 	mark: "++id,name,[sectionSubjectId+studentId],Mark1,Mark2,Mark3,Mark4,Mark5", // description
-	gradeTemplates: "++id,name", // grade ,description
-	schoolTemplates: "++id,name", // school , description
+	template: "++id,name,type", // value
 	school: "++id,&name", // sectionIds,vicePrincipalId , description
 	theme: "++id,name,schoolId", // description
 };
+
 
 type ObjectStores = typeof stores;
 
@@ -37,18 +37,13 @@ type SchoolCityIDBSchema = {
 };
 
 export type SchoolCityIDBTable = keyof SchoolCityIDBSchema;
-//adhoc check
-let s: SchoolCityIDBTable;
-s = "gradeTemplates";
-s = "schoolTemplates";
-export type SchoolCityIDBTemplate = "gradeTemplates" | "schoolTemplates";
 
 export type SchoolCityIDB = SchoolCityIDBSchema & Dexie;
 
-export const initalizeDB = (): SchoolCityIDB & Dexie => {
+export const initializeDB = (): SchoolCityIDB & Dexie => {
 	const db = new Dexie("school");
 	// data base should contain a year worth of information
-	db.version(2).stores(stores);
+	db.version(4).stores(stores);
 	db.open().catch(function (err) {
 		console.error(err.stack || err);
 	});
@@ -67,34 +62,29 @@ export abstract class SchoolCityObjectModel {
 
 export const myCrud = {
 	getAll: async <T extends SchoolCityObjectModel>(
-		table: keyof SchoolCityIDBSchema,
+		table: SchoolCityIDBTable,
 		db: SchoolCityIDB
 	): Promise<T[]> => {
-		console.log('getAll table = ', table);
 		return db[table].toArray().catch((e) => {
 			console.log(`getAll ${table} error = `, e);
 			throw e;
 		});
 	},
 	get: async (
-		table: keyof SchoolCityIDBSchema,
+		table: SchoolCityIDBTable,
 		db: SchoolCityIDB,
 		id: IndexableType
 	): Promise<any> => {
-		console.log('get table = ', table);
-		console.log('id = ', id);
 		return db[table].get(id).catch((e) => {
 			console.log(`get ${table} error = `, e);
 			throw e;
 		});
 	},
 	add: async (
-		table: keyof SchoolCityIDBSchema,
+		table: SchoolCityIDBTable,
 		db: SchoolCityIDB,
 		data: any
 	): Promise<any> => {
-		console.log('add table = ', table);
-		console.log('data = ', data);
 		return await db.transaction("rw", db[table], async () => {
 			if (data.id === undefined) {
 				return db[table].add(data);
@@ -108,13 +98,10 @@ export const myCrud = {
 		});
 	},
 	update: async (
-		table: keyof SchoolCityIDBSchema,
+		table: SchoolCityIDBTable,
 		db: SchoolCityIDB,
 		data: any
 	): Promise<any> => {
-		console.log('update table = ', table);
-		console.log('data = ', data);
-
 		if (data.id === undefined)
 			return myCrud.add(table, db, data)
 		else
@@ -124,12 +111,10 @@ export const myCrud = {
 			});
 	},
 	delete: async (
-		table: keyof SchoolCityIDBSchema,
+		table: SchoolCityIDBTable,
 		db: SchoolCityIDB,
 		id: number | string
 	): Promise<any> => {
-		console.log('delete table = ', table);
-		console.log('id = ', id);
 		return db[table].delete(id).catch((e) => {
 			console.log(`delete ${table} error = `, e);
 			throw e;
@@ -137,34 +122,17 @@ export const myCrud = {
 	},
 };
 
-export class GradeTemplates extends SchoolCityObjectModel {
+
+export class Setting extends SchoolCityObjectModel {
 	name: string;
 	description: string;
-	gradeId: number;
-
-	constructor(
-		name: string,
-		description: string,
-		gradeId: number,
-		id: undefined | number = undefined
-	) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.gradeId = gradeId;
-	}
-}
-
-export class SchoolTemplates extends SchoolCityObjectModel {
-	name: string;
-	description: string;
-	schoolId: number;
-
+	schoolId: number
+	value?: any;
 	constructor(
 		name: string,
 		description: string,
 		schoolId: number,
+		value: any = undefined,
 		id: undefined | number = undefined
 	) {
 		super();
@@ -172,8 +140,30 @@ export class SchoolTemplates extends SchoolCityObjectModel {
 		this.name = name;
 		this.description = description;
 		this.schoolId = schoolId;
+		this.value = value;
 	}
 }
+export class Template extends SchoolCityObjectModel {
+	name: string;
+	description: string;
+	type: SchoolCityIDBTable
+	value?: any
+	constructor(
+		name: string,
+		description: string,
+		type: SchoolCityIDBTable,
+		value: any = undefined,
+		id: undefined | number = undefined
+	) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.type = type;
+		this.value = value;
+	}
+}
+
 
 export class School extends SchoolCityObjectModel {
 	name: string;
@@ -200,7 +190,7 @@ export class Grade extends SchoolCityObjectModel {
 	number: number;
 	name: string;
 	description: string;
-	sectionsIds: number[];
+	sectionIds: number[];
 	administrator: number;
 	constructor(
 		number: number,
@@ -214,7 +204,7 @@ export class Grade extends SchoolCityObjectModel {
 		this.id = id;
 		this.number = number;
 		this.name = name;
-		this.sectionsIds = sectionIds;
+		this.sectionIds = sectionIds;
 		this.administrator = administrator;
 		this.description = description;
 	}
@@ -309,13 +299,13 @@ export class Section extends SchoolCityObjectModel {
 export class Administrator extends SchoolCityObjectModel {
 	phoneNumber: string;
 	name: string;
-	supervisorId: string;
+	supervisorId: number;
 	email: string;
 	schoolId: number;
 	constructor(
 		phoneNumber: string,
 		name: string,
-		supervisorId: string,
+		supervisorId: number,
 		email: string,
 		schoolId: number,
 		id: undefined | number = undefined
@@ -447,7 +437,26 @@ export function utilGrid(X: number, Y: number) {
 }
 
 export async function Grid(db: SchoolCityIDB | null, options: { X: number, Y: number }) {
-	let X = (db && await db.settings.get('numberOfWorkdays' as Setting)) || options.X
-	let Y = (db && await db.settings.get('periodsPerDay' as Setting)) || options.Y
+	let X = (db && await db.settings.get('numberOfWorkdays' as SettingName)) || options.X
+	let Y = (db && await db.settings.get('periodsPerDay' as SettingName)) || options.Y
 	return utilGrid(X, Y);
+}
+
+
+
+export const mp: {
+	[property in keyof typeof stores]: any
+} = {
+	mark: () => new Mark(0, '', 0, 0, 0, 0, 0, 0),
+	student: () => new Student('', '', '', '', 0, '', '', 0),
+	settings: () => new Setting('', '', 0, {}),
+	grade: () => new Grade(1, '', [], 0, ''),
+	section: () => new Section('', [], [], [], [], 0, 0, 0, ''),
+	administrator: () => new Administrator('', '', 0, '', 0),
+	teacher: () => new Teacher('', '', '', [], [], [], ''),
+	subject: () => new Subject('', '', []),
+	sectionSubject: () => new SectionSubject([], [], 0, 0, 0, 0, 0),
+	template: () => new Template('', '', 'school', {}),
+	school: () => new School('', '', [], 0),
+	theme: () => new Theme('', '', 0)
 }

@@ -1,8 +1,8 @@
-import { SchoolCityIDBTemplate } from "DB/schema";
+import { SchoolCityIDBTable } from "DB/schema";
 import { useSelector } from "react-redux";
 import TemplateGallery from "./TemplateGallery";
 interface TemplatesSectionProps {
-	table: SchoolCityIDBTemplate;
+	table: SchoolCityIDBTable;
 }
 
 const TemplatesSection: ({ table }: TemplatesSectionProps) => JSX.Element = ({

@@ -1,18 +1,26 @@
 import TemplatesSection from "components/Home/Templates/TemplatesSection";
 import Tile from "components/Home/Templates/Tile";
-import { myCrud, School } from "DB/schema";
+import { myCrud } from "DB/schema";
 import SchoolCityDBContext from "DB/SchoolCityDBContext";
 import { useLiveQuery } from "dexie-react-hooks";
+import { t } from "Language/t";
 import { IStore } from "Model/Store";
 import { collapse } from "Model/View/ExpandTemplates";
 import useTitle from "Model/View/Layout/useTitle";
 import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
+import useTableUrl from "./useTableUrl";
 
-interface SchoolHomeProps {}
+interface ObjectHomeProps {}
 
-const SchoolHome: ({}: SchoolHomeProps) => JSX.Element = ({}) => {
-	useTitle("School Home");
+const ObjectHome: (args: ObjectHomeProps) => JSX.Element = ({}) => {
+	const x = useTableUrl();
+	if (x.type === "redirect") return <Navigate to="/" />;
+
+	const table = x.table;
+
+	useTitle(t(table.toString()) + t(" Home"));
 
 	const db = useContext(SchoolCityDBContext);
 
@@ -27,10 +35,10 @@ const SchoolHome: ({}: SchoolHomeProps) => JSX.Element = ({}) => {
 		};
 	}, []);
 
-	const allSchools = useLiveQuery(
-		() => db && myCrud.getAll("school", db),
+	const allRecords = useLiveQuery(
+		() => db && myCrud.getAll(table, db),
 		[]
-	) as School[];
+	) as { id: number; name: string; description: string }[];
 
 	// const w = new Worker(new URL("./workers/try.worker.ts", import.meta.url));
 
@@ -38,12 +46,16 @@ const SchoolHome: ({}: SchoolHomeProps) => JSX.Element = ({}) => {
 	// w.postMessage({ data: "fart" });
 	return (
 		<div className="App h-full">
-			<TemplatesSection table="schoolTemplates" />
+			<TemplatesSection table={table} />
 			{!expanded && (
 				<div className="grid grid-cols-3">
-					{allSchools &&
-						allSchools.map((school) => (
-							<Tile key={school.id} instance={school} />
+					{allRecords &&
+						allRecords.map((item) => (
+							<Tile
+								key={item.id}
+								instance={item}
+								link={(item) => item.name}
+							/>
 						))}
 				</div>
 			)}
@@ -51,4 +63,4 @@ const SchoolHome: ({}: SchoolHomeProps) => JSX.Element = ({}) => {
 	);
 };
 
-export default SchoolHome;
+export default ObjectHome;

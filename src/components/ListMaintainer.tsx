@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface ListMaintainerProps {
 	lst: any[];
-	setLst: React.Dispatch<React.SetStateAction<any[]>>;
+	setLst: (lst: any[]) => void;
 	disabled?: boolean;
 }
 

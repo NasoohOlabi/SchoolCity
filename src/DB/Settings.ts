@@ -1,4 +1,4 @@
-export type Setting =
+export type SettingName =
 	"numberOfWorkdays"
 	| "periodsPerDay"
 	| "startWeekDay"

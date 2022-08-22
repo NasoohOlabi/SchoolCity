@@ -2,14 +2,13 @@ import { Option, Select } from "@material-tailwind/react";
 import { myCrud, SchoolCityIDBTable } from "DB/schema";
 import SchoolCityDBContext from "DB/SchoolCityDBContext";
 import { useLiveQuery } from "dexie-react-hooks";
-import React from "react";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import ListMaintainer from "./ListMaintainer";
 
 interface OneToManyProps {
 	oneTable: SchoolCityIDBTable;
 	lst: any[];
-	setLst: React.Dispatch<React.SetStateAction<any[]>>;
+	setLst: (lst: any[]) => void;
 	manyTable: SchoolCityIDBTable;
 	disabled?: boolean;
 }

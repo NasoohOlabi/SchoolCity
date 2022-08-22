@@ -1,10 +1,10 @@
-import { SchoolCityIDBTemplate } from "DB/schema";
+import { SchoolCityIDBTable } from "DB/schema";
 import { useSelector } from "react-redux";
 import GalleryGrid from "./GalleryGrid";
 import RecentlyUsed from "./RecentlyUsed";
 
 interface TemplateGalleryProps {
-	table: SchoolCityIDBTemplate;
+	table: SchoolCityIDBTable;
 }
 
 const TemplateGallery: ({ table }: TemplateGalleryProps) => JSX.Element = ({

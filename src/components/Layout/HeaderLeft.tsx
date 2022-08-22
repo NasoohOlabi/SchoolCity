@@ -4,6 +4,7 @@ import { IconButton } from "@material-tailwind/react";
 import { collapse } from "Model/View/ExpandTemplates";
 import { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
 import type { IStore } from "../../Model/Store";
 import store from "../../ViewModel/ViewModelStore";
 
@@ -20,18 +21,31 @@ const HeaderLeft: React.FC<HeaderLeftProps> = () => {
 	const [sidebarExpanded, setSidebarExpanded] =
 		useContext(store).sidebarExpanded;
 
+	const path = useLocation().pathname.split("/");
+	console.log(
+		"path[path.length - 1].toLowerCase() = ",
+		path[path.length - 1].toLowerCase()
+	);
+	const backFromNew = path[path.length - 1].toLowerCase() === "new";
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<IconButton
 				className="hidden md:inline-flex h-20 w-20 rounded "
 				onClick={() => {
 					dispatch(collapse());
-					if (!expanded) setSidebarExpanded(!sidebarExpanded);
+					if (backFromNew) navigate("../");
+					else if (!expanded) setSidebarExpanded(!sidebarExpanded);
 				}}
 			>
 				{/* <Icon name="menu" size="3xl" /> */}
 				<FontAwesomeIcon
-					icon={sidebarExpanded || expanded ? faArrowLeft : faBars}
+					icon={
+						sidebarExpanded || expanded || backFromNew
+							? faArrowLeft
+							: faBars
+					}
 				/>
 			</IconButton>
 			{/* <div className="hidden md:inline-flex">

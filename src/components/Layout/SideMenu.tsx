@@ -13,6 +13,7 @@ const SideMenu: React.FC<SideMenuProps> = ({}) => {
 		useContext(ctx).sidebarExpanded;
 	const dispatch = useDispatch();
 	const items = [
+		{ text: "Schools", path: "school" },
 		{ text: "Schedule", path: basePath + "/schedule" },
 		{ text: "Grades", path: basePath + "/grade" },
 		{ text: "Sections", path: basePath + "/section" },

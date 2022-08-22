@@ -9,39 +9,32 @@ import {
 	Switch,
 	Typography,
 } from "@material-tailwind/react";
-import { myCrud, SchoolCityIDBTable } from "DB/schema";
+import { mp, myCrud, SchoolCityIDBTable } from "DB/schema";
 import SchoolCityDBContext from "DB/SchoolCityDBContext";
-import { IndexableType } from "dexie";
-import { useLiveQuery } from "dexie-react-hooks";
 import { t } from "Language/t";
 import useRerender from "Model/hooks/useRerender";
-import React, { useCallback, useContext, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import OneToMany from "./OneToMany";
 
-interface DetailsProps {
-	title: string;
+export interface DraftProps {
 	table: SchoolCityIDBTable;
-	selector: { [index: string]: IndexableType };
-	query?: any;
+	title?: string;
 }
 
-const Details: (obj: DetailsProps) => JSX.Element = ({
-	title,
+const Draft: ({ table, title }: DraftProps) => JSX.Element = ({
 	table,
-	selector,
+	title,
 }) => {
-	console.log("selector = ", selector);
-
 	const db = useContext(SchoolCityDBContext);
-	let state = useRef({} as any).current;
-	state = useLiveQuery(
-		() => db && db[table].where(selector).first(),
-		[selector, table]
-	);
+	let state = useRef(mp[table]()).current;
+	if (!title) {
+		title = t("New ") + t(table);
+	}
 
 	const reRender = useRerender();
-	const [editing, setEditing] = useState(false);
+
+	const [editing, setEditing] = useState(true);
 
 	const myInput = (key: string) => {
 		const handler: React.ChangeEventHandler<HTMLInputElement> = (evt) => {
@@ -60,7 +53,6 @@ const Details: (obj: DetailsProps) => JSX.Element = ({
 							state[key] = evt.target.value;
 							console.log("state = ", state);
 						}}
-						defaultValue={state.key}
 					/>
 				);
 			case "number":
@@ -68,7 +60,6 @@ const Details: (obj: DetailsProps) => JSX.Element = ({
 					<Input
 						label={key}
 						disabled={!editing}
-						defaultValue={state[key]}
 						onChange={(evt) => {
 							if (!isNaN(+evt.target.value)) {
 								state[key] = evt.target.value;
@@ -168,4 +159,4 @@ const Details: (obj: DetailsProps) => JSX.Element = ({
 	);
 };
 
-export default Details;
+export default Draft;
