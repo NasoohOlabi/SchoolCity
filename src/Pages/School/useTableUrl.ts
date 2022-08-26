@@ -1,11 +1,10 @@
 import { SchoolCityIDBTable } from "DB/schema";
+import { IndexableType } from "dexie";
 import { useLocation } from "react-router-dom";
 
-const useTableUrl = (n: number = 1): { type: 'redirect' } | { type: 'table', table: SchoolCityIDBTable, name?: string } => {
+const useTableUrl = (n: number = 1): { type: 'redirect' } | { type: 'table', table: SchoolCityIDBTable, id: IndexableType | null } => {
 	const path = useLocation().pathname.split("/");
-
 	let rawTable = path[path.length - n];
-
 	if (
 		![
 			"student",
@@ -28,7 +27,7 @@ const useTableUrl = (n: number = 1): { type: 'redirect' } | { type: 'table', tab
 
 	const table = rawTable as SchoolCityIDBTable;
 
-	return { type: 'table', table, name: (n === 2) ? path[path.length - 1] : undefined }
+	return { type: 'table', table, id: (n === 2) ? path[path.length - 1] : null }
 
 
 }

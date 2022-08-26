@@ -6,30 +6,34 @@ import { SettingName } from "./Settings";
 
 const stores = {
 	student: "++id,firstName,lastName,fatherName,motherName,schoolId", // section, guardianPhoneNumber, studentPhoneNumber
-	grade: "++id,number,name", // description, sectionIds, administrator
-	// name is sth like first grade or 'صف أول'
-	section: "++id,name,&[number+gradeId],schoolId", // description, studentIds, schedule, teacherIds, sectionSubjectIds
+	grade: "++id,number,&[name+schoolId]", // description, sectionIds, administrator
+	// &name is sth like first grade or 'صف أول'
+	section: "++id,&[name+schoolId],&[number+gradeId]", // {subjectId,teacherId}[] , description, studentIds, schedule
 	// grade is foreign key to grade
 	// schedule sectionSubjectId[][]
-	administrator: "++id,phoneNumber,name,supervisorId,email,schoolId",
-	teacher: "++id,phoneNumber,name", // description, email, schedule, availability, sectionSubjectIds
+	administrator: "++id,phoneNumber,&name,supervisorId,email,schoolId",
+	teacher: "++id,phoneNumber,&name", // description, email, schedule, availability, sectionSubjectIds
 	// id autoIncremented for performance since it'll be used in Z3 is section
 	// schedule is section[][]
 	// availability is list of day period pairs... [0,2]===[startWeek,second]
-	settings: "++id,name,value,schoolId", // description
-	// name ex: workdays:6 | periodsPerDay:5
+	settings: "++id,&[name+schoolId]", // description, value
+	// &name ex: workdays:6 | periodsPerDay:5
 	// startWeek:Sunday
-	subject: "++id,name", // description, teacherIds
-	sectionSubject: "++id,sectionId,subjectId,teacherId", // periods, full marks, studentIds, teacherIds,
-	// you can either just use teachers and say this teacher is in this section 
+	subject: "++id,name,gradeId", // periods, full Mark,  description, teacherIds, MarkHeader
+	// you can either just use teachers and say this teacher is in this section
 	// or you can say that this section is having math and it's this teacher teaching it
-	mark: "++id,name,[sectionSubjectId+studentId],Mark1,Mark2,Mark3,Mark4,Mark5", // description
-	template: "++id,name,type", // value
-	school: "++id,&name", // sectionIds,vicePrincipalId , description
-	theme: "++id,name,schoolId", // description
+	mark: "++id,&name,[subjectId+studentId],Mark1,Mark2,Mark3,Mark4,Mark5", // description
+	template: "++id,&name,type", // value, description
+	school: "name", // sectionIds,vicePrincipalId , description
+	theme: "++id,&name,schoolId", // description
+	user: "uid" // photo name User
 };
 
-
+export const OM = {
+	pk: (table: SchoolCityIDBTable) => table === 'school' ? 'name' : table === 'user' ? 'uid' : 'id',
+	str: (item: any): string => (item.name || item.uid || item.id || '') + '',
+	identifier: (item: any, table?: SchoolCityIDBTable) => (!table && (item.id || item.name || item.uid)) || (table === 'school' ? item.name : (item.id || item.uid))
+}
 type ObjectStores = typeof stores;
 
 type SchoolCityIDBSchema = {
@@ -44,20 +48,17 @@ export const initializeDB = (): SchoolCityIDB & Dexie => {
 	const db = new Dexie("school");
 	// data base should contain a year worth of information
 	db.version(4).stores(stores);
-	db.open().catch(function (err) {
-		console.error(err.stack || err);
-	});
 
 	const mydb = db as SchoolCityIDB;
 
-	initializeTemplates(mydb);
 	initializeSettings(mydb);
+	initializeTemplates(mydb);
 
 	return mydb;
 };
 
-export abstract class SchoolCityObjectModel {
-	id: number | undefined;
+export interface SchoolCityObjectModel {
+	id?: number;
 }
 
 export const myCrud = {
@@ -100,12 +101,13 @@ export const myCrud = {
 	update: async (
 		table: SchoolCityIDBTable,
 		db: SchoolCityIDB,
-		data: any
+		data: any,
+		key?: IndexableType
 	): Promise<any> => {
-		if (data.id === undefined)
-			return myCrud.add(table, db, data)
+		const pk = key || (table === 'school') ? 'name' : (table === 'user') ? 'uid' : 'id'
+		if (data[pk] === undefined) return myCrud.add(table, db, data);
 		else
-			return db[table].update(data.id, data).catch((e) => {
+			return db[table].update(data[pk], data).catch((e) => {
 				console.log(`update ${table} error = `, e);
 				throw e;
 			});
@@ -113,7 +115,7 @@ export const myCrud = {
 	delete: async (
 		table: SchoolCityIDBTable,
 		db: SchoolCityIDB,
-		id: number | string
+		id: IndexableType
 	): Promise<any> => {
 		return db[table].delete(id).catch((e) => {
 			console.log(`delete ${table} error = `, e);
@@ -122,111 +124,81 @@ export const myCrud = {
 	},
 };
 
-
-export class Setting extends SchoolCityObjectModel {
+export interface Setting extends SchoolCityObjectModel {
 	name: string;
-	description: string;
-	schoolId: number
+	description?: string;
+	schoolId: number | 'global';
 	value?: any;
-	constructor(
-		name: string,
-		description: string,
-		schoolId: number,
-		value: any = undefined,
-		id: undefined | number = undefined
-	) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.schoolId = schoolId;
-		this.value = value;
-	}
 }
-export class Template extends SchoolCityObjectModel {
+const blankSetting = () => {
+	return {
+		name: "",
+		description: "",
+		schoolId: 'global',
+		value: undefined as any,
+	} as Setting;
+};
+export interface Template extends SchoolCityObjectModel {
 	name: string;
-	description: string;
-	type: SchoolCityIDBTable
-	value?: any
-	constructor(
-		name: string,
-		description: string,
-		type: SchoolCityIDBTable,
-		value: any = undefined,
-		id: undefined | number = undefined
-	) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.type = type;
-		this.value = value;
-	}
+	description?: string;
+	type: SchoolCityIDBTable;
+	value?: any;
 }
+const blankTemplate = () => {
+	return {
+		name: "",
+		description: "",
+		type: "school",
+		value: undefined,
+	} as Template;
+};
 
-
-export class School extends SchoolCityObjectModel {
+export interface School extends SchoolCityObjectModel {
 	name: string;
-	description: string;
-	sectionIds: number[];
 	vicePrincipalId: number;
-	constructor(
-		name: string,
-		description: string,
-		sectionIds: number[],
-		vicePrincipalId: number,
-		id: undefined | number = undefined
-	) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.sectionIds = sectionIds;
-		this.vicePrincipalId = vicePrincipalId;
-	}
+	sectionIds: number[];
+	description?: string;
 }
+const blankSchool = () => {
+	return {
+		name: "",
+		vicePrincipalId: 0,
+		sectionIds: [],
+		description: "",
+	} as School;
+};
 
-export class Grade extends SchoolCityObjectModel {
+export interface Grade extends SchoolCityObjectModel {
 	number: number;
 	name: string;
-	description: string;
-	sectionIds: number[];
-	administrator: number;
-	constructor(
-		number: number,
-		name: string,
-		sectionIds: number[],
-		administrator: number,
-		description: string,
-		id: undefined | number = undefined
-	) {
-		super();
-		this.id = id;
-		this.number = number;
-		this.name = name;
-		this.sectionIds = sectionIds;
-		this.administrator = administrator;
-		this.description = description;
-	}
+	description?: string;
+	administratorId: number;
+	schoolId: number
 }
-export class Theme extends SchoolCityObjectModel {
+const blankGrade = () => {
+	return {
+		number: 0,
+		name: "",
+		description: "",
+		sectionIds: [],
+		administratorId: 0,
+		schoolId: 0,
+		id: undefined,
+	} as Grade;
+};
+export interface Theme {
 	name: string;
-	description: string;
+	description?: string;
 	schoolId: number;
-	constructor(
-		name: string,
-		description: string,
-		schoolId: number,
-		id: undefined | number = undefined
-	) {
-		super();
-		this.name = name;
-		this.description = description;
-		this.schoolId = schoolId;
-	}
 }
-
-export class Student extends SchoolCityObjectModel {
+const blankTheme = () => {
+	return {
+		name: "",
+		description: "",
+		schoolId: 0,
+	} as Theme;
+};
+export interface Student {
 	firstName: string;
 	lastName: string;
 	fatherName: string;
@@ -235,228 +207,172 @@ export class Student extends SchoolCityObjectModel {
 	schoolId: number;
 	guardianPhoneNumber: string;
 	studentPhoneNumber: string;
-	constructor(
-		firstName: string,
-		lastName: string,
-		fatherName: string,
-		motherName: string,
-		sectionId: number,
-		guardianPhoneNumber: string,
-		studentPhoneNumber: string,
-		schoolId: number,
-		id: undefined | number = undefined
-	) {
-		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.fatherName = fatherName;
-		this.motherName = motherName;
-		this.sectionId = sectionId;
-		this.guardianPhoneNumber = guardianPhoneNumber;
-		this.studentPhoneNumber = studentPhoneNumber;
-		this.schoolId = schoolId
-	}
 }
+const blankStudent = () => {
+	return {
+		firstName: "",
+		lastName: "",
+		fatherName: "",
+		motherName: "",
+		sectionId: 0,
+		schoolId: 0,
+		guardianPhoneNumber: "",
+		studentPhoneNumber: "",
+	} as Student;
+};
 
-type SectionScheduleCell = { teacherId: number, isCemented: boolean };
-export class Section extends SchoolCityObjectModel {
+type SectionScheduleCell =
+	| { teacherId?: number; pinned: false }
+	| { teacherId: undefined; pinned: true };
+export interface SectionSubject {
+	teacherId: number,
+	subjectId: number,
+}
+export interface Section {
 	name: string;
 	number: number;
 	gradeId: number;
 	schoolId: number;
-	description: string;
-	studentIds: number[];
+	description?: string;
+	studentIds?: number[];
+	subjects: SectionSubject[]
 	schedule: SectionScheduleCell[][];
-	teacherIds: number[];
-	sectionSubjectIds: number[];
-	constructor(
-		name: string,
-		studentIds: number[],
-		schedule: SectionScheduleCell[][],
-		teacherIds: number[],
-		sectionSubjectIds: number[],
-		number: number,
-		gradeId: number,
-		schoolId: number,
-		description: string,
-		id: undefined | number = undefined
-	) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.studentIds = studentIds;
-		this.schedule = schedule;
-		this.teacherIds = teacherIds;
-		this.sectionSubjectIds = sectionSubjectIds;
-		this.number = number;
-		this.gradeId = gradeId;
-		this.schoolId = schoolId;
-		this.description = description;
-	}
 }
-
-export class Administrator extends SchoolCityObjectModel {
+const blankSection = () => {
+	return {
+		name: "",
+		number: 0,
+		gradeId: 0,
+		schoolId: 0,
+		description: "",
+		studentIds: [],
+		subjects: [],
+		schedule: [],
+		periods: [],
+	} as Section;
+};
+export interface Administrator {
 	phoneNumber: string;
 	name: string;
-	supervisorId: number;
-	email: string;
+	supervisorId?: number | null;
+	email?: string;
 	schoolId: number;
-	constructor(
-		phoneNumber: string,
-		name: string,
-		supervisorId: number,
-		email: string,
-		schoolId: number,
-		id: undefined | number = undefined
-	) {
-		super();
-		this.id = id;
-		this.phoneNumber = phoneNumber;
-		this.name = name;
-		this.supervisorId = supervisorId;
-		this.email = email;
-		this.schoolId = schoolId;
-	}
+	subordinates: Administrator[];
+	divisionName?: string
 }
-type SectionId = number
-type TeacherScheduleCell = SectionId | undefined | null
-export class Teacher extends SchoolCityObjectModel {
+const blankAdministrator = () => {
+	return {
+		phoneNumber: "",
+		name: "",
+		supervisorId: 0,
+		email: "",
+		schoolId: 0,
+	} as Administrator;
+};
+type SectionId = number;
+type TeacherScheduleCell = SectionId | undefined | null;
+
+export interface Teacher {
 	phoneNumber: string;
 	name: string;
-	description: string;
-	email: string;
+	description?: string;
+	email?: string;
 	schedule: TeacherScheduleCell[][];
 	availability: number[][];
-	sectionSubjectIds: number[];
-	constructor(
-		phoneNumber: string,
-		name: string,
-		email: string,
-		schedule: TeacherScheduleCell[][],
-		availability: number[][],
-		sectionSubjectIds: number[],
-		description: string,
-		id: undefined | number = undefined
-	) {
-		super();
-		this.id = id;
-		this.description = description;
-		this.phoneNumber = phoneNumber;
-		this.name = name;
-		this.email = email;
-		this.schedule = schedule;
-		this.availability = availability;
-		this.sectionSubjectIds = sectionSubjectIds;
-	}
+	subjectIds?: number[];
 }
-
-export class SectionSubject extends SchoolCityObjectModel {
-	sectionId: number;
-	subjectId: number;
-	teacherId: number;
-	periods: number;
-	fullMark: number;
-	studentIds: number[];
-	teacherIds: number[];
-	constructor(
-		teacherIds: number[],
-		studentIds: number[],
-		sectionId: number,
-		subjectId: number,
-		teacherId: number,
-		periods: number,
-		fullMark: number,
-		id: undefined | number = undefined
-	) {
-		super();
-		this.id = id;
-		this.teacherIds = teacherIds;
-		this.studentIds = studentIds;
-		this.sectionId = sectionId;
-		this.subjectId = subjectId;
-		this.teacherId = teacherId;
-		this.periods = periods;
-		this.fullMark = fullMark;
-	}
+const blankTeacher = () => {
+	return {
+		phoneNumber: "",
+		name: "",
+		description: "",
+		email: "",
+		schedule: [],
+		availability: [],
+		subjectIds: [],
+	} as Teacher;
+};
+type Average = { type: 'avg', cols: [IndexedMarkCol] }
+type WeightedAverage = { type: 'weighted avg', cols: [{ col: IndexedMarkCol, weight: number }] }
+type Equation = Average | WeightedAverage
+type IndexedMarkCol = 'Mark1' | 'Mark2' | 'Mark3' | 'Mark4' | 'Mark5'
+export interface MarkHeader {
+	mapping: { [column: number]: IndexedMarkCol | Equation }
 }
-
-export class Subject extends SchoolCityObjectModel {
+export interface Subject {
 	name: string;
-	description: string;
-	teacherIds: number[];
-	constructor(
-		name: string,
-		description: string,
-		teacherIds: number[],
-		id: undefined | number = undefined
-	) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.teacherIds = teacherIds;
-		this.description = description;
-	}
+	description?: string;
+	gradeId: number;
+	periods: number;
+	fullMark?: number;
+	marks?: MarkHeader;
 }
+const blankSubject = () => {
+	return {
+		name: "",
+		description: "",
+		gradeId: 0,
+		teacherId: 0,
+		periods: 0,
+		fullMark: 0,
+	} as Subject;
+};
 
-export class Mark extends SchoolCityObjectModel {
+export interface Mark {
 	studentId: number;
-	sectionSubjectId: number;
+	subjectId: number;
 	mark1: number;
 	mark2: number;
 	mark3: number;
 	mark4: number;
 	mark5: number;
-	description: string;
-	constructor(
-		studentId: number,
-		description: string,
-		sectionSubjectId: number,
-		mark1: number,
-		mark2: number,
-		mark3: number,
-		mark4: number,
-		mark5: number,
-		id: undefined | number = undefined
-	) {
-		super();
-		this.id = id;
-		this.studentId = studentId;
-		this.sectionSubjectId = sectionSubjectId;
-		this.mark1 = mark1;
-		this.mark2 = mark2;
-		this.mark3 = mark3;
-		this.mark4 = mark4;
-		this.mark5 = mark5;
-		this.description = description;
-	}
+	description?: string;
 }
+const blankMark = () => {
+	return {
+		studentId: 0,
+		subjectId: 0,
+		mark1: 0,
+		mark2: 0,
+		mark3: 0,
+		mark4: 0,
+		mark5: 0,
+		description: "",
+	} as Mark;
+};
 
 export function utilGrid(X: number, Y: number) {
 	return new Array(X).fill(null).map(() => new Array(Y).fill(null));
 }
 
-export async function Grid(db: SchoolCityIDB | null, options: { X: number, Y: number }) {
-	let X = (db && await db.settings.get('numberOfWorkdays' as SettingName)) || options.X
-	let Y = (db && await db.settings.get('periodsPerDay' as SettingName)) || options.Y
+export async function Grid(
+	db: SchoolCityIDB | null,
+	options: { X: number; Y: number }
+) {
+	let X =
+		(db && (await db.settings.where({ name: "numberOfWorkdays" as SettingName }).first())) ||
+		options.X;
+	let Y =
+		(db && (await db.settings.where({ name: "periodsPerDay" as SettingName }).first())) ||
+		options.Y;
 	return utilGrid(X, Y);
 }
 
-
+const name = "";
 
 export const mp: {
-	[property in keyof typeof stores]: any
+	[property in keyof typeof stores]: any;
 } = {
-	mark: () => new Mark(0, '', 0, 0, 0, 0, 0, 0),
-	student: () => new Student('', '', '', '', 0, '', '', 0),
-	settings: () => new Setting('', '', 0, {}),
-	grade: () => new Grade(1, '', [], 0, ''),
-	section: () => new Section('', [], [], [], [], 0, 0, 0, ''),
-	administrator: () => new Administrator('', '', 0, '', 0),
-	teacher: () => new Teacher('', '', '', [], [], [], ''),
-	subject: () => new Subject('', '', []),
-	sectionSubject: () => new SectionSubject([], [], 0, 0, 0, 0, 0),
-	template: () => new Template('', '', 'school', {}),
-	school: () => new School('', '', [], 0),
-	theme: () => new Theme('', '', 0)
-}
+	settings: blankSetting,
+	template: blankTemplate,
+	school: blankSchool,
+	student: blankStudent,
+	mark: blankMark,
+	grade: blankGrade,
+	section: blankSection,
+	administrator: blankAdministrator,
+	teacher: blankTeacher,
+	subject: blankSubject,
+	theme: blankTheme,
+	user: {}
+};

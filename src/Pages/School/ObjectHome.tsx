@@ -16,7 +16,8 @@ interface ObjectHomeProps {}
 
 const ObjectHome: (args: ObjectHomeProps) => JSX.Element = ({}) => {
 	const x = useTableUrl();
-	if (x.type === "redirect") return <Navigate to="/" />;
+
+	if (x.type === "redirect" || x.id !== null) return <Navigate to="/" />;
 
 	const table = x.table;
 
@@ -48,14 +49,15 @@ const ObjectHome: (args: ObjectHomeProps) => JSX.Element = ({}) => {
 		<div className="App h-full">
 			<TemplatesSection table={table} />
 			{!expanded && (
-				<div className="grid grid-cols-3">
+				<div className="p-8 ">
 					{allRecords &&
 						allRecords.map((item) => (
-							<Tile
-								key={item.id}
-								instance={item}
-								link={(item) => item.name}
-							/>
+							<div
+								key={item.id || item.name}
+								className="inline-block m-7"
+							>
+								<Tile instance={item} size="l" table={table} />
+							</div>
 						))}
 				</div>
 			)}

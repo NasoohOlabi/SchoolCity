@@ -1,7 +1,7 @@
 import { faAngleDown, faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "@material-tailwind/react";
-import { mp, myCrud, SchoolCityIDBTable } from "DB/schema";
+import { mp, SchoolCityIDBTable } from "DB/schema";
 import SchoolCityDBContext from "DB/SchoolCityDBContext";
 import { useLiveQuery } from "dexie-react-hooks";
 import { t } from "Language/t";
@@ -9,7 +9,7 @@ import { ITemplate } from "Model/Types";
 import { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { expand } from "../../../Model/View/ExpandTemplates";
-import Tile, { ITitleInstance } from "./Tile";
+import Tile from "./Tile";
 
 interface RecentlyUsedProps {
 	table: SchoolCityIDBTable;
@@ -22,19 +22,16 @@ const RecentlyUsed = ({ table }: RecentlyUsedProps): JSX.Element => {
 			state.templatesExpanded.expanded
 	);
 	const db = useContext(SchoolCityDBContext);
-	const templates = useLiveQuery(() => {
-		console.log(
-			"db && myCrud.getAll(table, db) = ",
-			db && db.template.where({ type: table })
-		);
-		return db && myCrud.getAll(table, db);
-	}, []) as ITemplate[];
+	if (!db) return <p>Loading</p>;
 
-	const linkFn = (t: ITitleInstance): string => {
-		return t.id === null
-			? "new"
-			: (table === "school" ? t.name : t.id?.toString()) || "";
-	};
+	const templates = useLiveQuery(() => {
+		// console.log(
+		// 	"db && myCrud.getAll(table, db) = ",
+		// 	db && db.template.where({ type: table })
+		// );
+		// return db && myCrud.getAll('template', db);
+		return db.template.where({ type: table }).toArray() || [];
+	}, []) as ITemplate[];
 
 	const blankInstance = mp[table]();
 
@@ -61,10 +58,10 @@ const RecentlyUsed = ({ table }: RecentlyUsedProps): JSX.Element => {
 				)}
 			</div>
 			<section className="recently-item-section flex justify-items-start w-full items-center align-middle">
-				<Tile instance={blankInstance} link={linkFn} />
+				<Tile instance={blankInstance} />
 				{templates &&
 					templates.map((template) => (
-						<Tile key={template.id} instance={template} link={linkFn} />
+						<Tile key={template.id} instance={template} />
 					))}
 			</section>
 		</>

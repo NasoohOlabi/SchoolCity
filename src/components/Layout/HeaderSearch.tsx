@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface HeaderSearchProps {}
 
-const HeaderSearch: React.FC<HeaderSearchProps> = () => {
+const HeaderSearch: (args: HeaderSearchProps) => JSX.Element = () => {
 	return (
 		<div
 			className="mx-5 md:mx-20 flex flex-grow items-center px-5 py-2 

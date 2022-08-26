@@ -2,7 +2,11 @@
   "compilerOptions": {
     "types": [
       "gapi",
-      "gapi.client.drive"
+      "gapi.client.drive",
+      "gapi.client.gmail",
+      "gapi.client.people",
+      "gapi.client.docs",
+      "gapi.client.sheets",
     ],
     "target": "ESNext",
     "useDefineForClassFields": true,

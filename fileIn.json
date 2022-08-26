@@ -1,0 +1,10018 @@
+{
+	"allClasses": [
+		{
+			"l": [
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t5", "t9", "t14", "t15", "t22"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t5", "t9", "t14", "t15", "t22"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t5", "t9", "t14", "t15", "t22"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t5", "t9", "t14", "t15", "t22"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t5", "t9", "t14", "t15", "t22"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t14", "t15", "t22"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t14", "t15", "t22"]
+					}
+				],
+				[
+					{
+						"currentTeacher": "t7",
+						"isCemented": true,
+						"Options": ["t2", "t7", "t9", "t14", "t21"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t14", "t21"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t14", "t21"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t14", "t21"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t9", "t14", "t21"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t9", "t14"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t9", "t14"]
+					}
+				],
+				[
+					{
+						"currentTeacher": "t6",
+						"isCemented": true,
+						"Options": ["t6", "t9", "t21", "t22"]
+					},
+					{
+						"currentTeacher": "t6",
+						"isCemented": true,
+						"Options": ["t6", "t9", "t21", "t22"]
+					},
+					{
+						"currentTeacher": "t6",
+						"isCemented": true,
+						"Options": ["t6", "t9", "t21", "t22"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t20", "t21", "t22"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t20", "t21", "t22"]
+					},
+					{
+						"currentTeacher": "t8",
+						"isCemented": true,
+						"Options": ["t8", "t9", "t20", "t22"]
+					},
+					{
+						"currentTeacher": "t8",
+						"isCemented": true,
+						"Options": ["t8", "t9", "t20", "t22"]
+					}
+				],
+				[
+					{
+						"currentTeacher": "t7",
+						"isCemented": true,
+						"Options": ["t2", "t7", "t9", "t14", "t21", "t22"]
+					},
+					{
+						"currentTeacher": "t7",
+						"isCemented": true,
+						"Options": ["t2", "t7", "t14", "t21", "t22"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t14", "t21", "t22"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t14", "t21", "t22"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t9", "t14", "t21", "t22"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t9", "t14", "t22"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t9", "t14", "t22"]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t5", "t15"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t5", "t15"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t5", "t15"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t5", "t15", "t20"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t5", "t15", "t20"]
+					},
+					{
+						"currentTeacher": "t8",
+						"isCemented": true,
+						"Options": ["t2", "t8", "t15", "t20"]
+					},
+					{
+						"currentTeacher": "t8",
+						"isCemented": true,
+						"Options": ["t2", "t8", "t15", "t20"]
+					}
+				]
+			],
+			"Name": "grade12class1",
+			"teachers": {
+				"t2": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4]
+					]
+				},
+				"t5": {
+					"Periods": 4,
+					"remPeriods": 4,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4]
+					]
+				},
+				"t6": {
+					"Periods": 3,
+					"remPeriods": 0,
+					"periodsHere": [
+						[2, 0],
+						[2, 1],
+						[2, 2]
+					],
+					"emptyAvailables": []
+				},
+				"t7": {
+					"Periods": 3,
+					"remPeriods": 0,
+					"periodsHere": [
+						[1, 0],
+						[3, 0],
+						[3, 1]
+					],
+					"emptyAvailables": []
+				},
+				"t8": {
+					"Periods": 4,
+					"remPeriods": 0,
+					"periodsHere": [
+						[2, 5],
+						[2, 6],
+						[4, 5],
+						[4, 6]
+					],
+					"emptyAvailables": []
+				},
+				"t9": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 3],
+						[2, 4],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t14": {
+					"Periods": 4,
+					"remPeriods": 4,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t15": {
+					"Periods": 5,
+					"remPeriods": 5,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4]
+					]
+				},
+				"t20": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[2, 3],
+						[2, 4],
+						[4, 3],
+						[4, 4]
+					]
+				},
+				"t21": {
+					"Periods": 5,
+					"remPeriods": 5,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[2, 3],
+						[2, 4],
+						[3, 2],
+						[3, 3],
+						[3, 4]
+					]
+				},
+				"t22": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 3],
+						[2, 4],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				}
+			}
+		},
+		{
+			"l": [
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t4",
+							"t5",
+							"t9",
+							"t13",
+							"t15",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t4",
+							"t5",
+							"t9",
+							"t13",
+							"t15",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t5",
+							"t9",
+							"t13",
+							"t15",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t5",
+							"t9",
+							"t13",
+							"t15",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t5",
+							"t9",
+							"t13",
+							"t15",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t13", "t15", "t16", "t22", "t26", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t13", "t15", "t16", "t22", "t26", "t27"]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t9",
+							"t16",
+							"t18",
+							"t21",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t16",
+							"t18",
+							"t21",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t16",
+							"t18",
+							"t21",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t16",
+							"t18",
+							"t21",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t16",
+							"t18",
+							"t21",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t0", "t2", "t9", "t16", "t18", "t24", "t26"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t0", "t2", "t9", "t16", "t18", "t24", "t26"]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t4",
+							"t9",
+							"t13",
+							"t18",
+							"t21",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t4",
+							"t9",
+							"t13",
+							"t18",
+							"t21",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t13", "t18", "t21", "t22", "t24", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t13",
+							"t18",
+							"t20",
+							"t21",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t13",
+							"t18",
+							"t20",
+							"t21",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t13", "t18", "t20", "t22", "t24", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t13", "t18", "t20", "t22", "t24", "t27"]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t9",
+							"t18",
+							"t21",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t18",
+							"t21",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t18",
+							"t21",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t18",
+							"t21",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t18",
+							"t21",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t18",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t18",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t4",
+							"t5",
+							"t13",
+							"t15",
+							"t18",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t4",
+							"t5",
+							"t13",
+							"t15",
+							"t18",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t5", "t13", "t15", "t18", "t26", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t5",
+							"t13",
+							"t15",
+							"t18",
+							"t20",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t5",
+							"t13",
+							"t15",
+							"t18",
+							"t20",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t13", "t15", "t18", "t20", "t26"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t13", "t15", "t18", "t20", "t26"]
+					}
+				]
+			],
+			"Name": "grade11class2",
+			"teachers": {
+				"t0": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t2": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t4": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[1, 0],
+						[1, 1],
+						[2, 0],
+						[2, 1],
+						[3, 0],
+						[3, 1],
+						[4, 0],
+						[4, 1]
+					]
+				},
+				"t5": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4]
+					]
+				},
+				"t9": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t13": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t15": {
+					"Periods": 4,
+					"remPeriods": 4,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t16": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6]
+					]
+				},
+				"t18": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t20": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t21": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4]
+					]
+				},
+				"t22": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t24": {
+					"Periods": 4,
+					"remPeriods": 4,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t26": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t27": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4]
+					]
+				}
+			}
+		},
+		{
+			"l": [
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t4",
+							"t5",
+							"t9",
+							"t13",
+							"t14",
+							"t15",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t4",
+							"t5",
+							"t9",
+							"t13",
+							"t14",
+							"t15",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t5",
+							"t9",
+							"t13",
+							"t14",
+							"t15",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t5",
+							"t9",
+							"t13",
+							"t14",
+							"t15",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t5",
+							"t9",
+							"t13",
+							"t14",
+							"t15",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t13",
+							"t14",
+							"t15",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t13",
+							"t14",
+							"t15",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t9",
+							"t14",
+							"t16",
+							"t18",
+							"t21",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t14",
+							"t16",
+							"t18",
+							"t21",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t14",
+							"t16",
+							"t18",
+							"t21",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t14",
+							"t16",
+							"t18",
+							"t21",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t14",
+							"t16",
+							"t18",
+							"t21",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t0", "t2", "t9", "t14", "t16", "t18", "t26"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t0", "t2", "t9", "t14", "t16", "t18", "t26"]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t4", "t9", "t13", "t18", "t21", "t22", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t4", "t9", "t13", "t18", "t21", "t22", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t13", "t18", "t21", "t22", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t13", "t18", "t20", "t21", "t22", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t13", "t18", "t20", "t21", "t22", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t13", "t18", "t20", "t22", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t13", "t18", "t20", "t22", "t27"]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t9",
+							"t14",
+							"t18",
+							"t21",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t14",
+							"t18",
+							"t21",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t14",
+							"t18",
+							"t21",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t14",
+							"t18",
+							"t21",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t14",
+							"t18",
+							"t21",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t4",
+							"t5",
+							"t13",
+							"t15",
+							"t18",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t4",
+							"t5",
+							"t13",
+							"t15",
+							"t18",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t5", "t13", "t15", "t18", "t26", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t5",
+							"t13",
+							"t15",
+							"t18",
+							"t20",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t5",
+							"t13",
+							"t15",
+							"t18",
+							"t20",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t13", "t15", "t18", "t20", "t26"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t13", "t15", "t18", "t20", "t26"]
+					}
+				]
+			],
+			"Name": "grade11class1",
+			"teachers": {
+				"t0": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t2": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t4": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[1, 0],
+						[1, 1],
+						[2, 0],
+						[2, 1],
+						[3, 0],
+						[3, 1],
+						[4, 0],
+						[4, 1]
+					]
+				},
+				"t5": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4]
+					]
+				},
+				"t9": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t13": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t14": {
+					"Periods": 4,
+					"remPeriods": 4,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t15": {
+					"Periods": 4,
+					"remPeriods": 4,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t16": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6]
+					]
+				},
+				"t18": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t20": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t21": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4]
+					]
+				},
+				"t22": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t26": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t27": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4]
+					]
+				}
+			}
+		},
+		{
+			"l": [
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t4",
+							"t9",
+							"t10",
+							"t11",
+							"t13",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t4",
+							"t9",
+							"t10",
+							"t11",
+							"t13",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t13",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t13",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t13",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t13",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t13",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t10",
+							"t16",
+							"t18",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t10",
+							"t16",
+							"t18",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t10",
+							"t16",
+							"t18",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t24",
+							"t26"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t24",
+							"t26"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t4",
+							"t9",
+							"t11",
+							"t13",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t4",
+							"t9",
+							"t11",
+							"t13",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t13",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t13",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t13",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t13",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t13",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t27"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t4",
+							"t10",
+							"t13",
+							"t18",
+							"t19",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t4",
+							"t10",
+							"t13",
+							"t18",
+							"t19",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t10", "t13", "t18", "t19", "t26", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t10", "t13", "t18", "t19", "t26", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t10", "t13", "t18", "t19", "t26", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t10", "t13", "t18", "t19", "t26"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t10", "t13", "t18", "t19", "t26"]
+					}
+				]
+			],
+			"Name": "grade10class2",
+			"teachers": {
+				"t0": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t2": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t4": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[1, 0],
+						[1, 1],
+						[2, 0],
+						[2, 1],
+						[3, 0],
+						[3, 1],
+						[4, 0],
+						[4, 1]
+					]
+				},
+				"t9": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t10": {
+					"Periods": 6,
+					"remPeriods": 6,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t11": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t13": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t16": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6]
+					]
+				},
+				"t18": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t19": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t22": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t24": {
+					"Periods": 4,
+					"remPeriods": 4,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t26": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t27": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4]
+					]
+				}
+			}
+		},
+		{
+			"l": [
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t4",
+							"t9",
+							"t10",
+							"t11",
+							"t13",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t4",
+							"t9",
+							"t10",
+							"t11",
+							"t13",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t13",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t13",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t13",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t13",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t13",
+							"t16",
+							"t22",
+							"t26",
+							"t27"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t10",
+							"t16",
+							"t18",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t10",
+							"t16",
+							"t18",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t10",
+							"t16",
+							"t18",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t24",
+							"t26"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t24",
+							"t26"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t4",
+							"t9",
+							"t11",
+							"t13",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t4",
+							"t9",
+							"t11",
+							"t13",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t13",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t13",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t13",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t13",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t13",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t27"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t4",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t2",
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t24",
+							"t26",
+							"t27"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t4",
+							"t10",
+							"t13",
+							"t18",
+							"t19",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t4",
+							"t10",
+							"t13",
+							"t18",
+							"t19",
+							"t26",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t10", "t13", "t18", "t19", "t26", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t10", "t13", "t18", "t19", "t26", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t10", "t13", "t18", "t19", "t26", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t10", "t13", "t18", "t19", "t26"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t10", "t13", "t18", "t19", "t26"]
+					}
+				]
+			],
+			"Name": "grade10class1",
+			"teachers": {
+				"t0": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t2": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t4": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[1, 0],
+						[1, 1],
+						[2, 0],
+						[2, 1],
+						[3, 0],
+						[3, 1],
+						[4, 0],
+						[4, 1]
+					]
+				},
+				"t9": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t10": {
+					"Periods": 6,
+					"remPeriods": 6,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t11": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t13": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t16": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6]
+					]
+				},
+				"t18": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t19": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t22": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t24": {
+					"Periods": 4,
+					"remPeriods": 4,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t26": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t27": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4]
+					]
+				}
+			}
+		},
+		{
+			"l": [
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t14",
+							"t16",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t14",
+							"t16",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t14",
+							"t16",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t14",
+							"t16",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t14",
+							"t16",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t14",
+							"t16",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t14",
+							"t16",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t9",
+							"t14",
+							"t16",
+							"t18",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t14", "t16", "t18", "t26", "t27", "t28"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t14", "t16", "t18", "t26", "t27", "t28"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t14", "t16", "t18", "t26", "t27", "t28"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t9",
+							"t14",
+							"t16",
+							"t18",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t9", "t14", "t16", "t18", "t26", "t28"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t9", "t14", "t16", "t18", "t26", "t28"]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t11", "t12", "t13", "t18", "t22", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t11", "t12", "t13", "t18", "t22", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t11", "t12", "t13", "t18", "t22", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t11", "t12", "t13", "t18", "t22", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t3",
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t18",
+							"t22",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t3",
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t18",
+							"t22",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t3",
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t18",
+							"t22",
+							"t27"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t9",
+							"t11",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t11",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t11",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t11",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t9",
+							"t11",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t9",
+							"t11",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t9",
+							"t11",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t3",
+							"t12",
+							"t13",
+							"t18",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t3",
+							"t12",
+							"t13",
+							"t18",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t3",
+							"t12",
+							"t13",
+							"t18",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t12", "t13", "t18", "t26", "t27", "t28"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t12", "t13", "t18", "t26", "t27", "t28"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t12", "t13", "t18", "t26", "t28"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t12", "t13", "t18", "t26", "t28"]
+					}
+				]
+			],
+			"Name": "grade9class2",
+			"teachers": {
+				"t2": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t3": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2]
+					]
+				},
+				"t9": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t11": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t12": {
+					"Periods": 6,
+					"remPeriods": 6,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t13": {
+					"Periods": 4,
+					"remPeriods": 4,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t14": {
+					"Periods": 6,
+					"remPeriods": 6,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t16": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6]
+					]
+				},
+				"t18": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t22": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t26": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t27": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4]
+					]
+				},
+				"t28": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				}
+			}
+		},
+		{
+			"l": [
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t14",
+							"t16",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t14",
+							"t16",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t14",
+							"t16",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t14",
+							"t16",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t14",
+							"t16",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t14",
+							"t16",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t14",
+							"t16",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t9",
+							"t14",
+							"t16",
+							"t18",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t14", "t16", "t18", "t26", "t27", "t28"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t14", "t16", "t18", "t26", "t27", "t28"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t14", "t16", "t18", "t26", "t27", "t28"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t9",
+							"t14",
+							"t16",
+							"t18",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t9", "t14", "t16", "t18", "t26", "t28"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t9", "t14", "t16", "t18", "t26", "t28"]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t11", "t12", "t13", "t18", "t22", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t11", "t12", "t13", "t18", "t22", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t11", "t12", "t13", "t18", "t22", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t9", "t11", "t12", "t13", "t18", "t22", "t27"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t3",
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t18",
+							"t22",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t3",
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t18",
+							"t22",
+							"t27"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t3",
+							"t9",
+							"t11",
+							"t12",
+							"t13",
+							"t18",
+							"t22",
+							"t27"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t9",
+							"t11",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t11",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t11",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t11",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t9",
+							"t11",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t9",
+							"t11",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t9",
+							"t11",
+							"t14",
+							"t18",
+							"t22",
+							"t26",
+							"t27",
+							"t28"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t3",
+							"t12",
+							"t13",
+							"t18",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t3",
+							"t12",
+							"t13",
+							"t18",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t2",
+							"t3",
+							"t12",
+							"t13",
+							"t18",
+							"t26",
+							"t27",
+							"t28"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t12", "t13", "t18", "t26", "t27", "t28"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t12", "t13", "t18", "t26", "t27", "t28"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t12", "t13", "t18", "t26", "t28"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t2", "t12", "t13", "t18", "t26", "t28"]
+					}
+				]
+			],
+			"Name": "grade9class1",
+			"teachers": {
+				"t2": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t3": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2]
+					]
+				},
+				"t9": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t11": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t12": {
+					"Periods": 6,
+					"remPeriods": 6,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t13": {
+					"Periods": 4,
+					"remPeriods": 4,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t14": {
+					"Periods": 6,
+					"remPeriods": 6,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t16": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6]
+					]
+				},
+				"t18": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t22": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t26": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t27": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4]
+					]
+				},
+				"t28": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				}
+			}
+		},
+		{
+			"l": [
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t1",
+							"t9",
+							"t11",
+							"t12",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t1",
+							"t9",
+							"t11",
+							"t12",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t1",
+							"t9",
+							"t11",
+							"t12",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t16",
+							"t18",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t16",
+							"t18",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t16",
+							"t18",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t16",
+							"t18",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t16",
+							"t18",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t16",
+							"t18",
+							"t23",
+							"t26",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t16",
+							"t18",
+							"t23",
+							"t26",
+							"t28",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t18",
+							"t19",
+							"t22",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t18",
+							"t19",
+							"t22",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t18",
+							"t19",
+							"t22",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t18",
+							"t19",
+							"t22",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t1",
+							"t9",
+							"t11",
+							"t12",
+							"t18",
+							"t19",
+							"t22",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t1",
+							"t9",
+							"t11",
+							"t12",
+							"t18",
+							"t19",
+							"t22",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t1",
+							"t9",
+							"t11",
+							"t12",
+							"t18",
+							"t19",
+							"t22",
+							"t27",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t12",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t12",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t12",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t12",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t12",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t12", "t17", "t18", "t19", "t26", "t28", "t29"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t12", "t17", "t18", "t19", "t26", "t28", "t29"]
+					}
+				]
+			],
+			"Name": "grade8class2",
+			"teachers": {
+				"t0": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t1": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 4],
+						[2, 5],
+						[2, 6]
+					]
+				},
+				"t9": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t11": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t12": {
+					"Periods": 4,
+					"remPeriods": 4,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t16": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6]
+					]
+				},
+				"t17": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t18": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t19": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t22": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t23": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6]
+					]
+				},
+				"t26": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t27": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4]
+					]
+				},
+				"t28": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t29": {
+					"Periods": 6,
+					"remPeriods": 6,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				}
+			}
+		},
+		{
+			"l": [
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t1",
+							"t9",
+							"t11",
+							"t12",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t1",
+							"t9",
+							"t11",
+							"t12",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t1",
+							"t9",
+							"t11",
+							"t12",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t16",
+							"t18",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t16",
+							"t18",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t16",
+							"t18",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t16",
+							"t18",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t16",
+							"t18",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t16",
+							"t18",
+							"t23",
+							"t26",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t16",
+							"t18",
+							"t23",
+							"t26",
+							"t28",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t18",
+							"t19",
+							"t22",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t18",
+							"t19",
+							"t22",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t18",
+							"t19",
+							"t22",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t12",
+							"t18",
+							"t19",
+							"t22",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t1",
+							"t9",
+							"t11",
+							"t12",
+							"t18",
+							"t19",
+							"t22",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t1",
+							"t9",
+							"t11",
+							"t12",
+							"t18",
+							"t19",
+							"t22",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t1",
+							"t9",
+							"t11",
+							"t12",
+							"t18",
+							"t19",
+							"t22",
+							"t27",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t0",
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t12",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t12",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t12",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t12",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t12",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t12", "t17", "t18", "t19", "t26", "t28", "t29"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t12", "t17", "t18", "t19", "t26", "t28", "t29"]
+					}
+				]
+			],
+			"Name": "grade8class1",
+			"teachers": {
+				"t0": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t1": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 4],
+						[2, 5],
+						[2, 6]
+					]
+				},
+				"t9": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t11": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t12": {
+					"Periods": 4,
+					"remPeriods": 4,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t16": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6]
+					]
+				},
+				"t17": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t18": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t19": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t22": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t23": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6]
+					]
+				},
+				"t26": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t27": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4]
+					]
+				},
+				"t28": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t29": {
+					"Periods": 6,
+					"remPeriods": 6,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				}
+			}
+		},
+		{
+			"l": [
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t23",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t16",
+							"t18",
+							"t23",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t16",
+							"t18",
+							"t23",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t16",
+							"t18",
+							"t23",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t23",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t23",
+							"t25",
+							"t26",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t23",
+							"t25",
+							"t26",
+							"t28",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t27",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t10", "t17", "t18", "t19", "t26", "t28", "t29"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t10", "t17", "t18", "t19", "t26", "t28", "t29"]
+					}
+				]
+			],
+			"Name": "grade7class2",
+			"teachers": {
+				"t9": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t10": {
+					"Periods": 4,
+					"remPeriods": 4,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t11": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t16": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6]
+					]
+				},
+				"t17": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t18": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t19": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t22": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t23": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6]
+					]
+				},
+				"t25": {
+					"Periods": 5,
+					"remPeriods": 5,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t26": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t27": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4]
+					]
+				},
+				"t28": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t29": {
+					"Periods": 6,
+					"remPeriods": 6,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				}
+			}
+		},
+		{
+			"l": [
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t11",
+							"t16",
+							"t22",
+							"t23",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t23",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t16",
+							"t18",
+							"t23",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t16",
+							"t18",
+							"t23",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t16",
+							"t18",
+							"t23",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t23",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t23",
+							"t25",
+							"t26",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t10",
+							"t16",
+							"t18",
+							"t23",
+							"t25",
+							"t26",
+							"t28",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t27",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t27",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t9",
+							"t11",
+							"t17",
+							"t18",
+							"t19",
+							"t22",
+							"t25",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					}
+				],
+				[
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": [
+							"t10",
+							"t17",
+							"t18",
+							"t19",
+							"t26",
+							"t27",
+							"t28",
+							"t29"
+						]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t10", "t17", "t18", "t19", "t26", "t28", "t29"]
+					},
+					{
+						"currentTeacher": "",
+						"isCemented": false,
+						"Options": ["t10", "t17", "t18", "t19", "t26", "t28", "t29"]
+					}
+				]
+			],
+			"Name": "grade7class1",
+			"teachers": {
+				"t9": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t10": {
+					"Periods": 4,
+					"remPeriods": 4,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t11": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t16": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6]
+					]
+				},
+				"t17": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t18": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t19": {
+					"Periods": 3,
+					"remPeriods": 3,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t22": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t23": {
+					"Periods": 2,
+					"remPeriods": 2,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6]
+					]
+				},
+				"t25": {
+					"Periods": 5,
+					"remPeriods": 5,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6]
+					]
+				},
+				"t26": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t27": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4]
+					]
+				},
+				"t28": {
+					"Periods": 1,
+					"remPeriods": 1,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				},
+				"t29": {
+					"Periods": 6,
+					"remPeriods": 6,
+					"periodsHere": [],
+					"emptyAvailables": [
+						[0, 0],
+						[0, 1],
+						[0, 2],
+						[0, 3],
+						[0, 4],
+						[0, 5],
+						[0, 6],
+						[1, 0],
+						[1, 1],
+						[1, 2],
+						[1, 3],
+						[1, 4],
+						[1, 5],
+						[1, 6],
+						[2, 0],
+						[2, 1],
+						[2, 2],
+						[2, 3],
+						[2, 4],
+						[2, 5],
+						[2, 6],
+						[3, 0],
+						[3, 1],
+						[3, 2],
+						[3, 3],
+						[3, 4],
+						[3, 5],
+						[3, 6],
+						[4, 0],
+						[4, 1],
+						[4, 2],
+						[4, 3],
+						[4, 4],
+						[4, 5],
+						[4, 6]
+					]
+				}
+			}
+		}
+	],
+	"teachersGuild": [
+		"t0",
+		"t1",
+		"t2",
+		"t3",
+		"t4",
+		"t5",
+		"t6",
+		"t7",
+		"t8",
+		"t9",
+		"t10",
+		"t11",
+		"t12",
+		"t13",
+		"t14",
+		"t15",
+		"t16",
+		"t17",
+		"t18",
+		"t19",
+		"t20",
+		"t21",
+		"t22",
+		"t23",
+		"t24",
+		"t25",
+		"t26",
+		"t27",
+		"t28",
+		"t29"
+	],
+	"activateList": [],
+	"availables": {
+		"t6": [
+			[2, 0],
+			[2, 1],
+			[2, 2]
+		],
+		"t28": [
+			[0, 0],
+			[0, 1],
+			[0, 2],
+			[0, 3],
+			[0, 4],
+			[0, 5],
+			[0, 6],
+			[1, 0],
+			[1, 1],
+			[1, 2],
+			[1, 3],
+			[1, 4],
+			[1, 5],
+			[1, 6],
+			[3, 0],
+			[3, 1],
+			[3, 2],
+			[3, 3],
+			[3, 4],
+			[3, 5],
+			[3, 6],
+			[4, 0],
+			[4, 1],
+			[4, 2],
+			[4, 3],
+			[4, 4],
+			[4, 5],
+			[4, 6]
+		],
+		"t27": [
+			[0, 0],
+			[0, 1],
+			[0, 2],
+			[0, 3],
+			[0, 4],
+			[0, 5],
+			[0, 6],
+			[1, 0],
+			[1, 1],
+			[1, 2],
+			[1, 3],
+			[1, 4],
+			[2, 0],
+			[2, 1],
+			[2, 2],
+			[2, 3],
+			[2, 4],
+			[2, 5],
+			[2, 6],
+			[3, 0],
+			[3, 1],
+			[3, 2],
+			[3, 3],
+			[3, 4],
+			[3, 5],
+			[3, 6],
+			[4, 0],
+			[4, 1],
+			[4, 2],
+			[4, 3],
+			[4, 4]
+		],
+		"t26": [
+			[0, 0],
+			[0, 1],
+			[0, 2],
+			[0, 3],
+			[0, 4],
+			[0, 5],
+			[0, 6],
+			[1, 0],
+			[1, 1],
+			[1, 2],
+			[1, 3],
+			[1, 4],
+			[1, 5],
+			[1, 6],
+			[3, 0],
+			[3, 1],
+			[3, 2],
+			[3, 3],
+			[3, 4],
+			[3, 5],
+			[3, 6],
+			[4, 0],
+			[4, 1],
+			[4, 2],
+			[4, 3],
+			[4, 4],
+			[4, 5],
+			[4, 6]
+		],
+		"t16": [
+			[0, 0],
+			[0, 1],
+			[0, 2],
+			[0, 3],
+			[0, 4],
+			[0, 5],
+			[0, 6],
+			[1, 0],
+			[1, 1],
+			[1, 2],
+			[1, 3],
+			[1, 4],
+			[1, 5],
+			[1, 6]
+		],
+		"t18": [
+			[1, 0],
+			[1, 1],
+			[1, 2],
+			[1, 3],
+			[1, 4],
+			[1, 5],
+			[1, 6],
+			[2, 0],
+			[2, 1],
+			[2, 2],
+			[2, 3],
+			[2, 4],
+			[2, 5],
+			[2, 6],
+			[3, 0],
+			[3, 1],
+			[3, 2],
+			[3, 3],
+			[3, 4],
+			[3, 5],
+			[3, 6],
+			[4, 0],
+			[4, 1],
+			[4, 2],
+			[4, 3],
+			[4, 4],
+			[4, 5],
+			[4, 6]
+		],
+		"t4": [
+			[0, 0],
+			[0, 1],
+			[1, 0],
+			[1, 1],
+			[2, 0],
+			[2, 1],
+			[3, 0],
+			[3, 1],
+			[4, 0],
+			[4, 1]
+		],
+		"t7": [
+			[1, 0],
+			[3, 0],
+			[3, 1]
+		],
+		"t20": [
+			[2, 3],
+			[2, 4],
+			[2, 5],
+			[2, 6],
+			[4, 3],
+			[4, 4],
+			[4, 5],
+			[4, 6]
+		],
+		"t11": [
+			[0, 0],
+			[0, 1],
+			[0, 2],
+			[0, 3],
+			[0, 4],
+			[0, 5],
+			[0, 6],
+			[2, 0],
+			[2, 1],
+			[2, 2],
+			[2, 3],
+			[2, 4],
+			[2, 5],
+			[2, 6],
+			[3, 0],
+			[3, 1],
+			[3, 2],
+			[3, 3],
+			[3, 4],
+			[3, 5],
+			[3, 6]
+		],
+		"t5": [
+			[0, 0],
+			[0, 1],
+			[0, 2],
+			[0, 3],
+			[0, 4],
+			[4, 0],
+			[4, 1],
+			[4, 2],
+			[4, 3],
+			[4, 4]
+		],
+		"t3": [
+			[2, 4],
+			[2, 5],
+			[2, 6],
+			[4, 0],
+			[4, 1],
+			[4, 2]
+		],
+		"t19": [
+			[2, 0],
+			[2, 1],
+			[2, 2],
+			[2, 3],
+			[2, 4],
+			[2, 5],
+			[2, 6],
+			[3, 0],
+			[3, 1],
+			[3, 2],
+			[3, 3],
+			[3, 4],
+			[3, 5],
+			[3, 6],
+			[4, 0],
+			[4, 1],
+			[4, 2],
+			[4, 3],
+			[4, 4],
+			[4, 5],
+			[4, 6]
+		],
+		"t22": [
+			[0, 0],
+			[0, 1],
+			[0, 2],
+			[0, 3],
+			[0, 4],
+			[0, 5],
+			[0, 6],
+			[2, 0],
+			[2, 1],
+			[2, 2],
+			[2, 3],
+			[2, 4],
+			[2, 5],
+			[2, 6],
+			[3, 0],
+			[3, 1],
+			[3, 2],
+			[3, 3],
+			[3, 4],
+			[3, 5],
+			[3, 6]
+		],
+		"t10": [
+			[0, 0],
+			[0, 1],
+			[0, 2],
+			[0, 3],
+			[0, 4],
+			[0, 5],
+			[0, 6],
+			[1, 0],
+			[1, 1],
+			[1, 2],
+			[1, 3],
+			[1, 4],
+			[1, 5],
+			[1, 6],
+			[4, 0],
+			[4, 1],
+			[4, 2],
+			[4, 3],
+			[4, 4],
+			[4, 5],
+			[4, 6]
+		],
+		"t12": [
+			[0, 0],
+			[0, 1],
+			[0, 2],
+			[0, 3],
+			[0, 4],
+			[0, 5],
+			[0, 6],
+			[2, 0],
+			[2, 1],
+			[2, 2],
+			[2, 3],
+			[2, 4],
+			[2, 5],
+			[2, 6],
+			[4, 0],
+			[4, 1],
+			[4, 2],
+			[4, 3],
+			[4, 4],
+			[4, 5],
+			[4, 6]
+		],
+		"t21": [
+			[1, 0],
+			[1, 1],
+			[1, 2],
+			[1, 3],
+			[1, 4],
+			[2, 0],
+			[2, 1],
+			[2, 2],
+			[2, 3],
+			[2, 4],
+			[3, 0],
+			[3, 1],
+			[3, 2],
+			[3, 3],
+			[3, 4]
+		],
+		"t15": [
+			[0, 0],
+			[0, 1],
+			[0, 2],
+			[0, 3],
+			[0, 4],
+			[0, 5],
+			[0, 6],
+			[4, 0],
+			[4, 1],
+			[4, 2],
+			[4, 3],
+			[4, 4],
+			[4, 5],
+			[4, 6]
+		],
+		"t23": [
+			[0, 0],
+			[0, 1],
+			[0, 2],
+			[0, 3],
+			[0, 4],
+			[0, 5],
+			[0, 6],
+			[1, 0],
+			[1, 1],
+			[1, 2],
+			[1, 3],
+			[1, 4],
+			[1, 5],
+			[1, 6]
+		],
+		"t17": [
+			[3, 0],
+			[3, 1],
+			[3, 2],
+			[3, 3],
+			[3, 4],
+			[3, 5],
+			[3, 6],
+			[4, 0],
+			[4, 1],
+			[4, 2],
+			[4, 3],
+			[4, 4],
+			[4, 5],
+			[4, 6]
+		],
+		"t2": [
+			[1, 0],
+			[1, 1],
+			[1, 2],
+			[1, 3],
+			[1, 4],
+			[1, 5],
+			[1, 6],
+			[3, 0],
+			[3, 1],
+			[3, 2],
+			[3, 3],
+			[3, 4],
+			[3, 5],
+			[3, 6],
+			[4, 0],
+			[4, 1],
+			[4, 2],
+			[4, 3],
+			[4, 4],
+			[4, 5],
+			[4, 6]
+		],
+		"t8": [
+			[2, 5],
+			[2, 6],
+			[4, 5],
+			[4, 6]
+		],
+		"t13": [
+			[0, 0],
+			[0, 1],
+			[0, 2],
+			[0, 3],
+			[0, 4],
+			[0, 5],
+			[0, 6],
+			[2, 0],
+			[2, 1],
+			[2, 2],
+			[2, 3],
+			[2, 4],
+			[2, 5],
+			[2, 6],
+			[4, 0],
+			[4, 1],
+			[4, 2],
+			[4, 3],
+			[4, 4],
+			[4, 5],
+			[4, 6]
+		],
+		"t0": [
+			[1, 0],
+			[1, 1],
+			[1, 2],
+			[1, 3],
+			[1, 4],
+			[1, 5],
+			[1, 6],
+			[3, 0],
+			[3, 1],
+			[3, 2],
+			[3, 3],
+			[3, 4],
+			[3, 5],
+			[3, 6]
+		],
+		"t1": [
+			[0, 4],
+			[0, 5],
+			[0, 6],
+			[2, 4],
+			[2, 5],
+			[2, 6]
+		],
+		"t25": [
+			[1, 0],
+			[1, 1],
+			[1, 2],
+			[1, 3],
+			[1, 4],
+			[1, 5],
+			[1, 6],
+			[2, 0],
+			[2, 1],
+			[2, 2],
+			[2, 3],
+			[2, 4],
+			[2, 5],
+			[2, 6],
+			[3, 0],
+			[3, 1],
+			[3, 2],
+			[3, 3],
+			[3, 4],
+			[3, 5],
+			[3, 6]
+		],
+		"t29": [
+			[0, 0],
+			[0, 1],
+			[0, 2],
+			[0, 3],
+			[0, 4],
+			[0, 5],
+			[0, 6],
+			[1, 0],
+			[1, 1],
+			[1, 2],
+			[1, 3],
+			[1, 4],
+			[1, 5],
+			[1, 6],
+			[2, 0],
+			[2, 1],
+			[2, 2],
+			[2, 3],
+			[2, 4],
+			[2, 5],
+			[2, 6],
+			[3, 0],
+			[3, 1],
+			[3, 2],
+			[3, 3],
+			[3, 4],
+			[3, 5],
+			[3, 6],
+			[4, 0],
+			[4, 1],
+			[4, 2],
+			[4, 3],
+			[4, 4],
+			[4, 5],
+			[4, 6]
+		],
+		"t24": [
+			[1, 0],
+			[1, 1],
+			[1, 2],
+			[1, 3],
+			[1, 4],
+			[1, 5],
+			[1, 6],
+			[2, 0],
+			[2, 1],
+			[2, 2],
+			[2, 3],
+			[2, 4],
+			[2, 5],
+			[2, 6],
+			[3, 0],
+			[3, 1],
+			[3, 2],
+			[3, 3],
+			[3, 4],
+			[3, 5],
+			[3, 6]
+		],
+		"t14": [
+			[0, 0],
+			[0, 1],
+			[0, 2],
+			[0, 3],
+			[0, 4],
+			[0, 5],
+			[0, 6],
+			[1, 0],
+			[1, 1],
+			[1, 2],
+			[1, 3],
+			[1, 4],
+			[1, 5],
+			[1, 6],
+			[3, 0],
+			[3, 1],
+			[3, 2],
+			[3, 3],
+			[3, 4],
+			[3, 5],
+			[3, 6]
+		],
+		"t9": [
+			[0, 0],
+			[0, 1],
+			[0, 2],
+			[0, 3],
+			[0, 4],
+			[0, 5],
+			[0, 6],
+			[1, 0],
+			[1, 4],
+			[1, 5],
+			[1, 6],
+			[2, 0],
+			[2, 1],
+			[2, 2],
+			[2, 3],
+			[2, 4],
+			[2, 5],
+			[2, 6],
+			[3, 0],
+			[3, 4],
+			[3, 5],
+			[3, 6]
+		]
+	},
+	"refreshTable": [
+		[
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		[
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		[
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		[
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		[
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		[
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		[
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		[
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		[
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		[
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		[
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		]
+	],
+	"tableFooterRefresher": [
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null
+	],
+	"teacherSchedule": {
+		"t0": [
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null]
+		],
+		"t1": [
+			[null, null, null, null, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		"t2": [
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1]
+		],
+		"t3": [
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, null, null, null, null]
+		],
+		"t4": [
+			[-1, -1, null, null, null, null, null],
+			[-1, -1, null, null, null, null, null],
+			[-1, -1, null, null, null, null, null],
+			[-1, -1, null, null, null, null, null],
+			[-1, -1, null, null, null, null, null]
+		],
+		"t5": [
+			[-1, -1, -1, -1, -1, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, null, null]
+		],
+		"t6": [
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[0, 0, 0, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		"t7": [
+			[null, null, null, null, null, null, null],
+			[0, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[0, 0, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		"t8": [
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, 0, 0],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, 0, 0]
+		],
+		"t9": [
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, null, null, null, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, null, null, null, -1, -1, -1],
+			[null, null, null, null, null, null, null]
+		],
+		"t10": [
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1]
+		],
+		"t11": [
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null]
+		],
+		"t12": [
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1]
+		],
+		"t13": [
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1]
+		],
+		"t14": [
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null]
+		],
+		"t15": [
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1]
+		],
+		"t16": [
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		"t17": [
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1]
+		],
+		"t18": [
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1]
+		],
+		"t19": [
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1]
+		],
+		"t20": [
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[null, null, null, -1, -1, -1, -1]
+		],
+		"t21": [
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, null, null],
+			[-1, -1, -1, -1, -1, null, null],
+			[-1, -1, -1, -1, -1, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		"t22": [
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null]
+		],
+		"t23": [
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null],
+			[null, null, null, null, null, null, null]
+		],
+		"t24": [
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null]
+		],
+		"t25": [
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null]
+		],
+		"t26": [
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1]
+		],
+		"t27": [
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, null, null]
+		],
+		"t28": [
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[null, null, null, null, null, null, null],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1]
+		],
+		"t29": [
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1],
+			[-1, -1, -1, -1, -1, -1, -1]
+		]
+	},
+	"Swapping": false,
+	"currentSolutionNumber": 0
+}

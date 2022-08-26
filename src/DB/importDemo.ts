@@ -1,56 +1,97 @@
-import demo from "./Demo";
-import { Administrator, Grade, School, SchoolCityIDB, Section, Subject, Teacher } from "./schema";
-const {
-	administrator
-	, grade
-	, school
-	, subject
-	, teacher
-	, section
-	, sectionSubjectTeacher
-} = demo
-const importableDemo = (
-	demoSchool: typeof school
-	, demoSectionSubjectTeacher: typeof sectionSubjectTeacher
-	, demoSubjects: typeof subject
-	, demoTeachers: typeof teacher
-	, demoAdministrators: typeof administrator
-	, demoSections: typeof section
-	, demoGrades: typeof grade
-) => {
-	try {
-		return {
-			// school: new School(demoSchool.name, demoSchool.description, demoSchool.sectionIds, demoSchool.vicePrincipalId)
-			// , sectionSubjectTeacher: new SectionSubject(demoSectionSubjectTeacher.name, demoSectionSubjectTeacher.teacherIds)
-			// subject: Subject.fromJSONArray(demoSubjects)
-			// , teacher: Teacher.fromJSONArray(demoTeachers)
-			// , administrator: Administrator.fromJSONArray(demoAdministrators)
-			// , section: Section.fromJSONArray(demoSections)
-			// , grade: Grade.fromJSONArray(demoGrades)
-		}
-	} catch (error) {
-		console.log(error)
-	}
+import { IndexableType } from "dexie";
+import { Administrator, Grade, School, SchoolCityIDB, SchoolCityIDBTable, Section, Subject, Teacher } from "./schema";
 
-}
-const importDemo = async ({
+const importDemo = ({
 	school,
-	// sectionTeacher,
-	subject,
-	teacher,
-	administrator,
-	section,
-	grade }: {
-		school: School
-		// , sectionTeacher: SectionTeacher
-		, subject: Subject
-		, teacher: Teacher
-		, administrator: Administrator
-		, section: Section
-		, grade: Grade
-	}) => async (db: SchoolCityIDB) => {
+	subjects,
+	teachers,
+	administrators,
+	sections,
+	grades
+}: {
+	school: School
+	// , sectionTeacher: SectionTeacher
+	, subjects: Subject[]
+	, teachers: Teacher[]
+	, administrators: Administrator[]
+	, sections: Section[]
+	, grades: Grade[]
+}) => (db: SchoolCityIDB) => {
+	let last: any = null
+	db.transaction('rw', ['template', 'school', 'administrator', 'grade', 'teacher', 'subject', 'section'] as SchoolCityIDBTable[], async (trans) => {
+		const db = trans.db as SchoolCityIDB
+
+		// const demoTemplateCnt = await db.template.where({ name: 'Demo', type: 'school' } as Template).count()
+		// if (demoTemplateCnt !== 0) {
+		// 	return;
+		// }
+
+		// const demoTemplate = { name: 'Demo', type: 'school', description: 'Demo Template to jump start your Experience includes high & middle school in Syria' } as Template
+
+		// last = demoTemplate
+		// const templateId = await db.template.add(demoTemplate)
+		const demoSchoolCnt = await db.school.where({ name: school.name } as School).count()
+		if (demoSchoolCnt !== 0) {
+			return;
+		}
+
+		last = school
 		const schoolId = await db.school.add(school)
-	}
+		console.log('schoolId = ', schoolId);
+
+		const administratorIds: IndexableType[] = []
+		for (const administrator of administrators) {
+			last = administrator
+			const x = await db.administrator.add({ ...administrator, schoolId: schoolId } as Administrator)
+			administratorIds.push(x)
+		}
+		console.log('administratorIds = ', administratorIds);
+
+		last = school
+		db.school.update(schoolId, { vicePrincipalId: administratorIds[school.vicePrincipalId] })
+		console.log()
+
+		const gradeIds: IndexableType[] = []
+		for (const grade of grades) {
+			const x = await db.grade.add({ ...grade, administratorId: administratorIds[grade.administratorId], schoolId: schoolId } as Grade)
+			gradeIds.push(x)
+		}
+
+		const teacherIds: IndexableType[] = []
+		for (const teacher of teachers) {
+			const x = await db.teacher.add(teacher as Teacher)
+			teacherIds.push(x)
+		}
+
+		const subjectIds: IndexableType[] = []
+		for (const subject of subjects) {
+			const x = await db.subject.add({ ...subject, gradeId: gradeIds[subject.gradeId] } as Subject)
+			subjectIds.push(x)
+		}
+
+		const sectionIds: IndexableType[] = []
+		for (const section of sections) {
+			const x = await db.section.add({
+				...section
+				, subjects: section.subjects.map(({ teacherId, subjectId }) => {
+					return {
+						teacherId: teacherIds[teacherId],
+						subjectId: subjectIds[subjectId]
+					}
+				})
+				, gradeId: gradeIds[section.gradeId]
+				, schoolId: schoolId
+			} as Section)
+			sectionIds.push(x)
+		}
+
+		db.school.update(schoolId, { sectionIds: sectionIds } as School)
+
+	}).catch(reason => {
+		console.log('import transaction failed for this reason ', reason)
+		console.log('last = ', last);
+	})
+}
 
 
 

@@ -13,7 +13,7 @@ const TemplatesSection: ({ table }: TemplatesSectionProps) => JSX.Element = ({
 			state.templatesExpanded.expanded
 	);
 
-	const height = expanded ? "h-full" : "";
+	const height = expanded ? "h-full" : "pb-6";
 
 	return (
 		<section className={"flex items-center px-4 py-2 bg-gray-200 " + height}>

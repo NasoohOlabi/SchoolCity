@@ -2,7 +2,7 @@ interface MainContentProps {
 	children: any;
 }
 
-const MainContent: React.FC<MainContentProps> = ({ children }) => {
+const MainContent: (args: MainContentProps) => JSX.Element = ({ children }) => {
 	return <div className="main-content">{children}</div>;
 };
 

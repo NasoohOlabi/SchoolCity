@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { initializeDB } from "./schema";
 import SchoolCityDBContext from "./SchoolCityDBContext";
 
-const SchoolCityDBContextProvider: React.FC<{ children: any }> = ({
+const SchoolCityDBContextProvider: (args: { children: any }) => JSX.Element = ({
 	children,
 }) => {
 	const db = useRef(initializeDB());
@@ -11,7 +11,7 @@ const SchoolCityDBContextProvider: React.FC<{ children: any }> = ({
 		// @ts-ignore
 		window["db"] = db;
 		return () => {
-			db.current.close();
+			// db.current.close();
 		};
 	}, []);
 

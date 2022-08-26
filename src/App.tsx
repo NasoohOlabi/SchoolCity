@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import "./App.css";
 import TryWorker from "./workers/try.worker?worker";
 // import z3 from "./workers/Z3.worker?worker";
+import { Button } from "@material-tailwind/react";
 import SchoolCityDBContext from "DB/SchoolCityDBContext";
 import {} from "dexie-react-hooks";
 import { IStore } from "Model/Store";
@@ -72,7 +73,21 @@ function App() {
 
 	// w.postMessage("fart");
 	// w.postMessage({ data: "fart" });
-	return <h1>home</h1>;
+
+	return (
+		<h1>
+			<Button
+				onClick={async () => {
+					const fileList =
+						(await gapi.client.drive) && gapi.client.drive.files.list();
+					console.log(`fileList = `, fileList);
+				}}
+			>
+				log files
+			</Button>
+			home
+		</h1>
+	);
 }
 
 export default App;

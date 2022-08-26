@@ -1,8 +1,7 @@
-import { faToiletPaperSlash } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconButton } from "@material-tailwind/react";
 import UserContext from "Model/Auth/UserContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
+import Connect from "./Connect";
+import ConnectionBtn from "./ConnectionBtn";
 
 interface HeaderRightProps {}
 
@@ -10,18 +9,16 @@ const HeaderRight: ({}: HeaderRightProps) => JSX.Element = () => {
 	const currentUser = useContext(UserContext);
 	// const currentUser = getCurrentUser();
 
-	useEffect(() => {
-		console.log("HeaderRight currentUser = ", currentUser);
-	}, [currentUser]);
+	// useEffect(() => {
+	// 	console.log("HeaderRight currentUser = ", currentUser);
+	// }, [currentUser]);
 
 	return (
 		<>
-			<IconButton className="hidden md:inline-flex h-20 w-20 ml-5 md:ml-20 rounded ">
-				<FontAwesomeIcon icon={faToiletPaperSlash} />
-			</IconButton>
+			<ConnectionBtn />
 			<img
-				loading="lazy"
 				className="cursor-pointer h-12 w-12 rounded-full ml-2"
+				referrerPolicy="no-referrer"
 				src={(currentUser && currentUser.photoURL) || ""}
 				// onClick={() => signOut()}
 				alt={(currentUser && currentUser.displayName) || "avatar"}

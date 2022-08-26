@@ -1,6 +1,6 @@
 interface GalleryGridProps {}
 
-const GalleryGrid: React.FC<GalleryGridProps> = ({}) => {
+const GalleryGrid: (args: GalleryGridProps) => JSX.Element = ({}) => {
 	return (
 		<div>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vero
