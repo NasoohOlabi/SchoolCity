@@ -153,7 +153,7 @@ const blankTemplate = () => {
 	} as Template;
 };
 
-export interface School extends SchoolCityObjectModel {
+export interface School {
 	name: string;
 	vicePrincipalId: number;
 	sectionIds: number[];
@@ -186,7 +186,7 @@ const blankGrade = () => {
 		id: undefined,
 	} as Grade;
 };
-export interface Theme {
+export interface Theme extends SchoolCityObjectModel {
 	name: string;
 	description?: string;
 	schoolId: number;
@@ -198,7 +198,7 @@ const blankTheme = () => {
 		schoolId: 0,
 	} as Theme;
 };
-export interface Student {
+export interface Student extends SchoolCityObjectModel {
 	firstName: string;
 	lastName: string;
 	fatherName: string;
@@ -224,11 +224,11 @@ const blankStudent = () => {
 type SectionScheduleCell =
 	| { teacherId?: number; pinned: false }
 	| { teacherId: undefined; pinned: true };
-export interface SectionSubject {
+export interface SectionSubject extends SchoolCityObjectModel {
 	teacherId: number,
 	subjectId: number,
 }
-export interface Section {
+export interface Section extends SchoolCityObjectModel {
 	name: string;
 	number: number;
 	gradeId: number;
@@ -251,7 +251,7 @@ const blankSection = () => {
 		periods: [],
 	} as Section;
 };
-export interface Administrator {
+export interface Administrator extends SchoolCityObjectModel {
 	phoneNumber: string;
 	name: string;
 	supervisorId?: number | null;
@@ -272,7 +272,7 @@ const blankAdministrator = () => {
 type SectionId = number;
 type TeacherScheduleCell = SectionId | undefined | null;
 
-export interface Teacher {
+export interface Teacher extends SchoolCityObjectModel {
 	phoneNumber: string;
 	name: string;
 	description?: string;
@@ -296,10 +296,10 @@ type Average = { type: 'avg', cols: [IndexedMarkCol] }
 type WeightedAverage = { type: 'weighted avg', cols: [{ col: IndexedMarkCol, weight: number }] }
 type Equation = Average | WeightedAverage
 type IndexedMarkCol = 'Mark1' | 'Mark2' | 'Mark3' | 'Mark4' | 'Mark5'
-export interface MarkHeader {
+export interface MarkHeader extends SchoolCityObjectModel {
 	mapping: { [column: number]: IndexedMarkCol | Equation }
 }
-export interface Subject {
+export interface Subject extends SchoolCityObjectModel {
 	name: string;
 	description?: string;
 	gradeId: number;
@@ -318,7 +318,7 @@ const blankSubject = () => {
 	} as Subject;
 };
 
-export interface Mark {
+export interface Mark extends SchoolCityObjectModel {
 	studentId: number;
 	subjectId: number;
 	mark1: number;
@@ -341,22 +341,58 @@ const blankMark = () => {
 	} as Mark;
 };
 
-export function utilGrid(X: number, Y: number) {
+// TODO: change to one call to get X Y to avoid inconsistancy
+export function utilGrid(X: number, Y: number): null[][] {
 	return new Array(X).fill(null).map(() => new Array(Y).fill(null));
 }
+export async function GridFactory(db: SchoolCityIDB) {
+	const { days: X, periods: Y } = await GridCoordinates(db)
+	return () => utilGrid(X, Y)
+}
+export async function GridCoordinates(db: SchoolCityIDB) {
+	let X = (await db.settings.where({ name: "numberOfWorkdays" as SettingName }).first() as Setting).value;
+	let Y = (await db.settings.where({ name: "periodsPerDay" as SettingName }).first() as Setting).value;
+	return { days: X, periods: Y }
+}
+export async function flatCoordinatesMapperFactory(db: SchoolCityIDB) {
+	const { days: X, periods: Y } = await GridCoordinates(db)
+	const _general = (x1: number, x2: number, cnt_x2: number) => x1 * cnt_x2 + x2
+	const _cnt = (cnt_x1: number, cnt_x2: number) => cnt_x1 * cnt_x2
+	const _general3 = (x1: number, x2: number, cnt_x2: number, x3: number, cnt_x3: number) => _general(x1, _general(x2, x3, cnt_x3), _cnt(cnt_x2, cnt_x3))
+	const break_dimension = (c: number, cnt_x2: number) => [Math.floor(c / cnt_x2), c % cnt_x2]
+	const sectionMapper = (numberOfSections: number) => {
+		return {
+			to1d: (section: number, day: number, period: number) => _general3(section, day, X, period, Y)
+			, to3d: (c: number) => {
+				const [section, inGridIndex] = break_dimension(c, X)
+				const [day, period] = break_dimension(inGridIndex, Y)
+				return [section, day, period]
+			}
+		}
+	}
+	return {
+		inGrid: {
+			to1d: (day: number, period: number) => _general(day, period, Y)
+			, to2d: (c: number) => break_dimension(c, Y)
+		}
+		, sectionMapper
+		, _general
+		, _general3
+	}
+}
+
 
 export async function Grid(
-	db: SchoolCityIDB | null,
-	options: { X: number; Y: number }
+	db: SchoolCityIDB,
+	options: { days: number; periods: number }
 ) {
-	let X =
-		(db && (await db.settings.where({ name: "numberOfWorkdays" as SettingName }).first())) ||
-		options.X;
-	let Y =
-		(db && (await db.settings.where({ name: "periodsPerDay" as SettingName }).first())) ||
-		options.Y;
+	const { days: X, periods: Y } = options || await GridCoordinates(db)
 	return utilGrid(X, Y);
 }
+export function LoopOverGrid<T, U>(g: T[][], f: (element: T, x1: number, x2: number) => U): U[][] {
+	return g.map((row, x1) => row.map((elem, x2) => f(elem, x1, x2)))
+}
+
 
 const name = "";
 

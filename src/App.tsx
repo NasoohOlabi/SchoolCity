@@ -1,11 +1,13 @@
 //ts-ignore
 import { useContext, useEffect, useState } from "react";
 import "./App.css";
-import TryWorker from "./workers/try.worker?worker";
+// import TryWorker from "./workers/try.worker?worker";
 // import z3 from "./workers/Z3.worker?worker";
 import { Button } from "@material-tailwind/react";
+import SMT_CodePreviewer from "components/SMT_CodePreviewer";
 import SchoolCityDBContext from "DB/SchoolCityDBContext";
 import {} from "dexie-react-hooks";
+import DriveSetup from "Gapi/Drive/Setup";
 import { IStore } from "Model/Store";
 import { collapse } from "Model/View/ExpandTemplates";
 import useTitle from "Model/View/Layout/useTitle";
@@ -27,19 +29,15 @@ import { useDispatch, useSelector } from "react-redux";
 const f = async () => {
 	// console.log("hi");
 	// console.log(todos);
-
 	// const instance = new ComlinkWorker<typeof import("./workers/try.worker")>(
 	// new URL("./workers/try.worker", import.meta.url)
 	// );
 	// console.log(instance);
 	// const result = await instance.add(2, 3);
-
 	// console.log(result);
-
-	const w = new TryWorker();
-	console.log(w);
-	w.postMessage("fart");
-
+	// const w = new TryWorker();
+	// console.log(w);
+	// w.postMessage("fart");
 	// const z = new z3();
 	// console.log(z);
 	// z.postMessage("fart");
@@ -78,14 +76,16 @@ function App() {
 		<h1>
 			<Button
 				onClick={async () => {
-					const fileList =
-						(await gapi.client.drive) && gapi.client.drive.files.list();
-					console.log(`fileList = `, fileList);
+					// const fileList =
+					// 	(await gapi.client.drive) && gapi.client.drive.files.list();
+					// console.log(`fileList = `, fileList);
+					DriveSetup();
 				}}
 			>
 				log files
 			</Button>
 			home
+			<SMT_CodePreviewer />
 		</h1>
 	);
 }

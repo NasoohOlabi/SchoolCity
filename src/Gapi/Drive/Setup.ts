@@ -1,19 +1,23 @@
-import { Administrator } from "DB/schema";
+import { Administrator } from "DB/schema"
 
 type FolderTree = { name: string, children: FolderTree[] }
 
+async function fileExists(name: string, parentId?: string): Promise<[boolean, gapi.client.drive.File?]> {
+	const body = { q: `name = '${name}'` }
+	if (parentId)
+		body.q = `'${parentId}' in parents and ` + body.q
+	const response = await gapi.client.drive.files.list(
+		// { q: "'1c0mnL-kjtxfXkTinXIU0oDvSpXJrJyR_' in parents and name = 'data5'" }
+		body
+	)
+	return [
+		(response.result.files && response.result.files.length > 0) || false
+		, (response.result.files && response.result.files[0]) || undefined
+	]
+}
 
-// const tree: FolderTree = {
-// 	name: 'working root final'
-// 	, children: [
-// 		{ name: 'c1', children: [] },
-// 		{
-// 			name: 'c2', children: [
-// 				{ name: 'c22', children: [] }
-// 			]
-// 		}]
-// }
-function mkdir({ name, children }: FolderTree, parent?: string) {
+
+async function InitializeDriveSpace({ name, children }: FolderTree, parent?: string) {
 	const body: any = {
 		// @ts-ignore
 		mimeType: "application/vnd.google-apps.folder",
@@ -22,18 +26,25 @@ function mkdir({ name, children }: FolderTree, parent?: string) {
 	if (parent)
 		body.parents = [parent]
 	// TODO: check if file exist
-	gapi.client.drive.files.create(body).then(file => {
+	const [exist, file] = await fileExists(name, parent)
+	if (exist && file) {
 		children.forEach((child) => {
-			if (file.result.id)
-				mkdir(child, file.result.id)
+			if (file.id)
+				InitializeDriveSpace(child, file.id)
 			else
-				mkdir(child, parent)
+				console.error(`couldn't create file `, { name, children }, ' because ', file)
 		})
-	})
+	}
+	else
+		gapi.client.drive.files.create(body).then(file => {
+			children.forEach((child) => {
+				if (file.result.id)
+					InitializeDriveSpace(child, file.result.id)
+				else
+					console.error(`couldn't create file `, { name, children }, ' because ', file)
+			})
+		})
 }
-
-
-let administrationTree: Administrator[] = []
 
 export default function DriveSetup() {
 	gapi.client.load('drive', 'v3', async () => {
@@ -41,7 +52,7 @@ export default function DriveSetup() {
 		const aTf = (a: Administrator): FolderTree => { return { name: a.divisionName || a.name, children: a.subordinates.map(aTf) } }
 
 		// create root folder for owner access
-		const tree: FolderTree = {
+		const tree = {
 			name: 'SchoolCity Root'
 			, children: [
 				{
@@ -66,15 +77,13 @@ export default function DriveSetup() {
 
 							]
 						}
-					],
-					...administrationTree.map(aTf)
+					]
 				}
 			]
 		}
 
-		mkdir(tree)
+		InitializeDriveSpace(tree)
 		// console.log(s)
 	})
 }
-
 // yarn add -D  @types/gapi.client.sheets@v4 @types/gapi.client.drive@v3  @types/gapi.client.people@v1 @types/gapi.client.gmail@v1 @types/gapi.client.docs@v1

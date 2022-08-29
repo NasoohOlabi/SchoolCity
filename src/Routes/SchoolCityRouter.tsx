@@ -5,6 +5,7 @@ import AppMount from "AppMount";
 import Header from "components/Layout/Header";
 import MainContent from "components/Layout/MainContent";
 import SideMenu from "components/Layout/SideMenu";
+import { WeekView } from "Legacy/Components/WeekView";
 import { useUser } from "Model/Auth/hooks/useUser";
 import UserContext from "Model/Auth/UserContext";
 import Login from "Pages/Login";
@@ -100,7 +101,7 @@ const SchoolCityRouter: (args: SchoolCityRouterProps) => JSX.Element = ({}) => {
 											<Route path="schedule">
 												<Route
 													index={true}
-													element={<ObjectHome />}
+													element={<WeekView />}
 												/>
 												<Route
 													path="new"

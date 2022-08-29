@@ -1,5 +1,38 @@
 import { Teacher } from "./schema";
 
+const mapping = {
+	t0: "Rahaf Kayal",
+	t1: "Anas Shaban",
+	t2: "Nisreen Selo",
+	t3: "Mayson Al-Monakel",
+	t4: "Eyad Al-Taba3",
+	t5: "Tawfiq Khabaz",
+	t6: "MHD Bardawel",
+	t7: "A'yda Husain",
+	t8: "3rfan Kholendy",
+	t9: "Laila",
+	t10: "Oydad A'airan",
+	t11: "Abyear Hammoud",
+	t12: "Maram jadeed",
+	t13: "Eiman Taha",
+	t14: "Nermen Ash",
+	t15: "Saeed KabaKouly",
+	t16: "IT",
+	t17: "Khaled Barakat",
+	t18: "Mona Hasanyn",
+	t19: "Nour Hamad",
+	t20: "Fayes Wahba",
+	t21: "Issam Kreeshan",
+	t22: "Reem Mukhalalaty",
+	t23: "Heba Kozon",
+	t24: "Nada Al-Safadi",
+	t25: "Nour Refayi",
+	t26: "Arts",
+	t27: "PA",
+	t28: "Music",
+	t29: "Hala Huobi",
+}
+
 const demoTeachers: Teacher[] = [
 	{
 		phoneNumber: "",

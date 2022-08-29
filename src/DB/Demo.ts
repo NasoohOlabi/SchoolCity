@@ -10,6 +10,7 @@ const demoAdministrators: Administrator[] = [
 		supervisorId: null,
 		email: "",
 		schoolId: 0,
+		subordinates: []
 	},
 ];
 
