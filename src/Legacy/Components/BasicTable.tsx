@@ -1,9 +1,18 @@
+import { useEffect } from "react";
 import { IBasicTableProps } from "../Interfaces/Interfaces";
 import { Cell } from "./TableCell";
 import TableFooter from "./TableFooter";
 
 export function BasicTable(props: IBasicTableProps) {
 	const week = props.WEEK_GLOBAL_Object;
+	useEffect(
+		() => {
+			// console.log(`useEffect basic table ${props.m} rerendered`);
+		},
+		week.allClasses[props.m].l.flatMap((row) =>
+			row.map((c) => c.currentTeacher)
+		)
+	);
 	// const classes = useStyles();
 	return (
 		// <div component={Paper}>
@@ -41,10 +50,6 @@ export function BasicTable(props: IBasicTableProps) {
 									return (
 										<Cell
 											key={`${[index, jndex]}`}
-											cellInitializer={props.cellInitializer([
-												index,
-												jndex,
-											])}
 											pos={[index, jndex]}
 											m={props.m}
 											handleChange={props.handleChange(
@@ -60,11 +65,7 @@ export function BasicTable(props: IBasicTableProps) {
 					})}
 				</tbody>
 			</table>
-			<TableFooter
-				m={props.m}
-				WEEK_GLOBAL_Object={week}
-				tableFooterInitializer={props.tableFooterInitializer}
-			/>
+			<TableFooter m={props.m} WEEK_GLOBAL_Object={week} />
 		</div>
 	);
 }

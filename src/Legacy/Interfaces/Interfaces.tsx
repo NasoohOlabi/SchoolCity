@@ -1,21 +1,17 @@
-import {
-	PosType,
-	refreshTableType,
-	tableFooterRefresherType,
-} from "../../Legacy/types";
+import { PosType } from "../../Legacy/types";
 import { backtrack, takeOneOffTheStack } from "../Logic/CoreAlgo";
 import { actionType, util } from "../Logic/util";
-import ClassObj, { NUM_OF_DAYS, NUM_OF_PERIODS_PER_DAY } from "./ClassObj";
+import ClassObj from "./ClassObj";
 
-export type TeacherId = number;
+type TeacherId = number;
 /**
  * obj : {
  * pos: PosType,
  * m: number,
  * teacher: TeacherId}
  */
-export type Transposition = TranspositionInstruction[];
-export interface TranspositionInstruction {
+type Transposition = TranspositionInstruction[];
+interface TranspositionInstruction {
 	pos: PosType;
 	m: number;
 	teacher: TeacherId;
@@ -45,7 +41,7 @@ export class Queue<T> {
  * PivotParent.stackLength is the number of pivots we are waiting to resolve once they do we'll consider this a solution
  * in other word the number of pointers keeping the obj alive!
  */
-export type callNodeType = {
+type callNodeType = {
 	teacher: TeacherId;
 	pos: PosType;
 	m: number;
@@ -61,20 +57,25 @@ export type callNodeType = {
 	};
 	cycleClosingParentName?: TeacherId;
 	action?: actionType;
-	week: IWEEK_GLOBAL_Object;
+	week: Solver_Week;
 	pivots: callNodeType[];
 };
 
-export type NodeProcessor = (
-	vertex: callNodeType,
-	queue: argumentsQueue
-) => void;
+type NodeProcessor = (vertex: callNodeType, queue: argumentsQueue) => void;
 
 export class argumentsQueue {
 	queue: Queue<callNodeType> = new Queue<callNodeType>();
-	_max: number = 500000;
+	// _max: number = 100000;
+	_max: number = 50;
 	_accepting: boolean = true;
-	// _stats = { preCalls: 0, reCalls: 0, pivotToCalls: 0 };
+	_stats = {
+		pullCalls: 0,
+		nodesFromPull: 0,
+		pushCalls: 0,
+		nodesFromPush: 0,
+		pivotToCalls: 0,
+		nodesFromPivot: 0,
+	};
 	Empty(): boolean {
 		return this.queue.Empty();
 	}
@@ -94,22 +95,34 @@ export class argumentsQueue {
 	}
 	unlock(): void {
 		if (!this._accepting) this._accepting = true;
-		// if (this._accepting) console.log(`Max wasn't reached!`);
-		// else {
-		// 	console.log(`Max was reached ;( `);
-		// 	this._accepting = true;
-		// }
+		if (this._accepting) console.log(`Max wasn't reached!`);
+		else {
+			console.log(`Max was reached ;( `);
+			this._accepting = true;
+		}
 		// console.log(this);
-		// const total =
-		// 	this._stats.preCalls + this._stats.reCalls + this._stats.pivotToCalls;
-		// const obj = {
-		// 	...this._stats,
-		// 	total,
-		// 	stoped_at: this.queue.length(),
-		// 	sched: total + this.queue.length(),
-		// };
-		// console.log(JSON.stringify(obj));
-		// this._stats = { preCalls: 0, reCalls: 0, pivotToCalls: 0 };
+		this._stats.nodesFromPivot /= this._stats.pivotToCalls;
+		this._stats.nodesFromPull /= this._stats.pullCalls;
+		this._stats.nodesFromPush /= this._stats.pushCalls;
+		const total =
+			this._stats.pullCalls +
+			this._stats.pushCalls +
+			this._stats.pivotToCalls;
+		const obj = {
+			...this._stats,
+			total,
+			stoped_at: this.queue.length(),
+			sched: total + this.queue.length(),
+		};
+		console.log(JSON.stringify(obj, null, 2));
+		this._stats = {
+			pullCalls: 0,
+			pushCalls: 0,
+			pivotToCalls: 0,
+			nodesFromPivot: 0,
+			nodesFromPull: 0,
+			nodesFromPush: 0,
+		};
 	}
 	length() {
 		return this.queue.length();
@@ -119,25 +132,35 @@ export class argumentsQueue {
 			this.dequeue();
 		}
 	}
+	front() {
+		return this.queue.front();
+	}
 	callFront(
 		re_fn: NodeProcessor,
 		pre_fn: NodeProcessor,
 		pivot_fn: NodeProcessor
 	): void {
 		const vertex = this.queue.front();
+		const pre_processing_length = this.length();
 		if (vertex.callTo === "pull") {
-			// this._stats.preCalls++;
+			this._stats.pullCalls++;
 			pre_fn(vertex, this);
+			this._stats.nodesFromPull +=
+				this.queue._store.length - pre_processing_length;
 		} else if (vertex.callTo === "push") {
 			if (vertex.action !== undefined) {
-				// this._stats.reCalls++;
+				this._stats.pushCalls++;
 				re_fn(vertex, this);
+				this._stats.nodesFromPush +=
+					this.queue._store.length - pre_processing_length;
 			} else
 				throw { ...vertex, message: "Action not specified for re call" };
 		} else if (vertex.callTo === "pivotTo") {
 			if (vertex.pivotArgs !== undefined) {
-				// this._stats.pivotToCalls++;
+				this._stats.pivotToCalls++;
 				pivot_fn(vertex, this);
+				this._stats.nodesFromPivot +=
+					this.queue._store.length - pre_processing_length;
 			} else {
 				throw {
 					...vertex,
@@ -162,27 +185,25 @@ export class argumentsQueue {
  * Pivots?: PivotsCallStack,
  * baseLength? : number}
  */
-export interface IMisc {
+interface IMisc {
 	depth?: number;
 	actList_Length?: number;
 	Pivots?: callNodeType[];
 	baseLength?: number;
 }
-export interface lCellObj {
+interface lCellObj {
 	currentTeacher: TeacherId;
 	isCemented: boolean;
 	Options: TeacherId[];
 }
-export interface IBasicTableProps {
+interface IBasicTableProps {
 	m: number;
 	handleChange: any;
-	cellInitializer: any;
-	tableFooterInitializer: any;
 	headRow: string[];
 	headCol: string[];
-	WEEK_GLOBAL_Object: IWEEK_GLOBAL_Object;
+	WEEK_GLOBAL_Object: Solver_Week;
 }
-export interface TimeRemainingState {
+interface TimeRemainingState {
 	whatToSayIndex: number;
 	total: number;
 	days: number;
@@ -190,24 +211,17 @@ export interface TimeRemainingState {
 	minutes: number;
 	seconds: number;
 }
-export interface ITableFooter {
+interface ITableFooter {
 	m: number;
-	tableFooterInitializer: any;
-	WEEK_GLOBAL_Object: IWEEK_GLOBAL_Object;
+	// tableFooterInitializer: any;
+	WEEK_GLOBAL_Object: Solver_Week;
 }
-export enum Screen {
-	ETA,
-	TABLE,
-	DATAPARSER,
-}
-export interface INavProps {
-	UI: Screen;
+interface INavProps {
 	switchToTable: (event: any) => void;
 	switchToETA: (event: any) => void;
 	switchToDataParser: (event: any) => void;
 }
-export interface IMyAppBarProps {
-	UI: Screen;
+interface IMyAppBarProps {
 	switchToTable: (event: any) => void;
 	switchToETA: (event: any) => void;
 	switchToDataParser: (event: any) => void;
@@ -215,26 +229,26 @@ export interface IMyAppBarProps {
 	toggleLang: (event: any) => void;
 	darkThemed: boolean;
 }
-export interface ICell {
+interface ICell {
 	pos: PosType;
-	cellInitializer: any;
+	// cellInitializer: any;
 	m: number;
 	handleChange: (event: any) => void;
-	WEEK_GLOBAL_Object: IWEEK_GLOBAL_Object;
+	WEEK_GLOBAL_Object: Solver_Week;
 }
-export interface TeachersDictionary<T> {
+
+interface TeachersDictionary<T> {
 	[index: TeacherId]: T;
 }
-export interface ITeacherSchedule {
-	[index: TeacherId]: (number | null)[][];
-}
-export interface IAvailables {
+type ITeacherSchedule = (number | null)[][][];
+
+interface IAvailables {
 	[index: TeacherId]: PosType[];
 }
-export interface IClassTeachers {
+interface IClassTeachers {
 	[index: TeacherId]: ClassTeacherData;
 }
-export interface IWEEK_GLOBAL_Object {
+interface Solver_Week {
 	allClasses: ClassObj[];
 	teachersGuild: TeacherId[];
 	Swapping: boolean;
@@ -242,101 +256,81 @@ export interface IWEEK_GLOBAL_Object {
 	activateList: TranspositionInstruction[][];
 	availables: IAvailables;
 	teacherSchedule: ITeacherSchedule;
-	refreshTable?: (() => void)[][][];
-	tableFooterRefresher?: (() => void)[];
+	NUM_OF_PERIODS_PER_DAY: number;
+	NUM_OF_DAYS: number;
 	forceUpdate?: () => void;
 }
-export class WeekObj implements IWEEK_GLOBAL_Object {
-	allClasses: ClassObj[] = [];
-	teachersGuild: TeacherId[] = [];
-	activateList: TranspositionInstruction[][] = [];
-	availables: IAvailables = {};
-	refreshTable: refreshTableType = [];
-	tableFooterRefresher: tableFooterRefresherType = [];
-	teacherSchedule: ITeacherSchedule = {};
-	forceUpdate: () => void = () => {};
-	Swapping = false;
-	currentSolutionNumber = 0;
-	constructor(...args: any[]) {
-		if (
-			args &&
-			args.length === 1 &&
-			args[0].allClasses &&
-			args[0].teachersGuild &&
-			args[0].availables
-		) {
-			const week = args[0];
-			this.allClasses = week.allClasses;
-			this.teachersGuild = week.teachersGuild;
-			this.availables = week.availables;
-			if (!week.refreshTable) {
-				this.refreshTable = new Array(week.allClasses.length)
-					.fill(null)
-					.map((_) =>
-						Array(NUM_OF_DAYS)
-							.fill(null)
-							.map(() =>
-								Array(NUM_OF_PERIODS_PER_DAY)
-									.fill(null)
-									.map(() => () => {})
-							)
-					);
-			} else {
-				this.refreshTable = week.refreshTable;
-			}
-		}
-	}
-	public addClass() {
+export const Solver_Week_util = {
+	addClass(week: Solver_Week) {
 		const cls = new ClassObj();
-		this.allClasses.push(cls);
-		this.refreshTable.push(cls.refreshTable());
-		this.tableFooterRefresher.push(() => {});
-	}
-	public addTeacher(
+		week.allClasses.push(cls);
+		// this.refreshTable.push(cls.refreshTable());
+		// this.tableFooterRefresher.push(() => {});
+	},
+	addTeacher(
+		week: Solver_Week,
 		ind: number,
 		m: number,
 		teacher: TeacherId,
 		Periods: number
 	) {
-		this.teachersGuild[ind] = teacher;
-		this.allClasses[m].addTeacher(teacher, Periods);
-	}
-	public teacherScheduleInit() {
-		this.teachersGuild.forEach((teacher) => {
-			this.teacherSchedule[teacher] = [...Array(NUM_OF_DAYS)].map((e) =>
-				Array(NUM_OF_PERIODS_PER_DAY).fill(null)
+		week.teachersGuild[ind] = teacher;
+		week.allClasses[m].addTeacher(teacher, Periods);
+	},
+	teacherScheduleInit(week: Solver_Week) {
+		week.teachersGuild.forEach((teacher) => {
+			week.teacherSchedule[teacher] = [...Array(week.NUM_OF_DAYS)].map((e) =>
+				Array(week.NUM_OF_PERIODS_PER_DAY).fill(null)
 			);
-			this.availables[teacher].forEach(([X, Y]: PosType) => {
-				this.teacherSchedule[teacher][X][Y] = -1;
+			week.availables[teacher].forEach(([X, Y]: PosType) => {
+				week.teacherSchedule[teacher][X][Y] = -1;
 			});
 		});
-	}
-}
-export interface IClass {
+	},
+};
+interface IClass {
 	l: lCellObj[][];
 	Name: string;
 	teachers: IClassTeachers;
 }
 
-export interface ClassTeacherData {
+interface ClassTeacherData {
 	Periods: number;
 	remPeriods: number;
 	periodsHere: PosType[];
 	emptyAvailables: PosType[];
 }
-export interface IWeekData {
-	allClasses: ClassObj[];
-	teachersGuild: TeacherId[];
-	Swapping: boolean;
-	currentSolutionNumber: number;
-	activateList: { pos: PosType; m: number; teacher: TeacherId }[][];
-	availables: IAvailables;
-	teacherSchedule: ITeacherSchedule;
-}
-export type ISomeHowPutHimAtWorkerMsg = [
+
+type ISomeHowPutHimAtWorkerMsg = [
 	number,
 	TeacherId,
 	PosType,
-	IWEEK_GLOBAL_Object,
+	Solver_Week,
 	boolean?
 ];
+
+type SectionId = number;
+export type {
+	SectionId,
+	ICell,
+	TeacherId,
+	Transposition,
+	TranspositionInstruction,
+	callNodeType,
+	NodeProcessor,
+	IMisc,
+	lCellObj,
+	IBasicTableProps,
+	TimeRemainingState,
+	ITableFooter,
+	INavProps,
+	IMyAppBarProps,
+	TeachersDictionary,
+	ITeacherSchedule,
+	IAvailables,
+	IClassTeachers,
+	Solver_Week,
+	IClass,
+	ClassTeacherData,
+	ISomeHowPutHimAtWorkerMsg,
+};

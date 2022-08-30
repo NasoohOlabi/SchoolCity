@@ -40,9 +40,9 @@ type SchoolCityIDBSchema = {
 	[Property in keyof ObjectStores]: Table;
 };
 
-export type SchoolCityIDBTable = keyof SchoolCityIDBSchema;
+type SchoolCityIDBTable = keyof SchoolCityIDBSchema;
 
-export type SchoolCityIDB = SchoolCityIDBSchema & Dexie;
+type SchoolCityIDB = SchoolCityIDBSchema & Dexie;
 
 export const initializeDB = (): SchoolCityIDB & Dexie => {
 	const db = new Dexie("school");
@@ -57,7 +57,7 @@ export const initializeDB = (): SchoolCityIDB & Dexie => {
 	return mydb;
 };
 
-export interface SchoolCityObjectModel {
+interface SchoolCityObjectModel {
 	id?: number;
 }
 
@@ -124,7 +124,7 @@ export const myCrud = {
 	},
 };
 
-export interface Setting extends SchoolCityObjectModel {
+interface Setting extends SchoolCityObjectModel {
 	name: string;
 	description?: string;
 	schoolId: number | 'global';
@@ -138,7 +138,7 @@ const blankSetting = () => {
 		value: undefined as any,
 	} as Setting;
 };
-export interface Template extends SchoolCityObjectModel {
+interface Template extends SchoolCityObjectModel {
 	name: string;
 	description?: string;
 	type: SchoolCityIDBTable;
@@ -153,7 +153,7 @@ const blankTemplate = () => {
 	} as Template;
 };
 
-export interface School {
+interface School {
 	name: string;
 	vicePrincipalId: number;
 	sectionIds: number[];
@@ -168,7 +168,7 @@ const blankSchool = () => {
 	} as School;
 };
 
-export interface Grade extends SchoolCityObjectModel {
+interface Grade extends SchoolCityObjectModel {
 	number: number;
 	name: string;
 	description?: string;
@@ -186,7 +186,7 @@ const blankGrade = () => {
 		id: undefined,
 	} as Grade;
 };
-export interface Theme extends SchoolCityObjectModel {
+interface Theme extends SchoolCityObjectModel {
 	name: string;
 	description?: string;
 	schoolId: number;
@@ -198,7 +198,7 @@ const blankTheme = () => {
 		schoolId: 0,
 	} as Theme;
 };
-export interface Student extends SchoolCityObjectModel {
+interface Student extends SchoolCityObjectModel {
 	firstName: string;
 	lastName: string;
 	fatherName: string;
@@ -224,11 +224,11 @@ const blankStudent = () => {
 type SectionScheduleCell =
 	| { teacherId?: number; pinned: false }
 	| { teacherId: undefined; pinned: true };
-export interface SectionSubject extends SchoolCityObjectModel {
+interface SectionSubject extends SchoolCityObjectModel {
 	teacherId: number,
 	subjectId: number,
 }
-export interface Section extends SchoolCityObjectModel {
+interface Section extends SchoolCityObjectModel {
 	name: string;
 	number: number;
 	gradeId: number;
@@ -251,7 +251,7 @@ const blankSection = () => {
 		periods: [],
 	} as Section;
 };
-export interface Administrator extends SchoolCityObjectModel {
+interface Administrator extends SchoolCityObjectModel {
 	phoneNumber: string;
 	name: string;
 	supervisorId?: number | null;
@@ -272,7 +272,7 @@ const blankAdministrator = () => {
 type SectionId = number;
 type TeacherScheduleCell = SectionId | undefined | null;
 
-export interface Teacher extends SchoolCityObjectModel {
+interface Teacher extends SchoolCityObjectModel {
 	phoneNumber: string;
 	name: string;
 	description?: string;
@@ -296,10 +296,10 @@ type Average = { type: 'avg', cols: [IndexedMarkCol] }
 type WeightedAverage = { type: 'weighted avg', cols: [{ col: IndexedMarkCol, weight: number }] }
 type Equation = Average | WeightedAverage
 type IndexedMarkCol = 'Mark1' | 'Mark2' | 'Mark3' | 'Mark4' | 'Mark5'
-export interface MarkHeader extends SchoolCityObjectModel {
+interface MarkHeader extends SchoolCityObjectModel {
 	mapping: { [column: number]: IndexedMarkCol | Equation }
 }
-export interface Subject extends SchoolCityObjectModel {
+interface Subject extends SchoolCityObjectModel {
 	name: string;
 	description?: string;
 	gradeId: number;
@@ -318,7 +318,7 @@ const blankSubject = () => {
 	} as Subject;
 };
 
-export interface Mark extends SchoolCityObjectModel {
+interface Mark extends SchoolCityObjectModel {
 	studentId: number;
 	subjectId: number;
 	mark1: number;
@@ -354,8 +354,23 @@ export async function GridCoordinates(db: SchoolCityIDB) {
 	let Y = (await db.settings.where({ name: "periodsPerDay" as SettingName }).first() as Setting).value;
 	return { days: X, periods: Y }
 }
-export async function flatCoordinatesMapperFactory(db: SchoolCityIDB) {
-	const { days: X, periods: Y } = await GridCoordinates(db)
+export async function flatCoordinatesMapperFactory(db: SchoolCityIDB): Promise<CoordinateMapper> {
+	return DirectFlatCoordinatesMapper(await GridCoordinates(db))
+}
+type CoordinateMapper = {
+	inGrid: {
+		to1d: (day: number, period: number) => number;
+		to2d: (c: number) => number[];
+	};
+	sectionMapper: (numberOfSections: number) => {
+		to1d: (section: number, day: number, period: number) => number;
+		to3d: (c: number) => number[];
+	};
+	_general: (x1: number, x2: number, cnt_x2: number) => number;
+	_general3: (x1: number, x2: number, cnt_x2: number, x3: number, cnt_x3: number) => number;
+}
+export function DirectFlatCoordinatesMapper(XY: { days: number, periods: number }): CoordinateMapper {
+	const { days: X, periods: Y } = XY
 	const _general = (x1: number, x2: number, cnt_x2: number) => x1 * cnt_x2 + x2
 	const _cnt = (cnt_x1: number, cnt_x2: number) => cnt_x1 * cnt_x2
 	const _general3 = (x1: number, x2: number, cnt_x2: number, x3: number, cnt_x3: number) => _general(x1, _general(x2, x3, cnt_x3), _cnt(cnt_x2, cnt_x3))
@@ -412,3 +427,24 @@ export const mp: {
 	theme: blankTheme,
 	user: {}
 };
+export type {
+	SchoolCityObjectModel,
+	Setting,
+	Template,
+	School,
+	Grade,
+	Theme,
+	Student,
+	SectionSubject,
+	Section,
+	Administrator,
+	Teacher,
+	MarkHeader,
+	Subject,
+	Mark,
+	SchoolCityIDBTable,
+	SchoolCityIDB,
+	CoordinateMapper
+
+};
+

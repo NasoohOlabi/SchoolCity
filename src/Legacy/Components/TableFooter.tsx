@@ -5,7 +5,6 @@ import {
 	TranspositionInstruction,
 } from "../Interfaces/Interfaces";
 import { Done } from "../Logic/CoreAlgo";
-import { useForceUpdate } from "../Logic/Logic";
 
 export default function TableFooter(props: ITableFooter): JSX.Element {
 	const week = props.WEEK_GLOBAL_Object;
@@ -23,13 +22,13 @@ export default function TableFooter(props: ITableFooter): JSX.Element {
 				ms.push(step.m);
 			}
 		});
-	const tableFooterfn = useForceUpdate();
+	// console.log(`footer ${props.m} rendered `);
 	React.useEffect(
 		() => {
-			props.tableFooterInitializer(tableFooterfn);
+			// console.log(`footer ${props.m} week.Swapping = `, week.Swapping);
 		},
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-		[]
+		[week.Swapping, week.activateList, week.currentSolutionNumber]
 	);
 
 	if (!week.Swapping) {
@@ -38,7 +37,7 @@ export default function TableFooter(props: ITableFooter): JSX.Element {
 	if (week.Swapping && week.activateList.length <= 0) {
 		return (
 			<p>
-				No Solutions! <Button onClick={Done(props.m, week)}>OK</Button>
+				No Solutions! <Button onClick={Done(week)}>OK</Button>
 			</p>
 		);
 	}
@@ -62,27 +61,27 @@ export default function TableFooter(props: ITableFooter): JSX.Element {
 										if (sol1)
 											sol1.forEach(
 												(step: TranspositionInstruction) => {
-													if (week.refreshTable !== undefined)
-														week.refreshTable[step.m][
-															step.pos[0]
-														][step.pos[1]]();
+													// if (week.refreshTable !== undefined)
+													// 	week.refreshTable[step.m][
+													// 		step.pos[0]
+													// 	][step.pos[1]]();
 												}
 											);
 										if (sol2)
 											sol2.forEach(
 												(step: TranspositionInstruction) => {
-													if (week.refreshTable !== undefined)
-														week.refreshTable[step.m][
-															step.pos[0]
-														][step.pos[1]]();
+													// if (week.refreshTable !== undefined)
+													// 	week.refreshTable[step.m][
+													// 		step.pos[0]
+													// 	][step.pos[1]]();
 												}
 											);
-										if (week.tableFooterRefresher !== undefined)
-											week.tableFooterRefresher.forEach(
-												(tfr: any) => {
-													tfr();
-												}
-											);
+										// if (week.tableFooterRefresher !== undefined)
+										// 	week.tableFooterRefresher.forEach(
+										// 		(tfr: any) => {
+										// 			tfr();
+										// 		}
+										// 	);
 									}
 								}}
 							>
@@ -109,27 +108,27 @@ export default function TableFooter(props: ITableFooter): JSX.Element {
 										if (sol1)
 											sol1.forEach(
 												(step: TranspositionInstruction) => {
-													if (week.refreshTable !== undefined)
-														week.refreshTable[step.m][
-															step.pos[0]
-														][step.pos[1]]();
+													// if (week.refreshTable !== undefined)
+													// 	week.refreshTable[step.m][
+													// 		step.pos[0]
+													// 	][step.pos[1]]();
 												}
 											);
 										if (sol2)
 											sol2.forEach(
 												(step: TranspositionInstruction) => {
-													if (week.refreshTable !== undefined)
-														week.refreshTable[step.m][
-															step.pos[0]
-														][step.pos[1]]();
+													// if (week.refreshTable !== undefined)
+													// 	week.refreshTable[step.m][
+													// 		step.pos[0]
+													// 	][step.pos[1]]();
 												}
 											);
-										if (week.tableFooterRefresher !== undefined)
-											week.tableFooterRefresher.forEach(
-												(tfr: any) => {
-													tfr();
-												}
-											);
+										// if (week.tableFooterRefresher !== undefined)
+										// 	week.tableFooterRefresher.forEach(
+										// 		(tfr: any) => {
+										// 			tfr();
+										// 		}
+										// 	);
 									}
 								}}
 							>
@@ -137,7 +136,7 @@ export default function TableFooter(props: ITableFooter): JSX.Element {
 							</Button>
 						</td>
 						<td>
-							<Button onClick={Done(props.m, week)}>Done</Button>
+							<Button onClick={Done(week)}>Done</Button>
 						</td>
 						<td>
 							Effected Classes :{" "}

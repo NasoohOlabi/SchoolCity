@@ -1,21 +1,27 @@
 export default {} as typeof Worker & { new(): Worker };
-import { Transposition, TranspositionInstruction } from "../Legacy/Interfaces/Interfaces";
-import { fastForward, randomFiller } from "../Legacy/Logic/Logic";
+import { Transposition } from "../Legacy/Interfaces/Interfaces";
+import { fastForward } from "../Legacy/Logic/Logic";
 
-console.log(`self = `, self);
+console.log(`worker: Initiated.`)
 self.addEventListener('message', (event) => {
+	console.log(`worker: request received.`)
 	const week = ((week: string) => JSON.parse(week))(event.data);
-	console.log(`week = `, week);
-	const changeCellPost = (change: TranspositionInstruction) => {
-		self.postMessage({ payload: change, type: "oneChange" })
-	}
+	// const changeCellPost = (change: TranspositionInstruction) => {
+	// 	console.log(`posting one change `, change)
+	// 	self.postMessage({ payload: change, type: "oneChange" })
+	// }
 	const iterativeSolutionPoster = (changes: Transposition) => {
+		console.log(`posting multiple changes `, changes)
 		self.postMessage({ payload: changes, type: "multipleChanges" })
 	}
-	randomFiller(week, changeCellPost);
+	// randomFiller(week, changeCellPost);
+
+	console.log(`worker: going in iterativeSolutionPoster.`)
 	fastForward(week, iterativeSolutionPoster);
+	console.log(`worker: going out iterativeSolutionPoster.`)
 	// randomFiller(week);
 	// fastForward(week);
-	console.log(`posting Done`)
+	console.log(`posting...`)
 	self.postMessage({ payload: week, type: "Done" })
+	console.log(`posting Done`)
 })

@@ -37,4 +37,5 @@ export class DataViewModel {
 		DEFAULT_WEEK.teachersGuild.length - 1
 	);
 }
+
 export const weekContext = createContext(new DataViewModel());

@@ -4,13 +4,13 @@ import { useState } from "react";
 import { PosType, TeacherType_nullValue } from "../../Legacy/types";
 import {
 	IClass,
-	IWEEK_GLOBAL_Object,
+	Solver_Week,
 	TeacherId,
 	TranspositionInstruction,
 } from "../Interfaces/Interfaces";
 import { someHowPutHimAt } from "./CoreAlgo";
 import { contains, loopOverClass, withoutPos } from "./util";
-export function fill(week: IWEEK_GLOBAL_Object) {
+export function fill(week: Solver_Week) {
 	const availables = week.availables;
 	const allClasses: IClass[] = week.allClasses;
 	allClasses.forEach((Class, m) => {
@@ -28,16 +28,16 @@ export function fill(week: IWEEK_GLOBAL_Object) {
 		CementNoOtherOptionButToPutHere(allClasses, m, week);
 	});
 }
-// const noOtherOptionButToPutHere = (m: number, week: IWEEK_GLOBAL_Object, changeCellPost: (change: TranspositionInstruction) => void) => {
+// const noOtherOptionButToPutHere = (m: number, week: Solver_Week, changeCellPost: (change: TranspositionInstruction) => void) => {
 // 	const Class = week.allClasses[m];
 // 	Object.keys(Class.teachers).forEach((teacher) => {
 // 		const t = Class.teachers[teacher]
 // 		if (t !== undefined &&
 // 			t.remPeriods === t.emptyAvailables.length) {
-// 			t.emptyAvailables.forEach((Pos: PosType) => {
-// 				if (1 === util.situationInt(util.situation(teacher, Pos, m, week))) {
-// 					changeCellPost({ teacher, m, Pos })
-// 					putHimAt(week, m, teacher, Pos, "put");
+// 			t.emptyAvailables.forEach((pos: PosType) => {
+// 				if (1 === util.situationInt(util.situation(teacher, pos, m, week))) {
+// 					changeCellPost({ teacher, m, pos })
+// 					putHimAt(week, m, teacher, pos, "put");
 // 				}
 // 			});
 // 		}
@@ -45,7 +45,7 @@ export function fill(week: IWEEK_GLOBAL_Object) {
 // };
 // const autoFill = function (
 // 	m: number,
-// 	week: IWEEK_GLOBAL_Object,
+// 	week: Solver_Week,
 // 	changeCellPost: (change: TranspositionInstruction) => void
 // ) {
 // 	let xxx = 0;
@@ -55,7 +55,7 @@ export function fill(week: IWEEK_GLOBAL_Object) {
 // 			const RealOptions = actualOptions([x, y], m, week)
 // 			if (RealOptions.length === 1 && Class.l[x][y].currentTeacher === '') {
 // 				//do the change
-// 				changeCellPost({ teacher: RealOptions[0], m, Pos: [x, y] })
+// 				changeCellPost({ teacher: RealOptions[0], m, pos: [x, y] })
 // 				putHimAt(week, m, RealOptions[0], [x, y], "put")
 
 // 				//go back to the start to see if your changes affected what you have already checked
@@ -72,7 +72,7 @@ export function fill(week: IWEEK_GLOBAL_Object) {
 // }
 
 export function randomFiller(
-	week: IWEEK_GLOBAL_Object,
+	week: Solver_Week,
 	changeCellPost?: (change: TranspositionInstruction) => void
 ) {
 	const allClasses = week.allClasses;
@@ -88,8 +88,8 @@ export function randomFiller(
 				if (aOptions.length > 0) {
 					const teacher =
 						aOptions[Math.floor(Math.random() * aOptions.length)];
-					changeCellPost && changeCellPost({ pos: [i, j], teacher, m });
 					putHimAt(week, m, teacher, [i, j], "put");
+					changeCellPost && changeCellPost({ pos: [i, j], teacher, m });
 					// noOtherOptionButToPutHere(m, week, changeCellPost)
 					// autoFill(m, week, changeCellPost)
 				}
@@ -103,12 +103,12 @@ export function useForceUpdate() {
 	return () => setValue((value) => value + 1); // update the state to force render
 }
 export function actualOptions(
-	Pos: PosType,
+	pos: PosType,
 	m: number,
-	week: IWEEK_GLOBAL_Object,
+	week: Solver_Week,
 	command: "unfiltered" | "filtered" = "unfiltered"
 ) {
-	const [X, Y] = Pos;
+	const [X, Y] = pos;
 	const options = week.allClasses[m].l[X][Y].Options;
 	const res: TeacherId[] = options.filter((teacher) => {
 		return (
@@ -130,15 +130,15 @@ export const teacherHasNoMoreemptyAvailables = (
 	return teachersList[teacher].remPeriods < 1;
 };
 export const putHimAt = function (
-	week: IWEEK_GLOBAL_Object,
+	week: Solver_Week,
 	m: number,
 	teacher: TeacherId,
-	Pos: PosType,
+	pos: PosType,
 	op: "put" | "remove"
 ) {
 	const doit: boolean = op === "put";
 	const allClasses = week.allClasses;
-	const [X, Y] = Pos;
+	const [X, Y] = pos;
 	const teachers = allClasses[m].teachers;
 	if (doit) {
 		if (
@@ -148,19 +148,20 @@ export const putHimAt = function (
 		) {
 			allClasses[m].l[X][Y].currentTeacher = teacher;
 			teachers[teacher].remPeriods--;
-			teachers[teacher].periodsHere.push(Pos);
+			teachers[teacher].periodsHere.push(pos);
 			Object.keys(teachers).forEach((t) => {
 				const tData = teachers[+t];
-				tData.emptyAvailables = withoutPos(tData.emptyAvailables, Pos);
+				tData.emptyAvailables = withoutPos(tData.emptyAvailables, pos);
 			});
 			week.teacherSchedule[teacher][X][Y] = m;
-			if (week.refreshTable !== undefined) {
-				week.refreshTable[m][X][Y]();
-			}
+			// if (week.refreshTable !== undefined) {
+			// 	week.refreshTable[m][X][Y]();
+			// }
 		} else {
 			console.warn(
-				`Illegal put ${teacher} in ${week.allClasses[m].Name} in [${Pos[0]},${Pos[1]}]`
+				`Illegal put ${teacher} in ${week.allClasses[m].Name} in [${pos[0]},${pos[1]}]`
 			);
+			return false;
 		}
 	} else {
 		if (allClasses[m].l[X][Y].currentTeacher !== TeacherType_nullValue) {
@@ -169,26 +170,27 @@ export const putHimAt = function (
 			teachers[theTeacherBeingRemoved].remPeriods++;
 			teachers[theTeacherBeingRemoved].periodsHere = withoutPos(
 				teachers[theTeacherBeingRemoved].periodsHere,
-				Pos
+				pos
 			);
 			// allClasses[m].l[X][Y].Options = removed(allClasses[m].l[X][Y].Options,teacher);
 			Object.keys(teachers).forEach((t) => {
 				const teacherData = teachers[+t];
-				if (contains(week.availables[+t], Pos)) {
-					teacherData.emptyAvailables.push(Pos);
+				if (contains(week.availables[+t], pos)) {
+					teacherData.emptyAvailables.push(pos);
 				}
 			});
 			week.teacherSchedule[theTeacherBeingRemoved][X][Y] = -1;
-			if (week.refreshTable !== undefined) {
-				week.refreshTable[m][X][Y]();
-			}
+			// if (week.refreshTable !== undefined) {
+			// 	week.refreshTable[m][X][Y]();
+			// }
 		}
 	}
+	return true;
 };
 export const CementNoOtherOptionButToPutHere = (
 	School: IClass[],
 	m: number,
-	week: IWEEK_GLOBAL_Object
+	week: Solver_Week
 ) => {
 	const Class = School[m];
 	Object.keys(Class.teachers).forEach((t) => {
@@ -198,15 +200,15 @@ export const CementNoOtherOptionButToPutHere = (
 			teacherData.emptyAvailables,
 		];
 		if (periods === PosList.length) {
-			PosList.forEach((Pos) => {
-				putHimAt(week, m, +t, Pos, "put");
-				Class.l[Pos[0]][Pos[1]].isCemented = true;
+			PosList.forEach((pos) => {
+				putHimAt(week, m, +t, pos, "put");
+				Class.l[pos[0]][pos[1]].isCemented = true;
 			});
 		}
 	});
 };
 export const fastForward = (
-	week: IWEEK_GLOBAL_Object,
+	week: Solver_Week,
 	iterativeSolutionPoster?: (changes: TranspositionInstruction[]) => void
 ) => {
 	console.time("fast");
@@ -220,8 +222,8 @@ export const fastForward = (
 				return;
 			else empties.push([u, v]);
 		});
-		empties.forEach((Pos: PosType) => {
-			const [u, v] = Pos;
+		empties.forEach((pos: PosType) => {
+			const [u, v] = pos;
 			const teachers = Class.l[u][v].Options.sort(
 				(a, b) => 0.5 - Math.random()
 			);

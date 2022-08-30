@@ -7,7 +7,6 @@ import MySelect from "components/Details/MySelect";
 import React from "react";
 // import "../App.css";
 import { ICell, TeacherId } from "../Interfaces/Interfaces";
-import { useForceUpdate } from "../Logic/Logic";
 import { equals } from "../Logic/util";
 import { texts } from "./UiText";
 
@@ -32,14 +31,20 @@ export function UnmemCell(props: ICell): JSX.Element {
 	const [X, Y] = props.pos;
 	const cellData = props.WEEK_GLOBAL_Object.allClasses[props.m].l[X][Y];
 
-	const refreshCell = useForceUpdate();
-	React.useEffect(
-		() => {
-			props.cellInitializer(refreshCell);
-		},
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-		[]
-	);
+	// const refreshCell = useForceUpdate();
+	// React.useEffect(
+	// () => {
+	// props.cellInitializer();
+	// },
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// []
+	// );
+	// console.log(`rerendered cell[${X},${Y}] = `, cellData.currentTeacher);
+
+	React.useEffect(() => {
+		if (cellData.currentTeacher !== -1)
+			console.log(`cell[${X},${Y}] = `, cellData.currentTeacher);
+	}, [cellData.currentTeacher]);
 
 	const cell = (
 		D: boolean,
@@ -68,7 +73,7 @@ export function UnmemCell(props: ICell): JSX.Element {
 						noIcon={true}
 						kind=""
 						options={TeacherOptionsDropDown}
-						onMouseOver={refreshCell}
+						// onMouseOver={refreshCell}
 						// className={highlight ? classes.highlighted : ""}
 						// error={highlight}
 					/>
@@ -101,4 +106,5 @@ export function UnmemCell(props: ICell): JSX.Element {
 	}
 }
 
-export const Cell = React.memo(UnmemCell);
+// export const Cell = React.memo(UnmemCell);
+export const Cell = UnmemCell;

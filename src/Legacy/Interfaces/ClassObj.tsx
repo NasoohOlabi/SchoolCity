@@ -46,15 +46,15 @@ export default class ClassObj implements IClass {
 	/**
 	 * refreshTable
 	 */
-	public refreshTable(): (() => void)[][] {
-		return Array(NUM_OF_DAYS)
-			.fill(null)
-			.map(() =>
-				Array(NUM_OF_PERIODS_PER_DAY)
-					.fill(null)
-					.map(() => () => {})
-			);
-	}
+	// public refreshTable(): (() => void)[][] {
+	// 	return Array(NUM_OF_DAYS)
+	// 		.fill(null)
+	// 		.map(() =>
+	// 			Array(NUM_OF_PERIODS_PER_DAY)
+	// 				.fill(null)
+	// 				.map(() => () => {})
+	// 		);
+	// }
 	public addTeacher(teacher: TeacherId, Periods: number) {
 		this.teachers[teacher] = new TeacherClass(Periods);
 	}

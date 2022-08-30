@@ -5,7 +5,6 @@ import { mp, SchoolCityIDBTable } from "DB/schema";
 import SchoolCityDBContext from "DB/SchoolCityDBContext";
 import { useLiveQuery } from "dexie-react-hooks";
 import { t } from "Language/t";
-import { ITemplate } from "Model/Types";
 import { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { expand } from "../../../Model/View/ExpandTemplates";
@@ -14,7 +13,11 @@ import Tile from "./Tile";
 interface RecentlyUsedProps {
 	table: SchoolCityIDBTable;
 }
-
+interface ITemplate {
+	id: number;
+	name: string;
+	description: string;
+}
 const RecentlyUsed = ({ table }: RecentlyUsedProps): JSX.Element => {
 	const dispatch = useDispatch();
 	const expanded = useSelector(

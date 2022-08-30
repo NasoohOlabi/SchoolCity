@@ -5,8 +5,8 @@ import { someHowPutHimAt } from "../Logic/CoreAlgo";
 // (
 //     m: number,
 //     teacher: string,
-//     Pos: PosType,
-//     week: IWEEK_GLOBAL_Object,
+//     pos: PosType,
+//     week: Solver_Week,
 //     freeze: boolean = true,
 //     iterativeSolutionPoster?: (changes: Transposition) => void,
 //     justOne: boolean = false

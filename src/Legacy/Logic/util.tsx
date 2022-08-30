@@ -5,7 +5,7 @@ import {
 } from "../../Legacy/types";
 import {
 	IClass,
-	IWEEK_GLOBAL_Object,
+	Solver_Week,
 	TeacherId,
 	TranspositionInstruction,
 } from "../Interfaces/Interfaces";
@@ -107,7 +107,7 @@ const copyInstructions = (
 const pickAction = (
 	teacher: TeacherId,
 	m: number,
-	week: IWEEK_GLOBAL_Object
+	week: Solver_Week
 ): actionType => {
 	try {
 		if (week.allClasses[m].teachers[teacher].remPeriods > 0) {
@@ -125,7 +125,7 @@ const situation = (
 	teacher: TeacherId,
 	pos: PosType,
 	m: number,
-	week: IWEEK_GLOBAL_Object
+	week: Solver_Week
 ): { currTeacher: TeacherId; action: actionType; r: number } => {
 	const [x, y] = pos;
 	const ot = week.allClasses[m].l[x][y].currentTeacher;
