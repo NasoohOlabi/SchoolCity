@@ -42,8 +42,8 @@ export function UnmemCell(props: ICell): JSX.Element {
 	// console.log(`rerendered cell[${X},${Y}] = `, cellData.currentTeacher);
 
 	React.useEffect(() => {
-		if (cellData.currentTeacher !== -1)
-			console.log(`cell[${X},${Y}] = `, cellData.currentTeacher);
+		// if (cellData.currentTeacher !== -1)
+		// console.log(`cell[${X},${Y}] = `, cellData.currentTeacher);
 	}, [cellData.currentTeacher]);
 
 	const cell = (

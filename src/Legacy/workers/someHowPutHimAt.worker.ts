@@ -1,7 +1,6 @@
 declare const self: Worker;
 export default {} as typeof Worker & { new(): Worker };
 import { ISomeHowPutHimAtWorkerMsg } from "../Interfaces/Interfaces";
-import { someHowPutHimAt } from "../Logic/CoreAlgo";
 // (
 //     m: number,
 //     teacher: string,
@@ -14,7 +13,7 @@ import { someHowPutHimAt } from "../Logic/CoreAlgo";
 self.addEventListener('message', (event) => {
     const args: ISomeHowPutHimAtWorkerMsg = event.data;
 
-    someHowPutHimAt(...args)
+    // someHowPutHimAt(...args)
 
 
     console.log(`posting Done`)

@@ -9,78 +9,42 @@ import { PosType, TeacherType_nullValue } from "../types";
 import { putHimAt } from "./Logic";
 import { equals, util } from "./util";
 
-function conflicts(
-	...args:
-		| [callNodeType]
-		| [
-				TranspositionInstruction[],
-				{ pos: PosType; m: number; teacher: TeacherId }
-		  ]
-) {
-	if (args.length === 1) {
-		const vertex = args[0];
-		if (
-			vertex.week.allClasses[vertex.m].l[vertex.pos[0]][vertex.pos[1]]
-				.isCemented
-		)
-			return true;
+function conflicts(vertex: callNodeType) {
+	const { week, pos, m, pivots, teacher, parent } = vertex;
+	if (week.allClasses[m].l[pos[0]][pos[1]].isCemented) return true;
 
-		for (let i = 0; i < vertex.pivots.length; i++) {
-			if (
-				equals(vertex.pivots[i].pos, vertex.pos) &&
-				vertex.pivots[i].m === vertex.m
-			) {
-				return true;
-			} else if (
-				vertex.pivots[i].teacher === vertex.teacher &&
-				equals(vertex.pivots[i].pos, vertex.pos)
-			) {
-				return true;
-			}
+	for (let i = 0; i < pivots.length; i++) {
+		if (equals(pivots[i].pos, pos) && pivots[i].m === m) {
+			return true;
+		} else if (pivots[i].teacher === teacher && equals(pivots[i].pos, pos)) {
+			return true;
 		}
-		let tmp: callNodeType | null;
-		if (vertex.parent !== undefined) tmp = vertex.parent;
-		else
+	}
+	let tmp: callNodeType | null;
+	if (parent !== undefined) tmp = parent;
+	else
+		throw {
+			...vertex,
+			message: "Parent is undefined!",
+			where: "in conflicts",
+		};
+	while (tmp !== null) {
+		if (equals(tmp.pos, pos) && tmp.m === m) {
+			return true;
+		} else if (tmp.teacher === teacher && equals(tmp.pos, pos)) {
+			return true;
+		}
+		if (tmp.parent !== undefined) {
+			tmp = tmp.parent;
+		} else {
 			throw {
-				...vertex,
+				...tmp,
 				message: "Parent is undefined!",
 				where: "in conflicts",
 			};
-		while (tmp !== null) {
-			if (equals(tmp.pos, vertex.pos) && tmp.m === vertex.m) {
-				return true;
-			} else if (
-				tmp.teacher === vertex.teacher &&
-				equals(tmp.pos, vertex.pos)
-			) {
-				return true;
-			}
-			if (tmp.parent !== undefined) {
-				tmp = tmp.parent;
-			} else {
-				throw {
-					...tmp,
-					message: "Parent is undefined!",
-					where: "in conflicts",
-				};
-			}
 		}
-		return false;
-	} else if (args.length === 2) {
-		const base = args[0];
-		const Step = args[1];
-		for (let i = 0; i < base.length; i++) {
-			if (equals(base[i].pos, Step.pos) && base[i].m === Step.m) {
-				return true;
-			} else if (
-				base[i].teacher === Step.teacher &&
-				equals(base[i].pos, Step.pos)
-			) {
-				return true;
-			}
-		}
-		return false;
-	} else return false;
+	}
+	return false;
 }
 
 function preStrictConflicts(vertex: callNodeType) {
@@ -189,9 +153,6 @@ function pivotTo(vertex: callNodeType, queue: argumentsQueue) {
 			} else return true;
 		}
 	);
-	if (replacementTeachers.length - requirePivoting.length >= 3)
-		// doesn't require pivoting again .length >=2
-		return;
 	requirePivoting.forEach((replacementTeacher): void => {
 		const s = util.situation(replacementTeacher, vertex.pos, m, vertex.week);
 		queue.enqueue({
@@ -245,7 +206,7 @@ function pull(vertex: callNodeType, queue: argumentsQueue) {
 		week.allClasses[m].teachers[teacher].periodsHere ||
 		util.getHisActPeriods(week.allClasses[m], teacher);
 	const q_lenBefore = queue.length();
-	const pivotsQueue = new argumentsQueue();
+	// const pivotsQueue = new argumentsQueue();
 	teacherOtherPeriodsInTheClassM.forEach((edge) => {
 		const [edgeX, edgeY] = edge;
 		// tooking for other teachers to take edge and thus `teacher` can be in pulled to position
@@ -282,7 +243,8 @@ function pull(vertex: callNodeType, queue: argumentsQueue) {
 			}
 			// replacement teacher doesn't have unfulfilled periods and he not available
 			else if (s.action === "cycle" && s.r !== -1) {
-				pivotsQueue.enqueue({
+				// pivotsQueue.enqueue({
+				queue.enqueue({
 					...newNode,
 					callTo: "pivotTo",
 					pivotArgs: {
@@ -299,7 +261,8 @@ function pull(vertex: callNodeType, queue: argumentsQueue) {
 			}
 			// replacement teacher has unfulfilled periods and he not available
 			else if (s.action === "shift" && s.r !== -1) {
-				pivotsQueue.enqueue({
+				// pivotsQueue.enqueue({
+				queue.enqueue({
 					...newNode,
 					callTo: "pivotTo",
 					pivotArgs: {
@@ -313,15 +276,6 @@ function pull(vertex: callNodeType, queue: argumentsQueue) {
 			}
 		});
 	});
-	const q_lenAfter = queue.length();
-	// more than 2 non-pivoting solutions where proposed then there is no need to pivot
-	if (q_lenAfter - q_lenBefore < 3) {
-		while (pivotsQueue.notEmpty()) {
-			queue.enqueue(pivotsQueue.front());
-			// pivotsQueue.callFront(push, pull, pivotTo);
-			pivotsQueue.dequeue();
-		}
-	}
 }
 /**
  * push Assumes that this step has r===-1
@@ -336,9 +290,6 @@ function push(vertex: callNodeType, queue: argumentsQueue) {
 	const teacher_sitting_in_pos = S.currTeacher;
 	if (vertex.teacher === teacher_sitting_in_pos) return;
 
-	const pivotsQueue = new argumentsQueue();
-	const q_lenBefore = queue.length();
-	const PreviouslyMadePivots: number = pivots.length;
 	if (conflicts(vertex)) return;
 	/**
 	 * It's when the first push in the chain pushed a teacher that has no more periods
@@ -366,6 +317,17 @@ function push(vertex: callNodeType, queue: argumentsQueue) {
 		// you see I'm trying to push a teacher with no more periods in an available spot
 		// so instead I should pull him into that spot
 		// TODO: pull
+		// note it should be treaded like a pivot since
+		// the action is a cycle and it requires a closing parent name
+		// queue.enqueue({
+		// 	teacher,
+		// 	pos,
+		// 	m,
+		// 	week,
+		// 	parent: vertex,
+		// 	callTo: "pull",
+		// 	pivots,
+		// });
 		return;
 	}
 	// `teacher_sitting_in_pos` exist `m` `pos` isn't empty and we have to `push` him
@@ -400,7 +362,8 @@ function push(vertex: callNodeType, queue: argumentsQueue) {
 					callTo: "push",
 				});
 			} else {
-				pivotsQueue.enqueue({
+				// pivotsQueue.enqueue({
+				queue.enqueue({
 					...newNode,
 					callTo: "pivotTo",
 					pivotArgs: {
@@ -417,26 +380,18 @@ function push(vertex: callNodeType, queue: argumentsQueue) {
 			}
 		});
 	}
-
-	const q_lenAfter = queue.length();
-	if (q_lenAfter - q_lenBefore < 3 && PreviouslyMadePivots < 3) {
-		while (pivotsQueue.notEmpty()) {
-			queue.enqueue(pivotsQueue.front());
-			// pivotsQueue.callFront(push, pull, pivotTo);
-			pivotsQueue.dequeue();
-		}
-	}
 }
 const delegate = (
 	teacher: TeacherId,
 	pos: PosType,
 	m: number,
 	week: Solver_Week,
-	justOne: boolean = false
+	justOne: boolean = false,
+	size?: number
 ) => {
 	const situationInt = util.situationInt;
 	const S = util.situation(teacher, pos, m, week);
-	const queue = new argumentsQueue();
+	const queue = new argumentsQueue(size);
 	/**
 	 * {teacher,pos,m,week,parent:null,callTo:'nothing',pivots:[]}
 	 */
@@ -537,9 +492,14 @@ const delegate = (
 			});
 			break;
 	}
+	let firstIteration = true;
 	while (queue.notEmpty() && !enoughSolutions(week, justOne)) {
 		queue.callFront(push, pull, pivotTo);
+		if (1 === queue.length() && firstIteration) {
+			console.log(`sth is wrong Catch me!`);
+		}
 		queue.dequeue();
+		firstIteration = false;
 	}
 	queue.unlock();
 	queue.eraseAll();
@@ -550,9 +510,8 @@ export const someHowPutHimAt = (
 	teacher: TeacherId,
 	pos: PosType,
 	week: Solver_Week,
-	freeze: boolean = true,
 	iterativeSolutionPoster?: (changes: TranspositionInstruction[]) => void,
-	justOne: boolean = false
+	size?: number
 ): void => {
 	/*
 	* discription*
@@ -562,6 +521,10 @@ export const someHowPutHimAt = (
 	this should be enough?!
 	?!
 	*/
+	let freeze = true;
+	let justOne = false;
+	if (iterativeSolutionPoster) freeze = false;
+	if (iterativeSolutionPoster) justOne = true;
 	//short hands
 	week.Swapping = true;
 	// week.HandyAny.beforeAction = [];
@@ -600,7 +563,7 @@ export const someHowPutHimAt = (
 	// 	console.log(week.HandyAny.beforeAction);
 	// };
 	//   console.time('delegate')
-	delegate(teacher, pos, m, week, justOne);
+	delegate(teacher, pos, m, week, justOne, size);
 	//   console.timeEnd('delegate')
 	// if (week.activateList.length > 0) {
 	// 	const ms: number[] = [];

@@ -222,7 +222,9 @@ export const fastForward = (
 				return;
 			else empties.push([u, v]);
 		});
+		console.log(`empties = `, empties);
 		empties.forEach((pos: PosType) => {
+			console.log(`filling [${pos[0]},${pos[1]}]`);
 			const [u, v] = pos;
 			const teachers = Class.l[u][v].Options.sort(
 				(a, b) => 0.5 - Math.random()
@@ -235,15 +237,7 @@ export const fastForward = (
 				const teacher = Class.l[u][v].Options[ind];
 				const s = `iter: ${teacher} in ${Class.Name} in [${u},${v}]`;
 				console.time(s);
-				someHowPutHimAt(
-					m,
-					teacher,
-					[u, v],
-					week,
-					false,
-					iterativeSolutionPoster,
-					true
-				);
+				someHowPutHimAt(m, teacher, [u, v], week, iterativeSolutionPoster);
 				console.timeEnd(s);
 				ind++;
 			}

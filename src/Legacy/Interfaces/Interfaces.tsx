@@ -64,9 +64,14 @@ type callNodeType = {
 type NodeProcessor = (vertex: callNodeType, queue: argumentsQueue) => void;
 
 export class argumentsQueue {
-	queue: Queue<callNodeType> = new Queue<callNodeType>();
+	queue: Queue<callNodeType>;
 	// _max: number = 100000;
-	_max: number = 50;
+	_max: number;
+	constructor(size: number | undefined) {
+		this._max = size || 100000;
+		this.queue = new Queue<callNodeType>();
+		console.log(`constructed a queue Sized ${this._max}`);
+	}
 	_accepting: boolean = true;
 	_stats = {
 		pullCalls: 0,
@@ -94,12 +99,11 @@ export class argumentsQueue {
 		this.queue.dequeue();
 	}
 	unlock(): void {
-		if (!this._accepting) this._accepting = true;
 		if (this._accepting) console.log(`Max wasn't reached!`);
-		else {
-			console.log(`Max was reached ;( `);
-			this._accepting = true;
-		}
+		else console.log(`Max was reached ;( `);
+
+		this._accepting = true;
+
 		// console.log(this);
 		this._stats.nodesFromPivot /= this._stats.pivotToCalls;
 		this._stats.nodesFromPull /= this._stats.pullCalls;
@@ -111,6 +115,7 @@ export class argumentsQueue {
 		const obj = {
 			...this._stats,
 			total,
+			size: this._max,
 			stoped_at: this.queue.length(),
 			sched: total + this.queue.length(),
 		};
