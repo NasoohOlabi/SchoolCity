@@ -3,7 +3,8 @@
 // import MenuItem from "@mui/material/MenuItem";
 // import Select from "@mui/material/Select";
 // import TableCell from "@mui/material/TableCell";
-import MySelect from "components/Details/MySelect";
+import StrSelect from "components/Details/StrSelect";
+import { useForceUpdate } from "Legacy/Logic/Logic";
 import React from "react";
 // import "../App.css";
 import { ICell, TeacherId } from "../Interfaces/Interfaces";
@@ -31,19 +32,11 @@ export function UnmemCell(props: ICell): JSX.Element {
 	const [X, Y] = props.pos;
 	const cellData = props.WEEK_GLOBAL_Object.allClasses[props.m].l[X][Y];
 
-	// const refreshCell = useForceUpdate();
-	// React.useEffect(
-	// () => {
-	// props.cellInitializer();
-	// },
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	// []
-	// );
-	// console.log(`rerendered cell[${X},${Y}] = `, cellData.currentTeacher);
+	const refreshCell = useForceUpdate();
 
 	React.useEffect(() => {
 		// if (cellData.currentTeacher !== -1)
-		// console.log(`cell[${X},${Y}] = `, cellData.currentTeacher);
+		console.log(`cell[${X},${Y}] = `, cellData.currentTeacher);
 	}, [cellData.currentTeacher]);
 
 	const cell = (
@@ -62,20 +55,19 @@ export function UnmemCell(props: ICell): JSX.Element {
 			<td align="center">
 				<form>
 					<label id="demo-simple-select-label"></label>
-					<MySelect
+					<StrSelect
 						padding="minimal"
 						border="none"
 						disabled={D}
 						// labelId="demo-simple-select-label"
 						// id="demo-simple-select"
-						defaultValue={displayTeacherName}
-						onChange={props.handleChange}
-						noIcon={true}
-						kind=""
-						options={TeacherOptionsDropDown}
-						// onMouseOver={refreshCell}
-						// className={highlight ? classes.highlighted : ""}
-						// error={highlight}
+						onChange={(evt) => {
+							props.handleChange(evt);
+							refreshCell();
+						}}
+						selectedItem={displayTeacherName}
+						items={TeacherOptionsDropDown}
+						// onMouseOver={ }
 					/>
 				</form>
 			</td>

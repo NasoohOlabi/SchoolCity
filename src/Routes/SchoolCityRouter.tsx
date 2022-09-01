@@ -5,6 +5,7 @@ import AppMount from "AppMount";
 import Header from "components/Layout/Header";
 import MainContent from "components/Layout/MainContent";
 import SideMenu from "components/Layout/SideMenu";
+import { SchoolCityIDBTable } from "DB/schema";
 import { WeekView } from "Legacy/Components/WeekView";
 import { useUser } from "Model/Auth/hooks/useUser";
 import UserContext from "Model/Auth/UserContext";
@@ -20,9 +21,7 @@ import PrivateRoutes from "./PrivateRoutes";
 interface SchoolCityRouterProps {}
 
 const SchoolCityRouter: (args: SchoolCityRouterProps) => JSX.Element = ({}) => {
-	const { currentUser, pending } = useUser();
-	console.log(`currentUser = `, currentUser);
-	console.log(`!!currentUser = `, !!currentUser);
+	const { currentUser, pending, signedOut } = useUser();
 	const ctx = new ViewModelPubSub({
 		sidebarExpanded: false,
 		templatesExpanded: false,
@@ -77,27 +76,20 @@ const SchoolCityRouter: (args: SchoolCityRouterProps) => JSX.Element = ({}) => {
 									<Route path="school">
 										<Route index={true} element={<ObjectHome />} />
 										<Route path="new" element={<ObjectNew />}></Route>
-										<Route path=":schoolName">
+										<Route
+											path=":schoolName"
+											element={
+												<PrivateRoutes
+													isAllowed={!!currentUser}
+													redirectPath="/app/school"
+													checkSchoolName
+												/>
+											}
+										>
 											<Route
 												index={true}
 												element={<ObjectInfo />}
 											></Route>
-											<Route path="grade">
-												<Route
-													index={true}
-													element={<ObjectHome />}
-												/>
-												<Route
-													path="new"
-													element={<ObjectNew />}
-												></Route>
-												<Route path=":id">
-													<Route
-														index={true}
-														element={<ObjectInfo />}
-													/>
-												</Route>
-											</Route>
 											<Route path="schedule">
 												<Route
 													index={true}
@@ -114,38 +106,36 @@ const SchoolCityRouter: (args: SchoolCityRouterProps) => JSX.Element = ({}) => {
 													></Route>
 												</Route>
 											</Route>
-											<Route path="mark">
-												<Route
-													index={true}
-													element={<ObjectHome />}
-												/>
-												<Route
-													path="new"
-													element={<ObjectNew />}
-												></Route>
-												<Route path=":name">
+											{(
+												[
+													"grade",
+													"administrator",
+													"mark",
+													"section",
+													"settings",
+													"student",
+													"subject",
+													"teacher",
+													"template",
+												] as SchoolCityIDBTable[]
+											).map((table, ind) => (
+												<Route path={table} key={ind}>
 													<Route
 														index={true}
-														element={<ObjectInfo />}
-													></Route>
-												</Route>
-											</Route>
-											<Route path="Section">
-												<Route
-													index={true}
-													element={<ObjectHome />}
-												/>
-												<Route
-													path="new"
-													element={<ObjectNew />}
-												></Route>
-												<Route path=":name">
+														element={<ObjectHome />}
+													/>
 													<Route
-														index={true}
-														element={<ObjectInfo />}
+														path="new"
+														element={<ObjectNew />}
 													></Route>
+													<Route path=":id">
+														<Route
+															index={true}
+															element={<ObjectInfo />}
+														/>
+													</Route>
 												</Route>
-											</Route>
+											))}
 										</Route>
 									</Route>
 								</Route>

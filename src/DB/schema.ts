@@ -64,12 +64,21 @@ interface SchoolCityObjectModel {
 export const myCrud = {
 	getAll: async <T extends SchoolCityObjectModel>(
 		table: SchoolCityIDBTable,
-		db: SchoolCityIDB
+		db: SchoolCityIDB,
+		options?: {
+			where: { [key: string]: any }
+		}
 	): Promise<T[]> => {
-		return db[table].toArray().catch((e) => {
-			console.log(`getAll ${table} error = `, e);
-			throw e;
-		});
+		if (options)
+			return db[table].where(options.where).toArray().catch((e) => {
+				console.log(`getAll ${table} error = `, e);
+				throw e;
+			});
+		else
+			return db[table].toArray().catch((e) => {
+				console.log(`getAll ${table} error = `, e);
+				throw e;
+			});
 	},
 	get: async (
 		table: SchoolCityIDBTable,

@@ -18,18 +18,18 @@ const DetailsSectionSubjects: ({}: DetailsSectionSubjectsProps) => JSX.Element =
 		const subjectIds = lst.map((o) => o.subjectId);
 		const teachers = useLiveQuery(
 			() => db.teacher.where("id").anyOf(teacherIds),
-			[]
+			[teacherIds, teacherIds.length, ...teacherIds]
 		);
 		const subjects = useLiveQuery(
 			() => db.subject.where("id").anyOf(subjectIds),
-			[]
+			[subjectIds, subjectIds.length, ...subjectIds]
 		);
 		return (
 			<div>
 				{teacherIds.map((teacherId, index) => (
 					<div
 						key={index}
-						className="rounded-md border-solid border-2 border-gray-400 m-2 p-2"
+						className="inline-block rounded-md border-solid border-2 border-gray-400 m-2 p-2"
 					>
 						<ManyToOne
 							selected={teacherId}

@@ -31,7 +31,7 @@ const Details: (obj: DetailsProps) => JSX.Element = ({
 	const state = useLiveQuery(
 		// () => db[table].where(selector).toArray(),
 		() => myCrud.get(table, db, selector),
-		[]
+		[table, selector]
 	) as any | null | undefined;
 	console.log(`state = `, state);
 	if (state === null || state === undefined) {

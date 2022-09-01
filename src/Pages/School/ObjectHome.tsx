@@ -9,7 +9,7 @@ import { collapse } from "Model/View/ExpandTemplates";
 import useTitle from "Model/View/Layout/useTitle";
 import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import useTableUrl from "./useTableUrl";
 
 interface ObjectHomeProps {}
@@ -20,6 +20,8 @@ const ObjectHome: (args: ObjectHomeProps) => JSX.Element = ({}) => {
 	if (x.type === "redirect" || x.id !== null) return <Navigate to="/" />;
 
 	const table = x.table;
+
+	const params = useParams();
 
 	useTitle(t(table.toString()) + t(" Home"));
 
@@ -37,8 +39,14 @@ const ObjectHome: (args: ObjectHomeProps) => JSX.Element = ({}) => {
 	}, []);
 
 	const allRecords = useLiveQuery(
-		() => db && myCrud.getAll(table, db),
-		[]
+		() =>
+			db &&
+			((params.schoolName &&
+				myCrud.getAll(table, db, {
+					where: { schoolId: params.schoolName },
+				})) ||
+				myCrud.getAll(table, db)),
+		[table]
 	) as { id: number; name: string; description: string }[];
 
 	// const w = new Worker(new URL("./workers/try.worker.ts", import.meta.url));
@@ -49,7 +57,7 @@ const ObjectHome: (args: ObjectHomeProps) => JSX.Element = ({}) => {
 		<div className="App h-full">
 			<TemplatesSection table={table} />
 			{!expanded && (
-				<div className="p-8 ">
+				<div className="p-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 					{allRecords &&
 						allRecords.map((item) => (
 							<div

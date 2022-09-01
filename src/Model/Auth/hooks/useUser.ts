@@ -1,37 +1,25 @@
-import SchoolCityDBContext from "DB/SchoolCityDBContext";
-import { SettingName } from "DB/Settings";
 import { User } from "firebase/auth";
 import { auth } from "firebase/firebase";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getCurrentUser } from "../getCurrentUser";
 
 export const useUser = () => {
-	const [currentUser, setCurrentUser] = useState<User | null>(null);
-	const [pending, setPending] = useState<boolean>(true);
-	const db = useContext(SchoolCityDBContext);
-	if (navigator.onLine) {
-		useEffect(() => {
-			auth.onAuthStateChanged((user: User | null) => {
-				setCurrentUser(user);
-				setPending(false);
-			});
-			if (!pending) {
-				const user = getCurrentUser();
-				if (user)
-					db && db.user.put(user.toJSON(), user.uid).catch('Failed to store User');
-				setCurrentUser(user);
+	const [currentUser, setCurrentUser] = useState<User | null>(getCurrentUser());
+	const [pending, setPending] = useState(true)
+	useEffect(() => {
+		auth.onAuthStateChanged((user: User | null) => {
+			console.log(`user set to ${JSON.stringify(user?.toJSON())} by observer`);
+			setCurrentUser(user);
+			if (pending) {
+				console.log(`pending ${pending} set to false by observer`);
+				setPending(false)
 			}
-		}, [getCurrentUser()]);
-	} else {
-		if (db) {
-			db.settings.where({ name: 'currentUser' as SettingName, schoolId: 'global' }).first().then(s => {
-				if (s.value) {
-					const user = s.value
-					console.log('await db.settings.where({ name: \'currentUser\' }).first().value = ', user);
-				}
-			})
-			// @ts-ignore
-		}
-	}
-	return { currentUser, setCurrentUser, pending }
+		})
+	}, []);
+	// const Signout =  () => {
+	// 	currentUser && db && db.user.put(null, currentUser.uid).catch('Failed to store User');
+	// 	const ans = auth.signOut();
+	// 	// console.log("ans = ", ans);
+	// }
+	return { currentUser, setCurrentUser, pending, signedOut: currentUser === null }
 }

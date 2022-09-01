@@ -1,9 +1,6 @@
 import { Button } from "@material-tailwind/react";
 import React from "react";
-import {
-	ITableFooter,
-	TranspositionInstruction,
-} from "../Interfaces/Interfaces";
+import { ITableFooter } from "../Interfaces/Interfaces";
 import { Done } from "../Logic/CoreAlgo";
 
 export default function TableFooter(props: ITableFooter): JSX.Element {
@@ -51,31 +48,31 @@ export default function TableFooter(props: ITableFooter): JSX.Element {
 								onClick={(e: any) => {
 									if (week.currentSolutionNumber > 0) {
 										week.currentSolutionNumber--;
-										// week.forceUpdate();
-										const sol1 =
-											week.activateList[
-												week.currentSolutionNumber + 1
-											];
-										const sol2 =
-											week.activateList[week.currentSolutionNumber];
-										if (sol1)
-											sol1.forEach(
-												(step: TranspositionInstruction) => {
-													// if (week.refreshTable !== undefined)
-													// 	week.refreshTable[step.m][
-													// 		step.pos[0]
-													// 	][step.pos[1]]();
-												}
-											);
-										if (sol2)
-											sol2.forEach(
-												(step: TranspositionInstruction) => {
-													// if (week.refreshTable !== undefined)
-													// 	week.refreshTable[step.m][
-													// 		step.pos[0]
-													// 	][step.pos[1]]();
-												}
-											);
+										week.forceUpdate && week.forceUpdate();
+										// const sol1 =
+										// 	week.activateList[
+										// 		week.currentSolutionNumber + 1
+										// 	];
+										// const sol2 =
+										// 	week.activateList[week.currentSolutionNumber];
+										// if (sol1)
+										// 	sol1.forEach(
+										// 		(step: TranspositionInstruction) => {
+										// 			// if (week.refreshTable !== undefined)
+										// 			// 	week.refreshTable[step.m][
+										// 			// 		step.pos[0]
+										// 			// 	][step.pos[1]]();
+										// 		}
+										// 	);
+										// if (sol2)
+										// 	sol2.forEach(
+										// 		(step: TranspositionInstruction) => {
+										// 			// if (week.refreshTable !== undefined)
+										// 			// 	week.refreshTable[step.m][
+										// 			// 		step.pos[0]
+										// 			// 	][step.pos[1]]();
+										// 		}
+										// 	);
 										// if (week.tableFooterRefresher !== undefined)
 										// 	week.tableFooterRefresher.forEach(
 										// 		(tfr: any) => {
@@ -99,30 +96,31 @@ export default function TableFooter(props: ITableFooter): JSX.Element {
 										week.activateList.length - 1
 									) {
 										week.currentSolutionNumber++;
-										const sol1 =
-											week.activateList[
-												week.currentSolutionNumber - 1
-											];
-										const sol2 =
-											week.activateList[week.currentSolutionNumber];
-										if (sol1)
-											sol1.forEach(
-												(step: TranspositionInstruction) => {
-													// if (week.refreshTable !== undefined)
-													// 	week.refreshTable[step.m][
-													// 		step.pos[0]
-													// 	][step.pos[1]]();
-												}
-											);
-										if (sol2)
-											sol2.forEach(
-												(step: TranspositionInstruction) => {
-													// if (week.refreshTable !== undefined)
-													// 	week.refreshTable[step.m][
-													// 		step.pos[0]
-													// 	][step.pos[1]]();
-												}
-											);
+										week.forceUpdate && week.forceUpdate();
+										// const sol1 =
+										// 	week.activateList[
+										// 		week.currentSolutionNumber - 1
+										// 	];
+										// const sol2 =
+										// 	week.activateList[week.currentSolutionNumber];
+										// if (sol1)
+										// 	sol1.forEach(
+										// 		(step: TranspositionInstruction) => {
+										// 			// if (week.refreshTable !== undefined)
+										// 			// 	week.refreshTable[step.m][
+										// 			// 		step.pos[0]
+										// 			// 	][step.pos[1]]();
+										// 		}
+										// 	);
+										// if (sol2)
+										// 	sol2.forEach(
+										// 		(step: TranspositionInstruction) => {
+										// 			// if (week.refreshTable !== undefined)
+										// 			// 	week.refreshTable[step.m][
+										// 			// 		step.pos[0]
+										// 			// 	][step.pos[1]]();
+										// 		}
+										// 	);
 										// if (week.tableFooterRefresher !== undefined)
 										// 	week.tableFooterRefresher.forEach(
 										// 		(tfr: any) => {

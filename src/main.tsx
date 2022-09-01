@@ -10,12 +10,12 @@ import store from "./Model/Store";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
-		<BrowserRouter>
-			<SchoolCityDBContextProvider>
+		<SchoolCityDBContextProvider>
+			<BrowserRouter>
 				<Provider store={store}>
 					<SchoolCityRouter />
 				</Provider>
-			</SchoolCityDBContextProvider>
-		</BrowserRouter>
+			</BrowserRouter>
+		</SchoolCityDBContextProvider>
 	</React.StrictMode>
 );

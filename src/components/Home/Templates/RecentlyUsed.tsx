@@ -34,7 +34,7 @@ const RecentlyUsed = ({ table }: RecentlyUsedProps): JSX.Element => {
 		// );
 		// return db && myCrud.getAll('template', db);
 		return db.template.where({ type: table }).toArray() || [];
-	}, []) as ITemplate[];
+	}, [table]) as ITemplate[];
 
 	const blankInstance = mp[table]();
 

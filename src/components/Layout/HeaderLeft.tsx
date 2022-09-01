@@ -25,6 +25,9 @@ const HeaderLeft: (args: HeaderLeftProps) => JSX.Element = () => {
 	const backFromNew = path[path.length - 1].toLowerCase() === "new";
 	const navigate = useNavigate();
 
+	console.log(
+		`expanded || sidebarExpanded || backFromNew = ${expanded} || ${sidebarExpanded} || ${backFromNew}`
+	);
 	const v = {
 		arrow: expanded || sidebarExpanded || backFromNew ? faArrowLeft : faBars,
 		action: () => {

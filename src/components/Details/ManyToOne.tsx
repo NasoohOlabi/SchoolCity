@@ -30,7 +30,7 @@ const ManyToOne: ({}: ManyToOneProps) => JSX.Element = ({
 	const db = useContext(SchoolCityDBContext);
 	if (!db) return <p>{t(`Cann't Connect to Data Base`)}</p>;
 
-	const all = useLiveQuery(() => myCrud.getAll(one, db), []) as any[];
+	const all = useLiveQuery(() => myCrud.getAll(one, db), [one]) as any[];
 	if (!all) return <p>loading...</p>;
 	const f = filter && all.filter(filter);
 	const viewAll = f || all || [];
@@ -40,11 +40,10 @@ const ManyToOne: ({}: ManyToOneProps) => JSX.Element = ({
 	return (
 		<span className="w-96">
 			<MySelect
-				defaultValue={selected}
-				noIcon={noIcon}
+				selectedItem={selected}
 				disabled={disabled}
 				kind={one}
-				options={viewAll}
+				items={viewAll}
 				onChange={(evt) => {
 					setFk(OM.identifier(evt, one));
 				}}

@@ -6,25 +6,35 @@ import { getPathParamsOutsideRoutes } from "Routes/util";
 interface SideMenuProps {}
 
 const SideMenu: (args: SideMenuProps) => JSX.Element = ({}) => {
-	const basePath = "app/school/" + getPathParamsOutsideRoutes()?.schoolName;
-	// const r = useRerender();
 	const [sidebarExpanded, setSidebarExpanded] = useStateCtx(
 		"sidebarExpanded",
 		"sidemenu"
 	);
+	const basePath = "app/school/" + getPathParamsOutsideRoutes()?.schoolName;
 
-	const items = [
-		{ text: "Schools", path: "app/school" },
-		{ text: "Schedule", path: basePath + "/schedule" },
-		{ text: "Grades", path: basePath + "/grade" },
-		{ text: "Sections", path: basePath + "/section" },
-		{ text: "Marks", path: basePath + "/mark" },
-	];
+	const items = getPathParamsOutsideRoutes()?.schoolName
+		? [
+				{ text: "Schools", path: "app/school" },
+				{ text: "Schedule", path: basePath + "/schedule" },
+				{ text: "Grades", path: basePath + "/grade" },
+				{ text: "Sections", path: basePath + "/section" },
+				{ text: "Marks", path: basePath + "/mark" },
+				{ text: "Teachers", path: basePath + "/teacher" },
+				{ text: "Administrators", path: basePath + "/administrator" },
+				{ text: "Students", path: basePath + "/student" },
+				{ text: "Subjects", path: basePath + "/subject" },
+				{ text: "Templates", path: basePath + "/template" },
+				{ text: "Settings", path: basePath + "/settings" },
+		  ]
+		: [
+				{ text: "Schools", path: "app/school" },
+				{ text: "Settings", path: basePath + "/settings" },
+		  ];
 
 	return (
 		sidebarExpanded && (
 			<div
-				className={`w-screen h-screen absolute top-0 z-50 p-0 ${
+				className={`w-screen h-screen fixed top-0 z-50 p-0 ${
 					sidebarExpanded ? "block" : "hidden"
 				}`}
 				onClick={() => {

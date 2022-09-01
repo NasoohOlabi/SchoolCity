@@ -28,7 +28,7 @@ const OneToMany: (args: OneToManyProps) => JSX.Element = ({
 	console.log(`manyTable = `, manyTable);
 	const all = useLiveQuery(
 		() => (db && myCrud.getAll(manyTable, db)) || [],
-		[]
+		[manyTable]
 	) as any[];
 
 	const changeHandler = (value: any) => {
@@ -49,7 +49,8 @@ const OneToMany: (args: OneToManyProps) => JSX.Element = ({
 		<span className="w-96">
 			<span>
 				<ListMaintainer
-					lst={lst}
+					itemsTable={manyTable}
+					ids={lst}
 					items={all}
 					disabled={disabled}
 					setLst={setLst}
