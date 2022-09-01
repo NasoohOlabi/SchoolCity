@@ -16,7 +16,8 @@ export function fill(week: Solver_Week) {
 	allClasses.forEach((Class, m) => {
 		loopOverClass((x, y) => {
 			// scanning the teachers in the class
-			Object.keys(Class.teachers).forEach((tID) => {
+			Class.teachers.forEach((classTeacherData, tID) => {
+				if (!classTeacherData) return;
 				const tData = Class.teachers[+tID];
 				let [periods, PosList] = [tData.remPeriods, tData.emptyAvailables];
 				if (contains(availables[+tID], [x, y]) && periods > 0) {
@@ -149,8 +150,8 @@ export const putHimAt = function (
 			allClasses[m].l[X][Y].currentTeacher = teacher;
 			teachers[teacher].remPeriods--;
 			teachers[teacher].periodsHere.push(pos);
-			Object.keys(teachers).forEach((t) => {
-				const tData = teachers[+t];
+			teachers.forEach((tData, t) => {
+				if (!tData) return;
 				tData.emptyAvailables = withoutPos(tData.emptyAvailables, pos);
 			});
 			week.teacherSchedule[teacher][X][Y] = m;
@@ -173,9 +174,8 @@ export const putHimAt = function (
 				pos
 			);
 			// allClasses[m].l[X][Y].Options = removed(allClasses[m].l[X][Y].Options,teacher);
-			Object.keys(teachers).forEach((t) => {
-				const teacherData = teachers[+t];
-				if (contains(week.availables[+t], pos)) {
+			teachers.forEach((teacherData, t) => {
+				if (teacherData && contains(week.availables[t], pos)) {
 					teacherData.emptyAvailables.push(pos);
 				}
 			});
@@ -193,8 +193,8 @@ export const CementNoOtherOptionButToPutHere = (
 	week: Solver_Week
 ) => {
 	const Class = School[m];
-	Object.keys(Class.teachers).forEach((t) => {
-		const teacherData = Class.teachers[+t];
+	Class.teachers.forEach((teacherData, t) => {
+		if (!teacherData) return;
 		let [periods, PosList] = [
 			teacherData.remPeriods,
 			teacherData.emptyAvailables,

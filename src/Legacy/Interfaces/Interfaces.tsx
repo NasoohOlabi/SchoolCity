@@ -1,7 +1,6 @@
 import { PosType } from "../../Legacy/types";
 import { backtrack, takeOneOffTheStack } from "../Logic/CoreAlgo";
 import { actionType, util } from "../Logic/util";
-import ClassObj from "./ClassObj";
 
 type TeacherId = number;
 /**
@@ -247,14 +246,12 @@ interface TeachersDictionary<T> {
 }
 type ITeacherSchedule = (number | null)[][][];
 
-interface IAvailables {
-	[index: TeacherId]: PosType[];
-}
-interface IClassTeachers {
-	[index: TeacherId]: ClassTeacherData;
-}
+type IAvailables = PosType[][];
+
+type IClassTeachers = ClassTeacherData[];
+
 interface Solver_Week {
-	allClasses: ClassObj[];
+	allClasses: IClass[];
 	teachersGuild: TeacherId[];
 	Swapping: boolean;
 	currentSolutionNumber: number;
@@ -267,10 +264,17 @@ interface Solver_Week {
 }
 export const Solver_Week_util = {
 	addClass(week: Solver_Week) {
-		const cls = new ClassObj();
+		const cls: IClass = {
+			l: [],
+			Name: "",
+			teachers: [],
+		};
 		week.allClasses.push(cls);
 		// this.refreshTable.push(cls.refreshTable());
 		// this.tableFooterRefresher.push(() => {});
+	},
+	removeTeacher: (Class: IClass, teacher: TeacherId) => {
+		delete Class.teachers[teacher];
 	},
 	addTeacher(
 		week: Solver_Week,
@@ -280,7 +284,12 @@ export const Solver_Week_util = {
 		Periods: number
 	) {
 		week.teachersGuild[ind] = teacher;
-		week.allClasses[m].addTeacher(teacher, Periods);
+		week.allClasses[m].teachers[teacher] = {
+			Periods: Periods,
+			remPeriods: Periods,
+			emptyAvailables: [],
+			periodsHere: [],
+		};
 	},
 	teacherScheduleInit(week: Solver_Week) {
 		week.teachersGuild.forEach((teacher) => {

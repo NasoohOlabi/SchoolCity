@@ -230,9 +230,7 @@ const blankStudent = () => {
 	} as Student;
 };
 
-type SectionScheduleCell =
-	| { teacherId?: number; pinned: false }
-	| { teacherId: undefined; pinned: true };
+type SectionScheduleCell = { teacherId: number; pinned: boolean }
 interface SectionSubject extends SchoolCityObjectModel {
 	teacherId: number,
 	subjectId: number,
@@ -279,7 +277,7 @@ const blankAdministrator = () => {
 	} as Administrator;
 };
 type SectionId = number;
-type TeacherScheduleCell = SectionId | undefined | null;
+type TeacherScheduleCell = SectionId | null;
 
 interface Teacher extends SchoolCityObjectModel {
 	phoneNumber: string;
@@ -287,7 +285,7 @@ interface Teacher extends SchoolCityObjectModel {
 	description?: string;
 	email?: string;
 	schedule: TeacherScheduleCell[][];
-	availability: number[][];
+	availability: [number, number][];
 	subjectIds?: number[];
 }
 const blankTeacher = () => {
@@ -351,12 +349,12 @@ const blankMark = () => {
 };
 
 // TODO: change to one call to get X Y to avoid inconsistancy
-export function utilGrid(X: number, Y: number): null[][] {
+export function Grid(X: number, Y: number): null[][] {
 	return new Array(X).fill(null).map(() => new Array(Y).fill(null));
 }
 export async function GridFactory(db: SchoolCityIDB) {
 	const { days: X, periods: Y } = await GridCoordinates(db)
-	return () => utilGrid(X, Y)
+	return () => Grid(X, Y)
 }
 export async function GridCoordinates(db: SchoolCityIDB) {
 	let X = (await db.settings.where({ name: "numberOfWorkdays" as SettingName }).first() as Setting).value;
@@ -406,13 +404,6 @@ export function DirectFlatCoordinatesMapper(XY: { days: number, periods: number 
 }
 
 
-export async function Grid(
-	db: SchoolCityIDB,
-	options: { days: number; periods: number }
-) {
-	const { days: X, periods: Y } = options || await GridCoordinates(db)
-	return utilGrid(X, Y);
-}
 export function LoopOverGrid<T, U>(g: T[][], f: (element: T, x1: number, x2: number) => U): U[][] {
 	return g.map((row, x1) => row.map((elem, x2) => f(elem, x1, x2)))
 }
