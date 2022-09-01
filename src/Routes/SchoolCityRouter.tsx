@@ -1,21 +1,29 @@
 import { ThemeProvider } from "@material-tailwind/react";
 import { GoogleOAuthProvider } from "@react-oauth/google";
-import App from "App";
+// import App from "App"; // dynamic
 import AppMount from "AppMount";
 import Header from "components/Layout/Header";
 import MainContent from "components/Layout/MainContent";
 import SideMenu from "components/Layout/SideMenu";
-import { SchoolCityIDBTable } from "DB/schema";
-import { WeekView } from "Legacy/Components/WeekView";
+import type { SchoolCityIDBTable } from "DB/schema";
+// import WeekView  from "Legacy/Components/WeekView"; // dynamic
 import { useUser } from "Model/Auth/hooks/useUser";
 import UserContext from "Model/Auth/UserContext";
-import Login from "Pages/Login";
-import ObjectHome from "Pages/School/ObjectHome";
-import ObjectInfo from "Pages/School/ObjectInfo";
-import ObjectNew from "Pages/School/ObjectNew";
-import { useEffect } from "react";
+// import Login from "Pages/Login"; // dynamic
+// import ObjectHome from "Pages/School/ObjectHome"; // dynamic
+// import ObjectInfo from "Pages/School/ObjectInfo"; // dynamic
+// import ObjectNew from "Pages/School/ObjectNew"; // dynamic
+import { Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { ViewModel, ViewModelPubSub } from "../ViewModel/ViewModelStore";
+import {
+	DynamicApp,
+	DynamicLogin,
+	DynamicObjectHome,
+	DynamicObjectInfo,
+	DynamicObjectNew,
+	DynamicWeekView,
+} from "./DynamicRoutes";
 import PrivateRoutes from "./PrivateRoutes";
 
 interface SchoolCityRouterProps {}
@@ -62,86 +70,94 @@ const SchoolCityRouter: (args: SchoolCityRouterProps) => JSX.Element = ({}) => {
 					<ThemeProvider>
 						<Header />
 						<MainContent>
-							<Routes>
-								<Route path="/" element={<App />} />
-								<Route
-									path="/app"
-									element={
-										<PrivateRoutes
-											isAllowed={!!currentUser}
-											redirectPath="/Login"
-										/>
-									}
-								>
-									<Route path="school">
-										<Route index={true} element={<ObjectHome />} />
-										<Route path="new" element={<ObjectNew />}></Route>
-										<Route
-											path=":schoolName"
-											element={
-												<PrivateRoutes
-													isAllowed={!!currentUser}
-													redirectPath="/app/school"
-													checkSchoolName
-												/>
-											}
-										>
+							<Suspense fallback={<p>loading</p>}>
+								<Routes>
+									<Route path="/" element={<DynamicApp />} />
+									<Route
+										path="/app"
+										element={
+											<PrivateRoutes
+												isAllowed={!!currentUser}
+												redirectPath="/Login"
+											/>
+										}
+									>
+										<Route path="school">
 											<Route
 												index={true}
-												element={<ObjectInfo />}
+												element={<DynamicObjectHome />}
+											/>
+											<Route
+												path="new"
+												element={<DynamicObjectNew />}
 											></Route>
-											<Route path="schedule">
+											<Route
+												path=":schoolName"
+												element={
+													<PrivateRoutes
+														isAllowed={!!currentUser}
+														redirectPath="/app/school"
+														checkSchoolName
+													/>
+												}
+											>
 												<Route
 													index={true}
-													element={<WeekView />}
-												/>
-												<Route
-													path="new"
-													element={<ObjectNew />}
+													element={<DynamicObjectInfo />}
 												></Route>
-												<Route path=":name">
+												<Route path="schedule">
 													<Route
 														index={true}
-														element={<ObjectInfo />}
-													></Route>
-												</Route>
-											</Route>
-											{(
-												[
-													"grade",
-													"administrator",
-													"mark",
-													"section",
-													"settings",
-													"student",
-													"subject",
-													"teacher",
-													"template",
-												] as SchoolCityIDBTable[]
-											).map((table, ind) => (
-												<Route path={table} key={ind}>
-													<Route
-														index={true}
-														element={<ObjectHome />}
+														element={<DynamicWeekView />}
 													/>
 													<Route
 														path="new"
-														element={<ObjectNew />}
+														element={<DynamicObjectNew />}
 													></Route>
-													<Route path=":id">
+													<Route path=":name">
 														<Route
 															index={true}
-															element={<ObjectInfo />}
-														/>
+															element={<DynamicObjectInfo />}
+														></Route>
 													</Route>
 												</Route>
-											))}
+												{(
+													[
+														"grade",
+														"administrator",
+														"mark",
+														"section",
+														"settings",
+														"student",
+														"subject",
+														"teacher",
+														"template",
+													] as SchoolCityIDBTable[]
+												).map((table, ind) => (
+													<Route path={table} key={ind}>
+														<Route
+															index={true}
+															element={<DynamicObjectHome />}
+														/>
+														<Route
+															path="new"
+															element={<DynamicObjectNew />}
+														></Route>
+														<Route path=":id">
+															<Route
+																index={true}
+																element={<DynamicObjectInfo />}
+															/>
+														</Route>
+													</Route>
+												))}
+											</Route>
 										</Route>
 									</Route>
-								</Route>
-								<Route path="/login" element={<Login />} />
-								<Route path="*" element={<div>non match</div>} />
-							</Routes>
+									<Route path="/login" element={<DynamicLogin />} />
+									<Route path="*" element={<div>non match</div>} />
+								</Routes>
+							</Suspense>
 						</MainContent>
 						<SideMenu />
 					</ThemeProvider>

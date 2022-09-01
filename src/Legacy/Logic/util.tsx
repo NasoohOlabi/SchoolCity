@@ -12,19 +12,9 @@ import {
 
 // testing git here
 
-export const equals = (a: PosType, b: PosType) => {
-	return a[0] === b[0] && a[1] === b[1];
-};
-export const contains = (a: PosType[], pos: PosType) => {
-	for (let i = 0; i < a.length; i++) {
-		if (equals(a[i], pos)) {
-			return true;
-		}
-	}
-	return false;
-};
+
 export const withoutPos = (lst: PosType[], pos: PosType) => {
-	return lst.filter((p) => !equals(pos, p));
+	return lst.filter((p) => pos !== p);
 };
 export const removed = <T extends unknown>(S: T[], s: T) => {
 	return S.slice(0, S.indexOf(s)).concat(S.slice(S.indexOf(s) + 1));
@@ -39,58 +29,20 @@ export const stringGuard = (arg: unknown): string => {
 };
 const getHisActPeriods = (Class: IClass, teacher: TeacherId): PosType[] => {
 	let result: PosType[] = [];
-	loopOverClass((i, j) => {
-		if (Class.l[i][j].currentTeacher === teacher) {
-			result.push([i, j]);
-		}
-	});
+	Class.l.forEach((pos,ind) => {
+		if (pos.currentTeacher === teacher) {
+			result.push(ind);
+		}		
+	})
 	return result;
 };
-export const listMinusAnother = (a: PosType[], b: PosType[]): PosType[] => {
-	const result: PosType[] = [];
-	for (let i = 0; i < a.length; i++) {
-		if (!contains(b, a[i])) {
-			result.push(a[i]);
-		}
-	}
-	return result;
-};
-export const notInBase_copy = (
-	a: PosType[],
-	m: number,
-	base: TranspositionInstruction[]
-): PosType[] => {
-	const result: PosType[] = [];
-	a.forEach((pos) => {
-		let notInBase = true;
-		for (let j = 0; j < base.length; j++) {
-			if (equals(base[j].pos, pos) && base[j].m === m) {
-				notInBase = false;
-				break;
-			}
-		}
-		if (notInBase) result.push(pos);
-	});
-	return result;
-};
-export const loopOverClass = (
-	f: (i: number, j: number) => void,
-	n = 5,
-	m = 7
-) => {
-	for (let i = 0; i < n; i++) {
-		for (let j = 0; j < m; j++) {
-			f(i, j);
-		}
-	}
-};
+
+
 const copyInstruction = (
 	obj: TranspositionInstruction
 ): { pos: PosType; m: number; teacher: TeacherId } => {
 	const res = Object();
-	res.pos = [];
-	res.pos.push(obj.pos[0]);
-	res.pos.push(obj.pos[1]);
+	res.pos = obj.pos;
 	res.m = obj.m;
 	res.teacher = obj.teacher;
 	return res;
@@ -127,11 +79,10 @@ const situation = (
 	m: number,
 	week: Solver_Week
 ): { currTeacher: TeacherId; action: actionType; r: number } => {
-	const [x, y] = pos;
-	const ot = week.allClasses[m].l[x][y].currentTeacher;
+	const ot = week.allClasses[m].l[pos].currentTeacher;
 	const a = pickAction(teacher, m, week);
-	const tmp = week.teacherSchedule[teacher][x][y];
-	if (tmp !== null) {
+	const tmp = week.teacherSchedule[teacher][pos];
+	if (typeof tmp === "number") {
 		const r: number = tmp;
 		return { currTeacher: ot, action: a, r };
 	} else {
@@ -200,19 +151,7 @@ function ruffleShuffle(
 	return res;
 }
 export type actionType = "shift" | "cycle";
-function stepMatch(
-	a: TranspositionInstruction,
-	wild: TranspositionInstruction | undefined
-): boolean {
-	if (wild === undefined) return false;
-	const skipTeacherMatching = wild.teacher === TeacherType_WildCard;
-	const skipposMatching = equals(wild.pos, [-1, -1]);
-	return (
-		(a.pos === wild.pos || skipposMatching) &&
-		(a.teacher === wild.teacher || skipTeacherMatching) &&
-		a.m === wild.m
-	);
-}
+
 export const util = {
 	copyInstructions,
 	copyInstruction,
@@ -220,7 +159,6 @@ export const util = {
 	situation,
 	situationInt,
 	ruffleShuffle,
-	stepMatch,
 	getHisActPeriods,
 	removed,
 };

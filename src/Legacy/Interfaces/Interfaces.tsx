@@ -1,3 +1,4 @@
+import { Teacher } from "DB/schema";
 import { PosType } from "../../Legacy/types";
 import { backtrack, takeOneOffTheStack } from "../Logic/CoreAlgo";
 import { actionType, util } from "../Logic/util";
@@ -244,15 +245,15 @@ interface ICell {
 interface TeachersDictionary<T> {
 	[index: TeacherId]: T;
 }
-type ITeacherSchedule = (number | null)[][][];
+type ITeacherSchedule = (number | null)[][];
 
-type IAvailables = PosType[][];
+type IAvailables = number[][];
 
 type IClassTeachers = ClassTeacherData[];
 
 interface Solver_Week {
 	allClasses: IClass[];
-	teachersGuild: TeacherId[];
+	teachersGuild: Teacher[];
 	Swapping: boolean;
 	currentSolutionNumber: number;
 	activateList: TranspositionInstruction[][];
@@ -276,34 +277,21 @@ export const Solver_Week_util = {
 	removeTeacher: (Class: IClass, teacher: TeacherId) => {
 		delete Class.teachers[teacher];
 	},
-	addTeacher(
-		week: Solver_Week,
-		ind: number,
-		m: number,
-		teacher: TeacherId,
-		Periods: number
-	) {
-		week.teachersGuild[ind] = teacher;
-		week.allClasses[m].teachers[teacher] = {
-			Periods: Periods,
-			remPeriods: Periods,
-			emptyAvailables: [],
-			periodsHere: [],
-		};
-	},
 	teacherScheduleInit(week: Solver_Week) {
 		week.teachersGuild.forEach((teacher) => {
-			week.teacherSchedule[teacher] = [...Array(week.NUM_OF_DAYS)].map((e) =>
-				Array(week.NUM_OF_PERIODS_PER_DAY).fill(null)
-			);
-			week.availables[teacher].forEach(([X, Y]: PosType) => {
-				week.teacherSchedule[teacher][X][Y] = -1;
+			if (!teacher.id) return;
+			week.teacherSchedule[teacher.id] = [
+				...Array(week.NUM_OF_DAYS * week.NUM_OF_PERIODS_PER_DAY),
+			].fill(null);
+			week.availables[teacher.id].forEach((pos: PosType) => {
+				if (!teacher.id) return;
+				week.teacherSchedule[teacher.id][pos] = -1;
 			});
 		});
 	},
 };
 interface IClass {
-	l: lCellObj[][];
+	l: lCellObj[];
 	Name: string;
 	teachers: IClassTeachers;
 }

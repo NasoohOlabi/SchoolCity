@@ -7,16 +7,16 @@ import type {
 import { argumentsQueue } from "../Interfaces/Interfaces";
 import { PosType, TeacherType_nullValue } from "../types";
 import { putHimAt } from "./Logic";
-import { equals, util } from "./util";
+import { util } from "./util";
 
 function conflicts(vertex: callNodeType) {
 	const { week, pos, m, pivots, teacher, parent } = vertex;
-	if (week.allClasses[m].l[pos[0]][pos[1]].isCemented) return true;
+	if (week.allClasses[m].l[pos].isCemented) return true;
 
 	for (let i = 0; i < pivots.length; i++) {
-		if (equals(pivots[i].pos, pos) && pivots[i].m === m) {
+		if (pivots[i].pos === pos && pivots[i].m === m) {
 			return true;
-		} else if (pivots[i].teacher === teacher && equals(pivots[i].pos, pos)) {
+		} else if (pivots[i].teacher === teacher && pivots[i].pos === pos) {
 			return true;
 		}
 	}
@@ -29,9 +29,9 @@ function conflicts(vertex: callNodeType) {
 			where: "in conflicts",
 		};
 	while (tmp !== null) {
-		if (equals(tmp.pos, pos) && tmp.m === m) {
+		if (tmp.pos === pos && tmp.m === m) {
 			return true;
-		} else if (tmp.teacher === teacher && equals(tmp.pos, pos)) {
+		} else if (tmp.teacher === teacher && tmp.pos === pos) {
 			return true;
 		}
 		if (tmp.parent !== undefined) {
@@ -49,16 +49,13 @@ function conflicts(vertex: callNodeType) {
 
 function preStrictConflicts(vertex: callNodeType) {
 	let tmp: callNodeType | null;
-	if (
-		vertex.week.allClasses[vertex.m].l[vertex.pos[0]][vertex.pos[1]]
-			.isCemented
-	) {
+	if (vertex.week.allClasses[vertex.m].l[vertex.pos].isCemented) {
 		return true;
 	}
 	if (vertex.parent !== undefined) tmp = vertex.parent;
 	else throw { ...vertex, message: `Parent is undefined` };
 	while (tmp !== null) {
-		if (equals(tmp.pos, vertex.pos) && tmp.m === vertex.m) {
+		if (tmp.pos === vertex.pos && tmp.m === vertex.m) {
 			return true;
 		} else if (tmp.teacher === vertex.teacher) {
 			return true;
@@ -101,7 +98,7 @@ function pivotTo(vertex: callNodeType, queue: argumentsQueue) {
 	const m = vertex.pivotArgs.next_m;
 
 	const nextNode = vertex.pivotArgs.AfterReChainNode;
-	const [X, Y] = vertex.pos;
+	const pos = vertex.pos;
 	const augmentedParent = vertex.pivotArgs.beforeReChainNode;
 	const NewStack =
 		vertex.pivotArgs.beforeReChainNode === null
@@ -109,7 +106,7 @@ function pivotTo(vertex: callNodeType, queue: argumentsQueue) {
 			: [...vertex.pivotArgs.beforeReChainNode.pivots];
 	if (nextNode !== undefined) NewStack.push(nextNode);
 	// const teachers = util.removed(vertex.week.allClasses[m].l[X][Y].Options, vertex.week.allClasses[m].l[X][Y].currentTeacher);
-	const replacementTeachers = vertex.week.allClasses[m].l[X][Y].Options;
+	const replacementTeachers = vertex.week.allClasses[m].l[pos].Options;
 	const requirePivoting = replacementTeachers.filter(
 		(replacementTeacher: TeacherId) => {
 			// if the proposed teacher is the same as the existing teacher
@@ -117,7 +114,7 @@ function pivotTo(vertex: callNodeType, queue: argumentsQueue) {
 			// so... the proposition is discarded
 			if (
 				replacementTeacher ===
-				vertex.week.allClasses[m].l[X][Y].currentTeacher
+				vertex.week.allClasses[m].l[pos].currentTeacher
 			)
 				return false;
 			// analyzing proposition
@@ -133,7 +130,7 @@ function pivotTo(vertex: callNodeType, queue: argumentsQueue) {
 			if (
 				s.r === -1 ||
 				(replacementTeacher ===
-					vertex.week.allClasses[vertex.m].l[X][Y].currentTeacher &&
+					vertex.week.allClasses[vertex.m].l[pos].currentTeacher &&
 					s.r === vertex.m)
 			) {
 				queue.enqueue({
@@ -208,9 +205,8 @@ function pull(vertex: callNodeType, queue: argumentsQueue) {
 	const q_lenBefore = queue.length();
 	// const pivotsQueue = new argumentsQueue();
 	teacherOtherPeriodsInTheClassM.forEach((edge) => {
-		const [edgeX, edgeY] = edge;
 		// tooking for other teachers to take edge and thus `teacher` can be in pulled to position
-		const teachers = week.allClasses[m].l[edgeX][edgeY].Options;
+		const teachers = week.allClasses[m].l[edge].Options;
 		teachers.forEach((t) => {
 			// filter out the `teacher` as an option to free `teacher` since it doesn't make sense
 			if (t === teacher) return;

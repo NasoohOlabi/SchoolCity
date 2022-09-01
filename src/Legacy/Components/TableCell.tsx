@@ -7,9 +7,7 @@ import StrSelect from "components/Details/StrSelect";
 import { useForceUpdate } from "Legacy/Logic/Logic";
 import React from "react";
 // import "../App.css";
-import { ICell, TeacherId } from "../Interfaces/Interfaces";
-import { equals } from "../Logic/util";
-import { texts } from "./UiText";
+import type { ICell, TeacherId } from "../Interfaces/Interfaces";
 
 // const useStyles = makeStyles((theme: any) =>
 // 	createStyles({
@@ -29,9 +27,8 @@ import { texts } from "./UiText";
 export function UnmemCell(props: ICell): JSX.Element {
 	// const classes = useStyles();
 	const week = props.WEEK_GLOBAL_Object;
-	const [X, Y] = props.pos;
-	const cellData = props.WEEK_GLOBAL_Object.allClasses[props.m].l[X][Y];
-
+	const { pos, m } = props;
+	const cellData = props.WEEK_GLOBAL_Object.allClasses[m].l[pos];
 	const refreshCell = useForceUpdate();
 
 	React.useEffect(() => {
@@ -39,18 +36,25 @@ export function UnmemCell(props: ICell): JSX.Element {
 		// console.log(`cell[${X},${Y}] = `, cellData.currentTeacher);
 	}, [cellData.currentTeacher]);
 
+	const optionsTeachers =
+		week.teachersGuild.filter(
+			(t) => t.id && cellData.Options.includes(t.id)
+		) || [];
+	if (!optionsTeachers) return <></>;
+	const teacher = optionsTeachers.filter(
+		(t) => t.id === cellData.currentTeacher
+	)[0];
+
 	const cell = (
 		D: boolean,
 		show: TeacherId,
 		highlight = false
 	): JSX.Element => {
-		const TeacherOptionsDropDown: string[] = cellData.Options.map(
-			(t: TeacherId) => {
-				return texts.NameMap[t];
-			}
+		const TeacherOptionsDropDown: string[] = optionsTeachers.map(
+			(t) => t.name
 		);
 		// @ts-ignore
-		const displayTeacherName = texts.NameMap[show] || "";
+		const displayTeacherName = teacher?.name || "";
 		return (
 			<td align="center">
 				<form>
@@ -86,8 +90,9 @@ export function UnmemCell(props: ICell): JSX.Element {
 			j++
 		) {
 			if (
-				equals(props.pos, week.activateList[i][j].pos) &&
-				props.m === week.activateList[i][j].m
+				(props.pos,
+				week.activateList[i][j].pos &&
+					props.m === week.activateList[i][j].m)
 			) {
 				return cell(true, week.activateList[i][j].teacher, true);
 			}

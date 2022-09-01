@@ -19,7 +19,7 @@ import { PosType } from "../types";
 import SubAppBar from "./SubAppBar";
 import { texts } from "./UiText";
 
-export function WeekView(theme: any): JSX.Element {
+export default function WeekView(theme: any): JSX.Element {
 	const WEEK_GLOBAL_Object_Ref = useRef<Solver_Week | undefined>(undefined);
 
 	const handleChange = useCallback((pos: PosType, m: number) => {
@@ -28,9 +28,8 @@ export function WeekView(theme: any): JSX.Element {
 			console.clear();
 			if (WEEK_GLOBAL_Object_Ref.current) {
 				someHowPutHimAt(m, teacher, pos, WEEK_GLOBAL_Object_Ref.current);
-				WEEK_GLOBAL_Object_Ref.current.allClasses[m].l[pos[0]][
-					pos[1]
-				].isCemented = true;
+				WEEK_GLOBAL_Object_Ref.current.allClasses[m].l[pos].isCemented =
+					true;
 			}
 		};
 	}, []);
@@ -74,12 +73,11 @@ export function WeekView(theme: any): JSX.Element {
 			return;
 		}
 		const changeCellPost = (payload: TranspositionInstruction) => {
-			const [x, y] = payload.pos;
-			const m = payload.m;
+			const { m, pos } = payload;
 			// WEEK_GLOBAL_Object.refreshTable[m][x][y]();
 		};
 		if (!WEEK_GLOBAL_Object_Ref.current) return;
-		randomFiller(WEEK_GLOBAL_Object_Ref.current, changeCellPost);
+		randomFiller(WEEK_GLOBAL_Object_Ref.current);
 		forceUpdate();
 
 		const data: any = JSON.stringify(WEEK_GLOBAL_Object_Ref.current);
@@ -92,11 +90,10 @@ export function WeekView(theme: any): JSX.Element {
 			if (msg.type === "multipleChanges") {
 				for (let i = 0; i < event.data.payload.length; i++) {
 					const payload = msg.payload as Transposition;
-					const [x, y] = payload[i].pos;
-					const m = payload[i].m;
+					const { m, pos } = payload[i];
 					if (WEEK_GLOBAL_Object_Ref.current)
-						WEEK_GLOBAL_Object_Ref.current.allClasses[m].l[x][
-							y
+						WEEK_GLOBAL_Object_Ref.current.allClasses[m].l[
+							pos
 						].currentTeacher = payload[i].teacher;
 				}
 			} else if (msg.type === "Done") {

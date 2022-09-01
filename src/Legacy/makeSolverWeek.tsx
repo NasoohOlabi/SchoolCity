@@ -1,4 +1,5 @@
 import {
+	DirectFlatCoordinatesMapper,
 	Grid,
 	GridCoordinates,
 	LoopOverGrid,
@@ -30,7 +31,9 @@ export default async function makeSolverWeek(
 
 	const { days, periods } = await GridCoordinates(db);
 
-	const teachersGuild = [
+	const mapper = DirectFlatCoordinatesMapper({ days, periods });
+
+	const teachersIds = [
 		...new Set(
 			sections.flatMap((section) =>
 				section.subjects.map(({ teacherId }) => teacherId)
@@ -38,23 +41,26 @@ export default async function makeSolverWeek(
 		),
 	];
 
-	const teachers = (await db.teacher
+	const teachersGuild = (await db.teacher
 		.where("id")
-		.anyOf(teachersGuild)
+		.anyOf(teachersIds)
 		.toArray()) as Teacher[];
 	const teachersIdMp = new Map<IndexableType, Teacher>();
 
-	teachers.forEach((t) => {
+	teachersGuild.forEach((t) => {
 		if (t.id) teachersIdMp.set(t.id, t);
 	});
 
 	const availables: IAvailables = [];
-	teachers.forEach(({ id, availability }) => {
-		if (id) availables[id] = availability;
+	teachersGuild.forEach(({ id, availability }) => {
+		if (id)
+			availables[id] = availability.map((pos) =>
+				mapper.inGrid.to1d(pos[0], pos[1])
+			);
 	});
 	const teacherSchedule: ITeacherSchedule = [];
-	teachers.forEach(({ id, schedule }) => {
-		if (id) teacherSchedule[id] = schedule;
+	teachersGuild.forEach(({ id, schedule }) => {
+		if (id) teacherSchedule[id] = schedule.flat();
 	});
 	const NUM_OF_PERIODS_PER_DAY = periods;
 	const NUM_OF_DAYS = days;
@@ -100,7 +106,7 @@ export default async function makeSolverWeek(
 			} as ClassTeacherData;
 		});
 		return {
-			l,
+			l: l.flat(),
 			Name: s.name,
 			teachers,
 		};

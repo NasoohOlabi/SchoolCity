@@ -9,20 +9,18 @@ import {
 	TranspositionInstruction,
 } from "../Interfaces/Interfaces";
 import { someHowPutHimAt } from "./CoreAlgo";
-import { contains, loopOverClass, withoutPos } from "./util";
+import { withoutPos } from "./util";
 export function fill(week: Solver_Week) {
 	const availables = week.availables;
 	const allClasses: IClass[] = week.allClasses;
 	allClasses.forEach((Class, m) => {
-		loopOverClass((x, y) => {
-			// scanning the teachers in the class
-			Class.teachers.forEach((classTeacherData, tID) => {
-				if (!classTeacherData) return;
-				const tData = Class.teachers[+tID];
+		Class.l.forEach((elem, pos) => {
+			Class.teachers.forEach((tData, tID) => {
+				if (!tData) return;
 				let [periods, PosList] = [tData.remPeriods, tData.emptyAvailables];
-				if (contains(availables[+tID], [x, y]) && periods > 0) {
-					Class.l[x][y].Options.push(+tID);
-					PosList.push([x, y]);
+				if (availables[tID].includes(pos) && periods > 0) {
+					Class.l[pos].Options.push(tID);
+					PosList.push(pos);
 				}
 			});
 		});
@@ -72,25 +70,21 @@ export function fill(week: Solver_Week) {
 // 	}
 // }
 
-export function randomFiller(
-	week: Solver_Week,
-	changeCellPost?: (change: TranspositionInstruction) => void
-) {
+export function randomFiller(week: Solver_Week) {
 	const allClasses = week.allClasses;
 	for (let m = 0; m < allClasses.length; m++) {
 		const Class = allClasses[m];
-		loopOverClass((i: number, j: number) => {
+		Class.l.forEach((_, pos) => {
 			if (
-				Class.l[i][j].currentTeacher === TeacherType_nullValue &&
-				Class.l[i][j].Options.length !== 0 &&
-				!Class.l[i][j].isCemented
+				Class.l[pos].currentTeacher === TeacherType_nullValue &&
+				Class.l[pos].Options.length !== 0 &&
+				!Class.l[pos].isCemented
 			) {
-				const aOptions: TeacherId[] = actualOptions([i, j], m, week);
+				const aOptions: TeacherId[] = actualOptions(pos, m, week);
 				if (aOptions.length > 0) {
 					const teacher =
 						aOptions[Math.floor(Math.random() * aOptions.length)];
-					putHimAt(week, m, teacher, [i, j], "put");
-					changeCellPost && changeCellPost({ pos: [i, j], teacher, m });
+					putHimAt(week, m, teacher, pos, "put");
 					// noOtherOptionButToPutHere(m, week, changeCellPost)
 					// autoFill(m, week, changeCellPost)
 				}
@@ -109,11 +103,10 @@ export function actualOptions(
 	week: Solver_Week,
 	command: "unfiltered" | "filtered" = "unfiltered"
 ) {
-	const [X, Y] = pos;
-	const options = week.allClasses[m].l[X][Y].Options;
+	const options = week.allClasses[m].l[pos].Options;
 	const res: TeacherId[] = options.filter((teacher) => {
 		return (
-			week.teacherSchedule[teacher][X][Y] === -1 &&
+			week.teacherSchedule[teacher][pos] === -1 &&
 			week.allClasses[m].teachers[teacher].remPeriods > 0
 		);
 	});
@@ -139,47 +132,63 @@ export const putHimAt = function (
 ) {
 	const doit: boolean = op === "put";
 	const allClasses = week.allClasses;
-	const [X, Y] = pos;
 	const teachers = allClasses[m].teachers;
 	if (doit) {
 		if (
 			!teacherHasNoMoreemptyAvailables(teacher, teachers) &&
-			allClasses[m].l[X][Y].currentTeacher === TeacherType_nullValue &&
-			week.teacherSchedule[teacher][X][Y] === -1
+			allClasses[m].l[pos].currentTeacher === TeacherType_nullValue &&
+			week.teacherSchedule[teacher][pos] === -1
 		) {
-			allClasses[m].l[X][Y].currentTeacher = teacher;
+			allClasses[m].l[pos].currentTeacher = teacher;
 			teachers[teacher].remPeriods--;
 			teachers[teacher].periodsHere.push(pos);
 			teachers.forEach((tData, t) => {
 				if (!tData) return;
 				tData.emptyAvailables = withoutPos(tData.emptyAvailables, pos);
 			});
-			week.teacherSchedule[teacher][X][Y] = m;
+			week.teacherSchedule[teacher][pos] = m;
 			// if (week.refreshTable !== undefined) {
 			// 	week.refreshTable[m][X][Y]();
 			// }
 		} else {
 			console.warn(
-				`Illegal put ${teacher} in ${week.allClasses[m].Name} in [${pos[0]},${pos[1]}]`
+				`Illegal put ${teacher} in ${week.allClasses[m].Name} in ${pos}`
 			);
+			console.log(`
+			!teacherHasNoMoreemptyAvailables(teacher, teachers) &&
+			allClasses[m].l[pos].currentTeacher === TeacherType_nullValue &&
+			week.teacherSchedule[teacher][pos] === -1 ==>
+
+			!teacherHasNoMoreemptyAvailables(
+				${teacher},
+				${JSON.stringify(teachers)}
+			) = ${teacherHasNoMoreemptyAvailables(teacher, teachers)} &&
+			allClasses[${m}].l[${pos}].currentTeacher = ${
+				allClasses[m].l[pos].currentTeacher
+			} === ${TeacherType_nullValue} &&
+			week.teacherSchedule[${teacher}][${pos}] = ${
+				week.teacherSchedule[teacher][pos]
+			} === -1
+
+			`);
 			return false;
 		}
 	} else {
-		if (allClasses[m].l[X][Y].currentTeacher !== TeacherType_nullValue) {
-			const theTeacherBeingRemoved = allClasses[m].l[X][Y].currentTeacher;
-			allClasses[m].l[X][Y].currentTeacher = TeacherType_nullValue;
+		if (allClasses[m].l[pos].currentTeacher !== TeacherType_nullValue) {
+			const theTeacherBeingRemoved = allClasses[m].l[pos].currentTeacher;
+			allClasses[m].l[pos].currentTeacher = TeacherType_nullValue;
 			teachers[theTeacherBeingRemoved].remPeriods++;
 			teachers[theTeacherBeingRemoved].periodsHere = withoutPos(
 				teachers[theTeacherBeingRemoved].periodsHere,
 				pos
 			);
-			// allClasses[m].l[X][Y].Options = removed(allClasses[m].l[X][Y].Options,teacher);
+			// allClasses[m].l[pos].Options = removed(allClasses[m].l[pos].Options,teacher);
 			teachers.forEach((teacherData, t) => {
-				if (teacherData && contains(week.availables[t], pos)) {
+				if (teacherData && week.availables[t].includes(pos)) {
 					teacherData.emptyAvailables.push(pos);
 				}
 			});
-			week.teacherSchedule[theTeacherBeingRemoved][X][Y] = -1;
+			week.teacherSchedule[theTeacherBeingRemoved][pos] = -1;
 			// if (week.refreshTable !== undefined) {
 			// 	week.refreshTable[m][X][Y]();
 			// }
@@ -202,7 +211,7 @@ export const CementNoOtherOptionButToPutHere = (
 		if (periods === PosList.length) {
 			PosList.forEach((pos) => {
 				putHimAt(week, m, +t, pos, "put");
-				Class.l[pos[0]][pos[1]].isCemented = true;
+				Class.l[pos].isCemented = true;
 			});
 		}
 	});
@@ -214,30 +223,29 @@ export const fastForward = (
 	console.time("fast");
 	week.allClasses.forEach((Class: IClass, m: number) => {
 		const empties: PosType[] = [];
-		loopOverClass((u: number, v: number) => {
+		Class.l.forEach((cellData, pos) => {
 			if (
-				Class.l[u][v].currentTeacher !== TeacherType_nullValue ||
-				Class.l[u][v].isCemented
+				cellData.currentTeacher !== TeacherType_nullValue ||
+				cellData.isCemented
 			)
 				return;
-			else empties.push([u, v]);
+			else empties.push(pos);
 		});
 		console.log(`empties = `, empties);
 		empties.forEach((pos: PosType) => {
-			console.log(`filling [${pos[0]},${pos[1]}]`);
-			const [u, v] = pos;
-			const teachers = Class.l[u][v].Options.sort(
+			console.log(`filling ${pos}`);
+			const teachers = Class.l[pos].Options.sort(
 				(a, b) => 0.5 - Math.random()
 			);
 			let ind = 0;
 			while (
-				Class.l[u][v].currentTeacher === TeacherType_nullValue &&
+				Class.l[pos].currentTeacher === TeacherType_nullValue &&
 				ind < teachers.length
 			) {
-				const teacher = Class.l[u][v].Options[ind];
-				const s = `iter: ${teacher} in ${Class.Name} in [${u},${v}]`;
+				const teacher = Class.l[pos].Options[ind];
+				const s = `iter: ${teacher} in ${Class.Name} in ${pos}`;
 				console.time(s);
-				someHowPutHimAt(m, teacher, [u, v], week, iterativeSolutionPoster);
+				someHowPutHimAt(m, teacher, pos, week, iterativeSolutionPoster);
 				console.timeEnd(s);
 				ind++;
 			}
