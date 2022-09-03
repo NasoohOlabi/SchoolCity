@@ -16,6 +16,8 @@ const ObjectInfo: (args: ObjectInfoProps) => JSX.Element = ({}) => {
 	}, [x.type, x.table, x.id]);
 	const properType = (x: any) => (isNaN(+x) ? x : +x);
 
+	console.log(`ObjectInfo render`);
+
 	if (x.type === "redirect" || x.id === null) return <Navigate to="/" />;
 	else
 		return (

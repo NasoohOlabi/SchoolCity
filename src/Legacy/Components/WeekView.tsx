@@ -5,54 +5,46 @@ import {
 	Solver_Week_util,
 	TeacherId,
 	Transposition,
-	TranspositionInstruction,
 } from "../Interfaces/Interfaces";
 import { fill, randomFiller, useForceUpdate } from "../Logic/Logic";
 import { BasicTable } from "./BasicTable";
 // import { allClasses } from "./Data";
-import { MySelectItem } from "components/Details/MySelect";
 import SchoolCityDBContext from "DB/SchoolCityDBContext";
 import makeSolverWeek from "Legacy/makeSolverWeek";
 import solveWorker from "../../workers/solve.worker?worker";
-import { someHowPutHimAt } from "../Logic/CoreAlgo";
 import { PosType } from "../types";
 import SubAppBar from "./SubAppBar";
 import { texts } from "./UiText";
 
 export default function WeekView(theme: any): JSX.Element {
 	const WEEK_GLOBAL_Object_Ref = useRef<Solver_Week | undefined>(undefined);
+	const WORKER_Ref = useRef<Worker | undefined>(undefined);
 
 	const handleChange = useCallback((pos: PosType, m: number) => {
-		return (value: string | MySelectItem) => {
-			let teacher: TeacherId = +texts.NameMap[value as string];
-			console.clear();
-			if (WEEK_GLOBAL_Object_Ref.current) {
-				someHowPutHimAt(m, teacher, pos, WEEK_GLOBAL_Object_Ref.current);
-				WEEK_GLOBAL_Object_Ref.current.allClasses[m].l[pos].isCemented =
-					true;
-			}
+		return (value: string) => {
+			if (!WEEK_GLOBAL_Object_Ref.current) return;
+			let teacher: TeacherId =
+				WEEK_GLOBAL_Object_Ref.current.teachersGuild.filter(
+					(x) => x.name === value
+				)[0].id || 0;
+			if (!WORKER_Ref.current) WORKER_Ref.current = new solveWorker();
+			WORKER_Ref.current.postMessage({
+				m,
+				teacher,
+				pos,
+				type: "put",
+				week: JSON.stringify(
+					Solver_Week_util.compress(WEEK_GLOBAL_Object_Ref.current)
+				),
+			});
+			forceUpdate();
 		};
 	}, []);
-	// const initCell = (m: number) => {
-	// 	return (pos: PosType) => {
-	// 		return (cellRefresher?: any) => {
-	// 			// if (WEEK_GLOBAL_Object.refreshTable !== undefined)
-	// 			// WEEK_GLOBAL_Object.refreshTable[m][pos[0]][pos[1]] =
-	// 			// 	cellRefresher;
-	// 		};
-	// 	};
-	// };
-	// const initTableFooter = (m: number) => {
-	// 	return (tableFooterfn: any) => {
-	// 		if (WEEK_GLOBAL_Object.tableFooterRefresher !== undefined)
-	// 			WEEK_GLOBAL_Object.tableFooterRefresher[m] = tableFooterfn;
-	// 	};
-	// };
+
 	const db = useContext(SchoolCityDBContext);
 	const forceUpdate = useForceUpdate();
 	useEffect(
 		() => {
-			console.clear();
 			db &&
 				makeSolverWeek(db).then((week) => {
 					WEEK_GLOBAL_Object_Ref.current = week;
@@ -72,15 +64,13 @@ export default function WeekView(theme: any): JSX.Element {
 			console.log("Your browser doesn't support web workers.");
 			return;
 		}
-		const changeCellPost = (payload: TranspositionInstruction) => {
-			const { m, pos } = payload;
-			// WEEK_GLOBAL_Object.refreshTable[m][x][y]();
-		};
 		if (!WEEK_GLOBAL_Object_Ref.current) return;
 		randomFiller(WEEK_GLOBAL_Object_Ref.current);
 		forceUpdate();
 
-		const data: any = JSON.stringify(WEEK_GLOBAL_Object_Ref.current);
+		const data: any = JSON.stringify(
+			Solver_Week_util.compress(WEEK_GLOBAL_Object_Ref.current)
+		);
 		const worker: Worker = new solveWorker();
 		worker.postMessage(data);
 		worker.onmessage = (event) => {

@@ -21,6 +21,8 @@ const OneToMany: (args: OneToManyProps) => JSX.Element = ({
 	oneTable,
 	disabled = false,
 }) => {
+	console.log(`OneToMany rerendered`);
+
 	const db = useContext(SchoolCityDBContext);
 
 	const selected: any[] = lst;
@@ -60,7 +62,6 @@ const OneToMany: (args: OneToManyProps) => JSX.Element = ({
 				<span>
 					<ManyToOne
 						disabled={disabled}
-						many={oneTable}
 						one={manyTable}
 						setFk={changeHandler}
 						filter={filter}

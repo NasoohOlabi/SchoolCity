@@ -12,8 +12,10 @@ import {
 import { myCrud, OM, SchoolCityIDB, SchoolCityIDBTable } from "DB/schema";
 import { IndexableType } from "dexie";
 import { t } from "Language/t";
-import React from "react";
+import React, { useEffect } from "react";
+import DBGridMaintainer from "./DBGridMaintainer";
 import DetailsSectionSubjects from "./DetailsSectionSubjects";
+import GridMaintainer from "./GridMaintainer";
 import ManyToOne from "./ManyToOne";
 import OneToMany from "./OneToMany";
 
@@ -40,7 +42,78 @@ export const myInputFactory: (args: {
 			state[key] = evt.target.value.trim();
 			db && myCrud.update(table, db, state);
 		};
+		console.log(`myInput rerender`);
+
 		const type = typeof state[key];
+		const setLst = (lst: any[]) => {
+			state[key] = lst;
+			reRender();
+			db && myCrud.update(table, db, state);
+		};
+		switch (key) {
+			case "subjects":
+				return (
+					<DetailsSectionSubjects
+						lst={state[key]}
+						disabled={!editing}
+						sectionId={OM.identifier(state, table)}
+					/>
+				);
+			case "subordinates":
+				return (
+					<OneToMany
+						disabled={!editing}
+						lst={state[key]}
+						setLst={setLst}
+						oneTable={table}
+						manyTable="administrator"
+					/>
+				);
+			case "supervisor":
+				return (
+					<ManyToOne
+						one={table}
+						selected={state[key]}
+						disabled={!editing}
+						setFk={(id: IndexableType) => {
+							state[key] = id;
+							reRender();
+							db && myCrud.update(table, db, state);
+						}}
+					/>
+				);
+			case "schedule":
+				if (table === "section") {
+					console.log(`state[${key}] = `, state[key]);
+					return (
+						<DBGridMaintainer
+							grid={state[key].map((r: any) =>
+								r.map((v: any) => v.teacherId)
+							)}
+							colorClass={{
+								[-1]: "bg-gray-400",
+							}}
+							idsTable="teacher"
+							nullColor="bg-gray-700"
+						/>
+					);
+				} else if (table === "teacher")
+					return (
+						<DBGridMaintainer
+							grid={state[key]}
+							idsTable="section"
+							nullColor="bg-gray-300"
+						/>
+					);
+			case "availability":
+				return (
+					<GridMaintainer
+						disabled={!editing}
+						lst={state[key]}
+						setLst={setLst}
+					/>
+				);
+		}
 		switch (type) {
 			case "string":
 				return (
@@ -56,12 +129,30 @@ export const myInputFactory: (args: {
 						/>
 					</div>
 				);
+			case "object":
+				if (key.endsWith("Ids") && Array.isArray(state[key])) {
+					const setLst = (lst: any[]) => {
+						state[key] = lst;
+						reRender();
+						db && myCrud.update(table, db, state);
+					};
+					return (
+						<OneToMany
+							disabled={!editing}
+							lst={state[key]}
+							setLst={setLst}
+							oneTable={table}
+							manyTable={
+								key.substring(0, key.length - 3) as SchoolCityIDBTable
+							}
+						/>
+					);
+				} else return <p>Unsupported Type</p>;
 			case "number":
 				const IdLess = key.substring(0, key.length - 2);
 				const isId = key.substring(key.length - 2) === "Id";
 				return isId ? (
 					<ManyToOne
-						many={table}
 						one={
 							// @ts-ignore
 							IdLess === "vicePrincipal"
@@ -99,34 +190,6 @@ export const myInputFactory: (args: {
 						className="-ml-4"
 					/>
 				);
-			case "object":
-				console.log(`key = `, key);
-				if (key === "subjects") {
-					return (
-						<DetailsSectionSubjects
-							lst={state[key]}
-							disabled={!editing}
-							sectionId={OM.identifier(state, table)}
-						/>
-					);
-				} else if (key.endsWith("Ids") && state[key].length !== undefined) {
-					const setLst = (lst: any[]) => {
-						state[key] = lst;
-						reRender();
-						db && myCrud.update(table, db, state);
-					};
-					return (
-						<OneToMany
-							disabled={!editing}
-							lst={state[key]}
-							setLst={setLst}
-							oneTable={table}
-							manyTable={
-								key.substring(0, key.length - 3) as SchoolCityIDBTable
-							}
-						/>
-					);
-				} else return <p>Unsupported Type</p>;
 			default:
 				return <p>Unsupported Type</p>;
 		}
@@ -141,6 +204,8 @@ const DetailsNDraftBase: ({}: DetailsNDraftBaseProps) => JSX.Element = ({
 	myInput,
 	saveHandler,
 }) => {
+	console.log(`DetailsNDraftBase rerendered`);
+	useEffect(() => {}, [title, editing, width]);
 	return (
 		<div className="header-page-center-container">
 			<Card className="header-page-center-container-card">

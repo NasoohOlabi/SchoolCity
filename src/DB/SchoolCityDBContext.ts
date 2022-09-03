@@ -1,6 +1,6 @@
 import { createContext } from "react";
-import { SchoolCityIDB } from "./schema";
+import { initializeDB, SchoolCityIDB } from "./schema";
 
-const SchoolCityDBContext = createContext<SchoolCityIDB | null>(null)
+const SchoolCityDBContext = createContext<SchoolCityIDB>(initializeDB())
 export default SchoolCityDBContext
 

@@ -42,7 +42,7 @@ function generate() {
 }
 
 const TextAnimate: ({ text }: TextAnimateProps) => JSX.Element = ({ text }) => {
-	const bg = React.useMemo(generate, [text]);
+	const bg = generate();
 	return (
 		<div
 			style={{ background: bg }}
@@ -53,4 +53,4 @@ const TextAnimate: ({ text }: TextAnimateProps) => JSX.Element = ({ text }) => {
 	);
 };
 
-export default TextAnimate;
+export default React.memo(TextAnimate, (p, np) => p.text === np.text);

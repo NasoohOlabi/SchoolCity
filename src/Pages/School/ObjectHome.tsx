@@ -42,15 +42,24 @@ const ObjectHome: (args: ObjectHomeProps) => JSX.Element = ({}) => {
 		() =>
 			db &&
 			((params.schoolName &&
+				table !== "teacher" &&
+				table !== "settings" &&
 				myCrud.getAll(table, db, {
 					where: { schoolId: params.schoolName },
 				})) ||
 				myCrud.getAll(table, db)),
 		[table]
-	) as { id: number; name: string; description: string }[];
+	) as { id: number; name: string; description: string; schoolId?: string }[];
 
 	// const w = new Worker(new URL("./workers/try.worker.ts", import.meta.url));
-
+	const displayLst = allRecords.map((x) => {
+		if (x.schoolId)
+			x.description =
+				x.schoolId === "global"
+					? "This is a default setting for all schools"
+					: "School " + x.schoolId;
+		return x;
+	});
 	// w.postMessage("fart");
 	// w.postMessage({ data: "fart" });
 	return (

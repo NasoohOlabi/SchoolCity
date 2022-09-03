@@ -9,18 +9,18 @@ const demoAdministrators: Administrator[] = [
 		name: "mary",
 		supervisorId: null,
 		email: "",
-		schoolId: 0,
+		schoolId: "Demo",
 		subordinates: []
 	},
 ];
 
 const demoGrades: Grade[] = [
-	{ number: 7, name: "Demo grade 7", administratorId: 0, schoolId: 0 },
-	{ number: 8, name: "Demo grade 8", administratorId: 0, schoolId: 0 },
-	{ number: 9, name: "Demo grade 9", administratorId: 0, schoolId: 0 },
-	{ number: 10, name: "Demo grade 10", administratorId: 0, schoolId: 0 },
-	{ number: 11, name: "Demo grade 11", administratorId: 0, schoolId: 0 },
-	{ number: 12, name: "Demo grade 12", administratorId: 0, schoolId: 0 },
+	{ number: 7, name: "Demo grade 7", administratorId: 0, schoolId: "Demo" },
+	{ number: 8, name: "Demo grade 8", administratorId: 0, schoolId: "Demo" },
+	{ number: 9, name: "Demo grade 9", administratorId: 0, schoolId: "Demo" },
+	{ number: 10, name: "Demo grade 10", administratorId: 0, schoolId: "Demo" },
+	{ number: 11, name: "Demo grade 11", administratorId: 0, schoolId: "Demo" },
+	{ number: 12, name: "Demo grade 12", administratorId: 0, schoolId: "Demo" },
 ];
 
 const demoSchool = {

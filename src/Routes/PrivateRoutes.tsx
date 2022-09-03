@@ -50,9 +50,14 @@ const PrivateRoutes: (args: IPrivateRoutes) => JSX.Element = ({
 				// make sure to catch any error
 				.catch(console.error);
 		}
-	}, [schoolRedirect, schoolRedirectLoading]);
+	}, [
+		schoolRedirect,
+		schoolRedirectLoading,
+		checkSchoolName,
+		params["schoolName"],
+	]);
 	// if (!db) return <p>Loading...</p>;
-	
+
 	const isAuthenticated =
 		(typeof isAllowed === "boolean" && isAllowed === true) ||
 		(typeof isAllowed === "function" && isAllowed() === true);

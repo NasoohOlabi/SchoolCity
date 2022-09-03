@@ -15,12 +15,14 @@ export interface ITile {
 	instance: ITitleInstance;
 	table?: SchoolCityIDBTable;
 	size?: "l" | "m" | "s";
+	blank?: boolean;
 }
 
 const Tile: ({ instance }: ITile) => JSX.Element = ({
 	instance,
 	table,
 	size = "m",
+	blank = false,
 }) => {
 	const { id, name, description, photo } = instance;
 	const sizeClasses =
@@ -31,7 +33,7 @@ const Tile: ({ instance }: ITile) => JSX.Element = ({
 			: " w-16 h-20 ";
 	//   document.getElementById("container").style.background = gradient;
 	return (
-		<Link to={`./${OM.identifier(instance, table)}`}>
+		<Link to={`./${blank ? "new" : OM.identifier(instance, table)}`}>
 			<Card className={sizeClasses + " cursor-pointer overflow-hidden"}>
 				{/* <CardHeader color="blue" className="relative h-1/2">
 			</CardHeader> */}

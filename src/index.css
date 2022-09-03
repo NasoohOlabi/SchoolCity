@@ -11,6 +11,33 @@ body {
 	padding: 0;
 	min-width: 600px;
 }
+.availability-cell {
+	border: 0.2px solid black;
+}
+.availability-cell-red {
+	background-color: rgb(229, 115, 115);
+}
+.hover-availability-cell-red:hover {
+	cursor: pointer;
+	background-color: rgb(219 88 88);
+}
+.availability-cell-green {
+	background-color: rgb(115, 229, 115);
+}
+.hover-availability-cell-green:hover {
+	cursor: pointer;
+	background-color: rgb(88 219 88);
+}
+.availability-cell-red {
+	background-color: rgb(229 229 229);
+}
+.hover-availability-cell-red:hover {
+	cursor: pointer;
+	background-color: rgb(140 140 140);
+}
+.availability-cell-black {
+	background-color: rgb(0 0 0);
+}
 .main-content {
 	@apply w-full relative bg-gray-300;
 	/* margin: 0 auto 0 auto; */

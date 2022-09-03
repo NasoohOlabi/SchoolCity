@@ -6,9 +6,9 @@ import { SettingName } from "./Settings";
 
 const stores = {
 	student: "++id,firstName,lastName,fatherName,motherName,schoolId", // section, guardianPhoneNumber, studentPhoneNumber
-	grade: "++id,number,&[name+schoolId]", // description, sectionIds, administrator
+	grade: "++id,number,name,schoolId", // description, sectionIds, administrator
 	// &name is sth like first grade or 'صف أول'
-	section: "++id,&[name+schoolId],&[number+gradeId]", // {subjectId,teacherId}[] , description, studentIds, schedule
+	section: "++id,name,schoolId,number,gradeId", // {subjectId,teacherId}[] , description, studentIds, schedule
 	// grade is foreign key to grade
 	// schedule sectionSubjectId[][]
 	administrator: "++id,phoneNumber,&name,supervisorId,email,schoolId",
@@ -16,14 +16,14 @@ const stores = {
 	// id autoIncremented for performance since it'll be used in Z3 is section
 	// schedule is section[][]
 	// availability is list of day period pairs... [0,2]===[startWeek,second]
-	settings: "++id,&[name+schoolId]", // description, value
+	settings: "++id,[name+schoolId]", // description, value
 	// &name ex: workdays:6 | periodsPerDay:5
 	// startWeek:Sunday
-	subject: "++id,name,gradeId", // periods, full Mark,  description, teacherIds, MarkHeader
+	subject: "++id,name,gradeId,schoolId", // periods, full Mark,  description, teacherIds, MarkHeader
 	// you can either just use teachers and say this teacher is in this section
 	// or you can say that this section is having math and it's this teacher teaching it
-	mark: "++id,&name,[subjectId+studentId],Mark1,Mark2,Mark3,Mark4,Mark5", // description
-	template: "++id,&name,type", // value, description
+	mark: "++id,&name,subjectId,sectionId,schoolId", // description
+	template: "++id,&name,type,schoolId", // value, description
 	school: "name", // sectionIds,vicePrincipalId , description
 	theme: "++id,&name,schoolId", // description
 	user: "uid" // photo name User
@@ -53,6 +53,9 @@ export const initializeDB = (): SchoolCityIDB & Dexie => {
 
 	initializeSettings(mydb);
 	initializeTemplates(mydb);
+
+	// @ts-ignore
+	window.db = mydb
 
 	return mydb;
 };
@@ -136,7 +139,7 @@ export const myCrud = {
 interface Setting extends SchoolCityObjectModel {
 	name: string;
 	description?: string;
-	schoolId: number | 'global';
+	schoolId: string | 'global';
 	value?: any;
 }
 const blankSetting = () => {
@@ -152,10 +155,12 @@ interface Template extends SchoolCityObjectModel {
 	description?: string;
 	type: SchoolCityIDBTable;
 	value?: any;
+	schoolId: string;
 }
 const blankTemplate = () => {
 	return {
 		name: "",
+		schoolId: "",
 		description: "",
 		type: "school",
 		value: undefined,
@@ -182,7 +187,7 @@ interface Grade extends SchoolCityObjectModel {
 	name: string;
 	description?: string;
 	administratorId: number;
-	schoolId: number
+	schoolId: string
 }
 const blankGrade = () => {
 	return {
@@ -191,20 +196,20 @@ const blankGrade = () => {
 		description: "",
 		sectionIds: [],
 		administratorId: 0,
-		schoolId: 0,
+		schoolId: "",
 		id: undefined,
 	} as Grade;
 };
 interface Theme extends SchoolCityObjectModel {
 	name: string;
 	description?: string;
-	schoolId: number;
+	schoolId: string;
 }
 const blankTheme = () => {
 	return {
 		name: "",
 		description: "",
-		schoolId: 0,
+		schoolId: "",
 	} as Theme;
 };
 interface Student extends SchoolCityObjectModel {
@@ -213,7 +218,7 @@ interface Student extends SchoolCityObjectModel {
 	fatherName: string;
 	motherName: string;
 	sectionId: number;
-	schoolId: number;
+	schoolId: string;
 	guardianPhoneNumber: string;
 	studentPhoneNumber: string;
 }
@@ -224,7 +229,7 @@ const blankStudent = () => {
 		fatherName: "",
 		motherName: "",
 		sectionId: 0,
-		schoolId: 0,
+		schoolId: "",
 		guardianPhoneNumber: "",
 		studentPhoneNumber: "",
 	} as Student;
@@ -239,7 +244,7 @@ interface Section extends SchoolCityObjectModel {
 	name: string;
 	number: number;
 	gradeId: number;
-	schoolId: number;
+	schoolId: string;
 	description?: string;
 	studentIds?: number[];
 	subjects: SectionSubject[]
@@ -250,7 +255,7 @@ const blankSection = () => {
 		name: "",
 		number: 0,
 		gradeId: 0,
-		schoolId: 0,
+		schoolId: "",
 		description: "",
 		studentIds: [],
 		subjects: [],
@@ -263,7 +268,7 @@ interface Administrator extends SchoolCityObjectModel {
 	name: string;
 	supervisorId?: number | null;
 	email?: string;
-	schoolId: number;
+	schoolId: string;
 	subordinates: Administrator[];
 	divisionName?: string
 }
@@ -273,7 +278,7 @@ const blankAdministrator = () => {
 		name: "",
 		supervisorId: 0,
 		email: "",
-		schoolId: 0,
+		schoolId: "",
 	} as Administrator;
 };
 type SectionId = number;
@@ -287,6 +292,7 @@ interface Teacher extends SchoolCityObjectModel {
 	schedule: TeacherScheduleCell[][];
 	availability: [number, number][];
 	subjectIds?: number[];
+	schoolIds: string[]
 }
 const blankTeacher = () => {
 	return {
@@ -297,6 +303,7 @@ const blankTeacher = () => {
 		schedule: [],
 		availability: [],
 		subjectIds: [],
+		schoolIds: [],
 	} as Teacher;
 };
 type Average = { type: 'avg', cols: [IndexedMarkCol] }
@@ -310,6 +317,7 @@ interface Subject extends SchoolCityObjectModel {
 	name: string;
 	description?: string;
 	gradeId: number;
+	schoolId: string;
 	periods: number;
 	fullMark?: number;
 	marks?: MarkHeader;
@@ -319,6 +327,7 @@ const blankSubject = () => {
 		name: "",
 		description: "",
 		gradeId: 0,
+		schoolId: "",
 		teacherId: 0,
 		periods: 0,
 		fullMark: 0,
@@ -328,6 +337,7 @@ const blankSubject = () => {
 interface Mark extends SchoolCityObjectModel {
 	studentId: number;
 	subjectId: number;
+	schoolId: number
 	mark1: number;
 	mark2: number;
 	mark3: number;
@@ -339,6 +349,7 @@ const blankMark = () => {
 	return {
 		studentId: 0,
 		subjectId: 0,
+		schoolId: 0,
 		mark1: 0,
 		mark2: 0,
 		mark3: 0,

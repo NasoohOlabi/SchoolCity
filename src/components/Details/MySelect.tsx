@@ -24,7 +24,7 @@ export interface MySelectProps {
 	border?: "normal" | "none";
 }
 
-const MyImage = (usedValue: MySelectItem, kind: SchoolCityIDBTable) => {
+export const MyImage = (usedValue: MySelectItem, kind: SchoolCityIDBTable) => {
 	const params = useParams();
 	return (
 		(usedValue.avatar || usedValue.name) && (
@@ -74,7 +74,7 @@ const MySelect: ({}: MySelectProps) => JSX.Element = ({
 
 	useEffect(() => {
 		setValue(selectedItem);
-	}, [value, selectedItem]);
+	}, [value, selectedItem?.id, selectedItem?.name, selectedItem?.avatar]);
 	return (
 		<Listbox
 			value={value}

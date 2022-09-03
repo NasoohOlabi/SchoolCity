@@ -9,7 +9,7 @@ import {
 	TranspositionInstruction,
 } from "../Interfaces/Interfaces";
 import { someHowPutHimAt } from "./CoreAlgo";
-import { withoutPos } from "./util";
+import { util, withoutPos } from "./util";
 export function fill(week: Solver_Week) {
 	const availables = week.availables;
 	const allClasses: IClass[] = week.allClasses;
@@ -27,53 +27,52 @@ export function fill(week: Solver_Week) {
 		CementNoOtherOptionButToPutHere(allClasses, m, week);
 	});
 }
-// const noOtherOptionButToPutHere = (m: number, week: Solver_Week, changeCellPost: (change: TranspositionInstruction) => void) => {
-// 	const Class = week.allClasses[m];
-// 	Object.keys(Class.teachers).forEach((teacher) => {
-// 		const t = Class.teachers[teacher]
-// 		if (t !== undefined &&
-// 			t.remPeriods === t.emptyAvailables.length) {
-// 			t.emptyAvailables.forEach((pos: PosType) => {
-// 				if (1 === util.situationInt(util.situation(teacher, pos, m, week))) {
-// 					changeCellPost({ teacher, m, pos })
-// 					putHimAt(week, m, teacher, pos, "put");
-// 				}
-// 			});
-// 		}
-// 	});
-// };
-// const autoFill = function (
-// 	m: number,
-// 	week: Solver_Week,
-// 	changeCellPost: (change: TranspositionInstruction) => void
-// ) {
-// 	let xxx = 0;
-// 	const Class = week.allClasses[m]
-// 	for (let x = 0; x < Class.l.length; x++) {
-// 		for (let y = 0; y < Class.l[x].length; y++) {
-// 			const RealOptions = actualOptions([x, y], m, week)
-// 			if (RealOptions.length === 1 && Class.l[x][y].currentTeacher === '') {
-// 				//do the change
-// 				changeCellPost({ teacher: RealOptions[0], m, pos: [x, y] })
-// 				putHimAt(week, m, RealOptions[0], [x, y], "put")
+const noOtherOptionButToPutHere = (m: number, week: Solver_Week) => {
+	const Class = week.allClasses[m];
+	Class.teachers.forEach((t, teacher) => {
+		if (!t) return;
+		if (t.remPeriods === t.emptyAvailables.length) {
+			t.emptyAvailables.forEach((pos: PosType) => {
+				if (
+					1 === util.situationInt(util.situation(teacher, pos, m, week))
+				) {
+					putHimAt(week, m, teacher, pos, "put");
+				}
+			});
+		}
+	});
+};
+const autoFill = function (m: number, week: Solver_Week) {
+	const Class = week.allClasses[m];
+	for (let pos = 0; pos < Class.l.length; pos++) {
+		const RealOptions = actualOptions(pos, m, week);
+		if (
+			RealOptions.length === 1 &&
+			Class.l[pos].currentTeacher === TeacherType_nullValue
+		) {
+			//do the change
+			putHimAt(week, m, RealOptions[0], pos, "put");
 
-// 				//go back to the start to see if your changes affected what you have already checked
-// 				if (xxx < 100) {
-// 					x = 0; y = 0;
-// 					xxx++;
-// 				}
-// 				else {
-// 					alert(`OK here is the deal infinite loop \n Again `);
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-
+			//go back to the start to see if your changes affected what you have already checked
+			pos = 0;
+		}
+	}
+};
+function comp(c: IClass) {
+	let acc = 0;
+	c.teachers.forEach((teacherData, tId) => {
+		acc += teacherData.emptyAvailables.length;
+	});
+	return acc;
+}
 export function randomFiller(week: Solver_Week) {
 	const allClasses = week.allClasses;
-	for (let m = 0; m < allClasses.length; m++) {
-		const Class = allClasses[m];
+	const sortedAllClasses = [...allClasses].sort(
+		(Class1, Class2) => comp(Class1) - comp(Class2)
+	);
+	sortedAllClasses.forEach((x) => console.log(x.Name));
+	sortedAllClasses.forEach((Class) => {
+		const m = allClasses.map((c) => c.Name).indexOf(Class.Name);
 		Class.l.forEach((_, pos) => {
 			if (
 				Class.l[pos].currentTeacher === TeacherType_nullValue &&
@@ -82,15 +81,18 @@ export function randomFiller(week: Solver_Week) {
 			) {
 				const aOptions: TeacherId[] = actualOptions(pos, m, week);
 				if (aOptions.length > 0) {
-					const teacher =
-						aOptions[Math.floor(Math.random() * aOptions.length)];
+					// const teacher =
+					// 	aOptions[Math.floor(Math.random() * aOptions.length)];
+					const teacher = aOptions[0];
 					putHimAt(week, m, teacher, pos, "put");
-					// noOtherOptionButToPutHere(m, week, changeCellPost)
-					// autoFill(m, week, changeCellPost)
 				}
+				sortedAllClasses.forEach((Class, m) => {
+					noOtherOptionButToPutHere(m, week);
+					autoFill(m, week);
+				});
 			}
 		});
-	}
+	});
 }
 export function useForceUpdate() {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -169,7 +171,6 @@ export const putHimAt = function (
 			week.teacherSchedule[${teacher}][${pos}] = ${
 				week.teacherSchedule[teacher][pos]
 			} === -1
-
 			`);
 			return false;
 		}
@@ -231,9 +232,9 @@ export const fastForward = (
 				return;
 			else empties.push(pos);
 		});
-		console.log(`empties = `, empties);
+		console.log(`Class ${Class.Name} empties = `, empties);
+		console.log(`Class ${Class.Name} count empties = `, empties.length);
 		empties.forEach((pos: PosType) => {
-			console.log(`filling ${pos}`);
 			const teachers = Class.l[pos].Options.sort(
 				(a, b) => 0.5 - Math.random()
 			);

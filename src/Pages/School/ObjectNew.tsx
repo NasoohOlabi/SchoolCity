@@ -6,7 +6,8 @@ interface ObjectNewProps {}
 
 const ObjectNew: (args: ObjectNewProps) => JSX.Element = ({}) => {
 	const x = useTableUrl(2);
-	if (x.type === "redirect" || x.id !== null) return <Navigate to="/" />;
+	console.log(`x = `, x);
+	if (x.type === "redirect" || x.id === "new") return <Navigate to="/" />;
 
 	const table = x.table;
 

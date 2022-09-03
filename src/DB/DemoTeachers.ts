@@ -1,41 +1,9 @@
 import { Teacher } from "./schema";
 
-const mapping = {
-	t0: "Rahaf Kayal",
-	t1: "Anas Shaban",
-	t2: "Nisreen Selo",
-	t3: "Mayson Al-Monakel",
-	t4: "Eyad Al-Taba3",
-	t5: "Tawfiq Khabaz",
-	t6: "MHD Bardawel",
-	t7: "A'yda Husain",
-	t8: "3rfan Kholendy",
-	t9: "Laila",
-	t10: "Oydad A'airan",
-	t11: "Abyear Hammoud",
-	t12: "Maram jadeed",
-	t13: "Eiman Taha",
-	t14: "Nermen Ash",
-	t15: "Saeed KabaKouly",
-	t16: "IT",
-	t17: "Khaled Barakat",
-	t18: "Mona Hasanyn",
-	t19: "Nour Hamad",
-	t20: "Fayes Wahba",
-	t21: "Issam Kreeshan",
-	t22: "Reem Mukhalalaty",
-	t23: "Heba Kozon",
-	t24: "Nada Al-Safadi",
-	t25: "Nour Refayi",
-	t26: "Arts",
-	t27: "PA",
-	t28: "Music",
-	t29: "Hala Huobi",
-}
 
 const demoTeachers: Teacher[] = [
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher0",
 		availability: [
 			[1, 0],
@@ -78,7 +46,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher1",
 		availability: [
 			[0, 4],
@@ -97,7 +65,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher2",
 		availability: [
 			[1, 0],
@@ -155,7 +123,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher3",
 		availability: [
 			[2, 4],
@@ -174,7 +142,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher4",
 		availability: [
 			[0, 0],
@@ -197,7 +165,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher5",
 		availability: [
 			[0, 0],
@@ -220,7 +188,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher6",
 		availability: [
 			[2, 0],
@@ -236,7 +204,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher7",
 		availability: [
 			[1, 0],
@@ -252,7 +220,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher8",
 		availability: [
 			[2, 5],
@@ -269,7 +237,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher9",
 		availability: [
 			[0, 0],
@@ -320,7 +288,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher10",
 		availability: [
 			[0, 0],
@@ -378,7 +346,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher11",
 		availability: [
 			[0, 0],
@@ -436,7 +404,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher12",
 		availability: [
 			[0, 0],
@@ -494,7 +462,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher13",
 		availability: [
 			[0, 0],
@@ -552,7 +520,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher14",
 		availability: [
 			[0, 0],
@@ -610,7 +578,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher15",
 		availability: [
 			[0, 0],
@@ -653,7 +621,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher16",
 		availability: [
 			[0, 0],
@@ -696,7 +664,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher17",
 		availability: [
 			[3, 0],
@@ -739,7 +707,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher18",
 		availability: [
 			[1, 0],
@@ -812,7 +780,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher19",
 		availability: [
 			[2, 0],
@@ -870,7 +838,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher20",
 		availability: [
 			[2, 3],
@@ -891,7 +859,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher21",
 		availability: [
 			[1, 0],
@@ -919,7 +887,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher22",
 		availability: [
 			[0, 0],
@@ -977,7 +945,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher23",
 		availability: [
 			[0, 0],
@@ -1020,7 +988,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher24",
 		availability: [
 			[1, 0],
@@ -1078,7 +1046,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher25",
 		availability: [
 			[1, 0],
@@ -1136,7 +1104,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher26",
 		availability: [
 			[0, 0],
@@ -1209,7 +1177,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher27",
 		availability: [
 			[0, 0],
@@ -1277,7 +1245,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher28",
 		availability: [
 			[0, 0],
@@ -1350,7 +1318,7 @@ const demoTeachers: Teacher[] = [
 		],
 	},
 	{
-		phoneNumber: "",
+		schoolIds: ["Demo"], phoneNumber: "",
 		name: "teacher29",
 		availability: [
 			[0, 0],

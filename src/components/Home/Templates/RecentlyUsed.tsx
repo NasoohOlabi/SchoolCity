@@ -61,7 +61,7 @@ const RecentlyUsed = ({ table }: RecentlyUsedProps): JSX.Element => {
 				)}
 			</div>
 			<section className="recently-item-section flex justify-items-start w-full items-center align-middle">
-				<Tile instance={blankInstance} />
+				<Tile instance={blankInstance} blank />
 				{templates &&
 					templates.map((template) => (
 						<Tile key={template.id} instance={template} />

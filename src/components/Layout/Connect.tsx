@@ -8,7 +8,7 @@ const SCOPE =
 const Connect: ({}: ConnectProps) => JSX.Element = ({}) => {
 	const [gapiUser, setGapiUser] = useStateCtx("gapiUser", "Connect");
 
-	console.log(`gapiUser = `, gapiUser);
+	// console.log(`gapiUser = `, gapiUser);
 	const login = useGoogleLogin({
 		onSuccess: (response) => {
 			console.log(`response = `, response);

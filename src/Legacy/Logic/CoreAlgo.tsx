@@ -507,7 +507,8 @@ export const someHowPutHimAt = (
 	pos: PosType,
 	week: Solver_Week,
 	iterativeSolutionPoster?: (changes: TranspositionInstruction[]) => void,
-	size?: number
+	size?: number,
+	justOne: boolean = false
 ): void => {
 	/*
 	* discription*
@@ -518,9 +519,8 @@ export const someHowPutHimAt = (
 	?!
 	*/
 	let freeze = true;
-	let justOne = false;
 	if (iterativeSolutionPoster) freeze = false;
-	if (iterativeSolutionPoster) justOne = true;
+	if (justOne === undefined && iterativeSolutionPoster) justOne = true;
 	//short hands
 	week.Swapping = true;
 	// week.HandyAny.beforeAction = [];

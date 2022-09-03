@@ -70,7 +70,6 @@ export class argumentsQueue {
 	constructor(size: number | undefined) {
 		this._max = size || 100000;
 		this.queue = new Queue<callNodeType>();
-		console.log(`constructed a queue Sized ${this._max}`);
 	}
 	_accepting: boolean = true;
 	_stats = {
@@ -80,6 +79,7 @@ export class argumentsQueue {
 		nodesFromPush: 0,
 		pivotToCalls: 0,
 		nodesFromPivot: 0,
+		maxDepth: -1,
 	};
 	Empty(): boolean {
 		return this.queue.Empty();
@@ -96,6 +96,14 @@ export class argumentsQueue {
 		return false;
 	}
 	dequeue(): void {
+		if (this.queue.length() === 1) {
+			let d = 1;
+			let tmp = this.queue.front();
+			while (tmp.parent) {
+				d++;
+			}
+			this._stats.maxDepth = d;
+		}
 		this.queue.dequeue();
 	}
 	unlock(): void {
@@ -127,6 +135,7 @@ export class argumentsQueue {
 			nodesFromPivot: 0,
 			nodesFromPull: 0,
 			nodesFromPush: 0,
+			maxDepth: -1,
 		};
 	}
 	length() {
@@ -238,7 +247,7 @@ interface ICell {
 	pos: PosType;
 	// cellInitializer: any;
 	m: number;
-	handleChange: (event: any) => void;
+	handleChange: (value: string) => void;
 	WEEK_GLOBAL_Object: Solver_Week;
 }
 
@@ -264,6 +273,52 @@ interface Solver_Week {
 	forceUpdate?: () => void;
 }
 export const Solver_Week_util = {
+	compress: (week: Solver_Week) => {
+		let compressedWeek: any = { ...week };
+		delete compressedWeek["teachersGuild"];
+		delete compressedWeek.forceUpdate;
+		compressedWeek.allClasses = week.allClasses.map((Class) => {
+			const l = Class.l.map(({ currentTeacher, isCemented, Options }) => {
+				return { c: currentTeacher, i: isCemented, o: Options };
+			});
+			const teachers = Class.teachers.map((t) => {
+				return {
+					p: t.Periods,
+					ph: t.periodsHere,
+					rp: t.remPeriods,
+					e: t.emptyAvailables,
+				};
+			});
+			return {
+				l,
+				Name: Class.Name,
+				teachers,
+			};
+		});
+		return compressedWeek;
+	},
+	decompress: (week: any): Solver_Week => {
+		let decompressedWeek: any = { ...week };
+		decompressedWeek.allClasses = week.allClasses.map((Class: any) => {
+			const l = Class.l.map(({ c, i, o }: any) => {
+				return { currentTeacher: c, isCemented: i, Options: o };
+			});
+			const teachers = Class.teachers.map((t: any) => {
+				return {
+					Periods: t.p,
+					periodsHere: t.ph,
+					remPeriods: t.rp,
+					emptyAvailables: t.e,
+				};
+			});
+			return {
+				l,
+				Name: Class.Name,
+				teachers,
+			};
+		});
+		return decompressedWeek;
+	},
 	addClass(week: Solver_Week) {
 		const cls: IClass = {
 			l: [],

@@ -1,4 +1,5 @@
-import { mp, myCrud, SchoolCityIDBTable } from "DB/schema";
+import type { SchoolCityIDBTable } from "DB/schema";
+import { mp, myCrud } from "DB/schema";
 import SchoolCityDBContext from "DB/SchoolCityDBContext";
 import { t } from "Language/t";
 import useRerender from "Model/hooks/useRerender";

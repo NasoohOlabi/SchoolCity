@@ -1,7 +1,6 @@
 import ManyToOne from "components/Details/ManyToOne";
 import SchoolCityDBContext from "DB/SchoolCityDBContext";
 import { IndexableType } from "dexie";
-import { useLiveQuery } from "dexie-react-hooks";
 import { useContext } from "react";
 
 export interface DetailsSectionSubjectsProps {
@@ -13,17 +12,9 @@ export interface DetailsSectionSubjectsProps {
 const DetailsSectionSubjects: ({}: DetailsSectionSubjectsProps) => JSX.Element =
 	({ lst, disabled, sectionId }) => {
 		const db = useContext(SchoolCityDBContext);
-		if (!db) return <p>cant't access db</p>;
 		const teacherIds = lst.map((o) => o.teacherId);
 		const subjectIds = lst.map((o) => o.subjectId);
-		const teachers = useLiveQuery(
-			() => db.teacher.where("id").anyOf(teacherIds),
-			[teacherIds, teacherIds.length, ...teacherIds]
-		);
-		const subjects = useLiveQuery(
-			() => db.subject.where("id").anyOf(subjectIds),
-			[subjectIds, subjectIds.length, ...subjectIds]
-		);
+
 		return (
 			<div>
 				{teacherIds.map((teacherId, index) => (
@@ -34,7 +25,6 @@ const DetailsSectionSubjects: ({}: DetailsSectionSubjectsProps) => JSX.Element =
 						<ManyToOne
 							selected={teacherId}
 							one="teacher"
-							many="section"
 							disabled={disabled}
 							setFk={function (id: IndexableType): void {
 								db.section.update(sectionId, {
@@ -49,7 +39,6 @@ const DetailsSectionSubjects: ({}: DetailsSectionSubjectsProps) => JSX.Element =
 						<ManyToOne
 							selected={subjectIds[index]}
 							one="subject"
-							many="section"
 							disabled={disabled}
 							setFk={function (id: IndexableType): void {
 								db.section.update(sectionId, {

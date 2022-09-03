@@ -6,7 +6,7 @@ export interface ConnectionBtnProps {}
 
 const ConnectionBtn: ({}: ConnectionBtnProps) => JSX.Element = ({}) => {
 	const [gapiUser, _] = useStateCtx("gapiUser", "ConnectionBtn");
-	console.log(`gapiUser = `, gapiUser);
+	// console.log(`gapiUser = `, gapiUser);
 	return !!gapiUser ? <Disconnect /> : <Connect />;
 };
 

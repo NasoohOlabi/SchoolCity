@@ -8,7 +8,7 @@ export const useUser = () => {
 	const [pending, setPending] = useState(true)
 	useEffect(() => {
 		auth.onAuthStateChanged((user: User | null) => {
-			console.log(`user set to ${JSON.stringify(user?.toJSON())} by observer`);
+			// console.log(`user set to ${JSON.stringify(user?.toJSON())} by observer`);
 			setCurrentUser(user);
 			if (pending) {
 				console.log(`pending ${pending} set to false by observer`);

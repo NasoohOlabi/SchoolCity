@@ -2,122 +2,122 @@ import { Section } from "./schema";
 
 const DemoSections: Section[] = [
 	{
-		schoolId: 0,
+		schoolId: "",
 		name: "grade7class1",
 		schedule: [
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
 				},
 			],
 		],
@@ -141,122 +141,122 @@ const DemoSections: Section[] = [
 		],
 	},
 	{
-		schoolId: 0,
+		schoolId: "",
 		name: "grade7class2",
 		schedule: [
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
 				},
 			],
 		],
@@ -280,122 +280,122 @@ const DemoSections: Section[] = [
 		],
 	},
 	{
-		schoolId: 0,
+		schoolId: "",
 		name: "grade8class1",
 		schedule: [
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
 				},
 			],
 		],
@@ -420,122 +420,122 @@ const DemoSections: Section[] = [
 		],
 	},
 	{
-		schoolId: 0,
+		schoolId: "",
 		name: "grade8class2",
 		schedule: [
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
 				},
 			],
 		],
@@ -560,122 +560,122 @@ const DemoSections: Section[] = [
 		],
 	},
 	{
-		schoolId: 0,
+		schoolId: "",
 		name: "grade9class1",
 		schedule: [
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
 				},
 			],
 		],
@@ -698,122 +698,122 @@ const DemoSections: Section[] = [
 		],
 	},
 	{
-		schoolId: 0,
+		schoolId: "",
 		name: "grade9class2",
 		schedule: [
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
 				},
 			],
 		],
@@ -836,122 +836,122 @@ const DemoSections: Section[] = [
 		],
 	},
 	{
-		schoolId: 0,
+		schoolId: "",
 		name: "grade10class1",
 		schedule: [
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
 				},
 			],
 		],
@@ -975,122 +975,122 @@ const DemoSections: Section[] = [
 		],
 	},
 	{
-		schoolId: 0,
+		schoolId: "",
 		name: "grade10class2",
 		schedule: [
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
 				},
 			],
 		],
@@ -1114,122 +1114,122 @@ const DemoSections: Section[] = [
 		],
 	},
 	{
-		schoolId: 0,
+		schoolId: "",
 		name: "grade11class1",
 		schedule: [
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
 				},
 			],
 		],
@@ -1254,122 +1254,122 @@ const DemoSections: Section[] = [
 		],
 	},
 	{
-		schoolId: 0,
+		schoolId: "",
 		name: "grade11class2",
 		schedule: [
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
 				},
 			],
 		],
@@ -1394,122 +1394,122 @@ const DemoSections: Section[] = [
 		],
 	},
 	{
-		schoolId: 0,
+		schoolId: "",
 		name: "grade12class1",
 		schedule: [
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
-				},
-			],
-			[
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
-				},
-				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 			],
 			[
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
 				},
 				{
-					teacherId:-1,pinned: false,
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+			],
+			[
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
+				},
+				{
+					teacherId: -1, pinned: false,
 				},
 			],
 		],
