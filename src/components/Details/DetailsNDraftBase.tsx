@@ -1,4 +1,7 @@
-import { faPencil } from "@fortawesome/free-solid-svg-icons";
+import {
+	faArrowUpRightFromSquare,
+	faPencil,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	Button,
@@ -9,8 +12,9 @@ import {
 	Switch,
 	Typography,
 } from "@material-tailwind/react";
-import { myCrud, OM, SchoolCityIDB, SchoolCityIDBTable } from "DB/schema";
+import { OM, SchoolCityIDB, SchoolCityIDBTable } from "DB/schema";
 import { IndexableType } from "dexie";
+import Sheets from "Gapi/Sheets/Sheets";
 import { t } from "Language/t";
 import React, { useEffect } from "react";
 import DBGridMaintainer from "./DBGridMaintainer";
@@ -18,16 +22,7 @@ import DetailsSectionSubjects from "./DetailsSectionSubjects";
 import GridMaintainer from "./GridMaintainer";
 import ManyToOne from "./ManyToOne";
 import OneToMany from "./OneToMany";
-
-export interface DetailsNDraftBaseProps {
-	title: string;
-	editing: boolean;
-	setEditing: React.Dispatch<boolean>;
-	width: number;
-	state: any;
-	myInput: any;
-	saveHandler: any;
-}
+import SectionSubjects from "./SectionSubjects";
 
 export const myInputFactory: (args: {
 	table: SchoolCityIDBTable;
@@ -40,16 +35,26 @@ export const myInputFactory: (args: {
 	(key: string) => {
 		const handler: React.ChangeEventHandler<HTMLInputElement> = (evt) => {
 			state[key] = evt.target.value.trim();
-			db && myCrud.update(table, db, state);
+			// db && myCrud.update(table, db, state);
 		};
 		console.log(`myInput rerender`);
 
 		const type = typeof state[key];
 		const setLst = (lst: any[]) => {
+			console.log(`lst = `, lst);
 			state[key] = lst;
 			reRender();
-			db && myCrud.update(table, db, state);
+			// db && myCrud.update(table, db, state);
 		};
+		if (table === "mark" && key === "subjectId") {
+			return (
+				<SectionSubjects
+					mark={state}
+					disabled={!editing}
+					reRender={reRender}
+				/>
+			);
+		}
 		switch (key) {
 			case "subjects":
 				return (
@@ -69,19 +74,22 @@ export const myInputFactory: (args: {
 						manyTable="administrator"
 					/>
 				);
-			case "supervisor":
-				return (
-					<ManyToOne
-						one={table}
-						selected={state[key]}
-						disabled={!editing}
-						setFk={(id: IndexableType) => {
-							state[key] = id;
-							reRender();
-							db && myCrud.update(table, db, state);
-						}}
-					/>
-				);
+			case "supervisorId":
+				if (state[key] === state.id && !editing) {
+					return <p>This is a top ranking administrator</p>;
+				} else
+					return (
+						<ManyToOne
+							one={table}
+							selected={state[key]}
+							disabled={!editing}
+							setFk={(id: IndexableType) => {
+								state[key] = id;
+								reRender();
+								// db && myCrud.update(table, db, state);
+							}}
+						/>
+					);
 			case "schedule":
 				if (table === "section") {
 					console.log(`state[${key}] = `, state[key]);
@@ -132,9 +140,10 @@ export const myInputFactory: (args: {
 			case "object":
 				if (key.endsWith("Ids") && Array.isArray(state[key])) {
 					const setLst = (lst: any[]) => {
+						console.log(`lst = `, lst);
 						state[key] = lst;
 						reRender();
-						db && myCrud.update(table, db, state);
+						// db && myCrud.update(table, db, state);
 					};
 					return (
 						<OneToMany
@@ -164,7 +173,7 @@ export const myInputFactory: (args: {
 						setFk={(id: IndexableType) => {
 							state[key] = id;
 							reRender();
-							db && myCrud.update(table, db, state);
+							// db && myCrud.update(table, db, state);
 						}}
 					/>
 				) : (
@@ -194,9 +203,19 @@ export const myInputFactory: (args: {
 				return <p>Unsupported Type</p>;
 		}
 	};
-
+export interface DetailsNDraftBaseProps {
+	title: string;
+	editing: boolean;
+	setEditing: React.Dispatch<boolean>;
+	width: number;
+	state: any;
+	myInput: any;
+	saveHandler: any;
+	table: SchoolCityIDBTable;
+}
 const DetailsNDraftBase: ({}: DetailsNDraftBaseProps) => JSX.Element = ({
 	title,
+	table,
 	editing,
 	setEditing,
 	width,
@@ -206,27 +225,43 @@ const DetailsNDraftBase: ({}: DetailsNDraftBaseProps) => JSX.Element = ({
 }) => {
 	console.log(`DetailsNDraftBase rerendered`);
 	useEffect(() => {}, [title, editing, width]);
+	const storeKeys = Object.keys(state).filter(
+		(key) => key !== "sheetId" && key !== "title" && key !== "id"
+	);
 	return (
 		<div className="header-page-center-container">
 			<Card className="header-page-center-container-card">
 				<div className="flex pl-6 justify-between items-center ">
 					<Typography variant="h1">{title}</Typography>
-					<IconButton
-						className="md:inline-flex h-20 w-20 rounded "
-						onClick={() => setEditing(!editing)}
-					>
-						{/* <Icon name="menu" size="3xl" /> */}
-						<FontAwesomeIcon icon={faPencil} />
-					</IconButton>
+					<span className="flex justify-between items-center">
+						{table === "mark" && (
+							<Button
+								className="md:inline-flex h-fit w-fit rounded mr-4"
+								onClick={() => {
+									Sheets(state);
+								}}
+							>
+								Go to Sheet
+								<FontAwesomeIcon
+									className="ml-4"
+									icon={faArrowUpRightFromSquare}
+								/>
+							</Button>
+						)}
+						<IconButton
+							className="md:inline-flex h-20 w-20 rounded "
+							onClick={() => setEditing(!editing)}
+						>
+							{/* <Icon name="menu" size="3xl" /> */}
+							<FontAwesomeIcon icon={faPencil} />
+						</IconButton>
+					</span>
 				</div>
 				{width > 1024 ? (
 					<div className="lg:flex w-full">
 						<div className="right lg:w-1/2 lg:h-full">
-							{Object.keys(state)
-								.filter(
-									(key, ind) =>
-										key !== "title" && key !== "id" && ind % 2 === 0
-								)
+							{storeKeys
+								.filter((_, ind) => ind % 2 === 0)
 								.map((key) => (
 									<span key={key} className="w-fit relative inline">
 										<div className="relative flex m-4  content-center">
@@ -246,11 +281,8 @@ const DetailsNDraftBase: ({}: DetailsNDraftBaseProps) => JSX.Element = ({
 								))}
 						</div>
 						<div className="left lg:w-1/2 lg:h-full">
-							{Object.keys(state)
-								.filter(
-									(key, ind) =>
-										key !== "title" && key !== "id" && ind % 2 !== 0
-								)
+							{storeKeys
+								.filter((_, ind) => ind % 2 !== 0)
 								.map((key) => (
 									<span key={key} className="w-fit relative inline">
 										<div className="relative flex m-4  content-center">
@@ -271,25 +303,23 @@ const DetailsNDraftBase: ({}: DetailsNDraftBaseProps) => JSX.Element = ({
 						</div>
 					</div>
 				) : (
-					Object.keys(state)
-						.filter((key, ind) => key !== "title" && key !== "id")
-						.map((key) => (
-							<span key={key} className="w-fit relative inline">
-								<div className="relative flex m-4  content-center">
-									<Typography
-										className="flex justify-center items-center mr-4"
-										variant="h6"
-									>
-										{key.endsWith("Id")
-											? key.substring(0, key.length - 2)
-											: key.endsWith("Ids")
-											? key.substring(0, key.length - 3) + "s"
-											: key}
-									</Typography>
-									{myInput(key)}
-								</div>
-							</span>
-						))
+					storeKeys.map((key) => (
+						<span key={key} className="w-fit relative inline">
+							<div className="relative flex m-4  content-center">
+								<Typography
+									className="flex justify-center items-center mr-4"
+									variant="h6"
+								>
+									{key.endsWith("Id")
+										? key.substring(0, key.length - 2)
+										: key.endsWith("Ids")
+										? key.substring(0, key.length - 3) + "s"
+										: key}
+								</Typography>
+								{myInput(key)}
+							</div>
+						</span>
+					))
 				)}
 				<CardFooter>
 					<div className="flex justify-between items-center flex-row-reverse h-12">

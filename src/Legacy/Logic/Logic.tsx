@@ -70,7 +70,6 @@ export function randomFiller(week: Solver_Week) {
 	const sortedAllClasses = [...allClasses].sort(
 		(Class1, Class2) => comp(Class1) - comp(Class2)
 	);
-	sortedAllClasses.forEach((x) => console.log(x.Name));
 	sortedAllClasses.forEach((Class) => {
 		const m = allClasses.map((c) => c.Name).indexOf(Class.Name);
 		Class.l.forEach((_, pos) => {

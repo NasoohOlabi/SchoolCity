@@ -17,8 +17,11 @@ const Connect: ({}: ConnectProps) => JSX.Element = ({}) => {
 			gapi.load("client", () => {
 				console.log(`gapi.client = `, gapi.client);
 				gapi.client.setToken({ access_token: response.access_token });
-				gapi.client.load("drive", "v3", () => {
-					console.log("drive has loaded");
+				// @ts-ignore
+				window.schoolCityLoginModalOpen(false);
+				// @ts-ignore
+				window.scheduled.forEach((f) => {
+					f();
 				});
 			});
 		},

@@ -1,24 +1,45 @@
-// @ts-ignore
-import MaterialModal from "@material-tailwind/react/Modal";
-// @ts-ignore
-import ModalBody from "@material-tailwind/react/ModalBody";
-// @ts-ignore
-import ModalFooter from "@material-tailwind/react/ModalFooter";
+import {
+	Button,
+	Dialog,
+	DialogBody,
+	DialogFooter,
+	DialogHeader,
+} from "@material-tailwind/react";
+import ConnectionBtn from "components/Layout/ConnectionBtn";
+import { Fragment, useEffect, useState } from "react";
 
-interface ModalProps {
-	active: boolean;
-	onClose: () => void;
-	Body: JSX.Element;
-	Footer: JSX.Element;
-}
+export default function Modal() {
+	const [open, setOpen] = useState(false);
 
-const Modal: React.FC<ModalProps> = ({ active, onClose, Body, Footer }) => {
+	const handleOpen = () => setOpen(!open);
+
+	useEffect(() => {
+		// @ts-ignore
+		window.schoolCityLoginModalOpen = setOpen;
+	}, [open]);
+
 	return (
-		<MaterialModal size="sm" active={active} toggler={onClose}>
-			<ModalBody>{Body}</ModalBody>
-			<ModalFooter>{Footer}</ModalFooter>
-		</MaterialModal>
+		<Fragment>
+			<Dialog open={open} handler={handleOpen}>
+				<DialogHeader>Its a simple dialog.</DialogHeader>
+				<DialogBody divider>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+					Accusamus ad reprehenderit omnis perspiciatis aut odit! Unde
+					architecto perspiciatis, dolorum dolorem iure quia saepe autem
+					accusamus eum praesentium magni corrupti explicabo!
+				</DialogBody>
+				<DialogFooter>
+					<Button
+						variant="text"
+						color="red"
+						onClick={handleOpen}
+						className="mr-1"
+					>
+						<span>Cancel</span>
+					</Button>
+					<ConnectionBtn />
+				</DialogFooter>
+			</Dialog>
+		</Fragment>
 	);
-};
-
-export default Modal;
+}

@@ -335,26 +335,18 @@ const blankSubject = () => {
 };
 
 interface Mark extends SchoolCityObjectModel {
-	studentId: number;
+	sectionId: number;
 	subjectId: number;
-	schoolId: number
-	mark1: number;
-	mark2: number;
-	mark3: number;
-	mark4: number;
-	mark5: number;
+	schoolId: number;
+	sheetId: any;
 	description?: string;
 }
 const blankMark = () => {
 	return {
-		studentId: 0,
+		sheetId: null,
+		sectionId: 0,
 		subjectId: 0,
 		schoolId: 0,
-		mark1: 0,
-		mark2: 0,
-		mark3: 0,
-		mark4: 0,
-		mark5: 0,
 		description: "",
 	} as Mark;
 };

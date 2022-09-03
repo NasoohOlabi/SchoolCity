@@ -52,14 +52,17 @@ const ObjectHome: (args: ObjectHomeProps) => JSX.Element = ({}) => {
 	) as { id: number; name: string; description: string; schoolId?: string }[];
 
 	// const w = new Worker(new URL("./workers/try.worker.ts", import.meta.url));
-	const displayLst = allRecords.map((x) => {
-		if (x.schoolId)
-			x.description =
-				x.schoolId === "global"
-					? "This is a default setting for all schools"
-					: "School " + x.schoolId;
-		return x;
-	});
+	const displayLst =
+		(allRecords &&
+			allRecords.map((x) => {
+				if (x.schoolId)
+					x.description =
+						x.schoolId === "global"
+							? "This is a default setting for all schools"
+							: "School " + x.schoolId;
+				return x;
+			})) ||
+		[];
 	// w.postMessage("fart");
 	// w.postMessage({ data: "fart" });
 	return (
@@ -67,8 +70,8 @@ const ObjectHome: (args: ObjectHomeProps) => JSX.Element = ({}) => {
 			<TemplatesSection table={table} />
 			{!expanded && (
 				<div className="p-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-					{allRecords &&
-						allRecords.map((item) => (
+					{displayLst &&
+						displayLst.map((item) => (
 							<div
 								key={item.id || item.name}
 								className="inline-block m-7"

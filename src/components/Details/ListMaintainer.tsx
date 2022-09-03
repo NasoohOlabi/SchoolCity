@@ -27,30 +27,30 @@ const ListMaintainer: (args: ListMaintainerProps) => JSX.Element = ({
 		<div className="shadow-inner m-2 p-2 ">
 			{selectedItems.map((x: any, x_ind: number) => (
 				<div key={x_ind} className="inline-block">
-					<Link
-						to={`/app/school/${
-							params.schoolName
-						}/${itemsTable}/${OM.identifier(x, itemsTable)}`}
-					>
-						<span className="flex justify-between items-center content-center shadow-md m-2 p-2">
+					<span className="flex justify-between items-center content-center shadow-md m-2 p-2">
+						<Link
+							to={`/app/school/${
+								params.schoolName
+							}/${itemsTable}/${OM.identifier(x, itemsTable)}`}
+						>
 							{OM.str(x)}
-							{!disabled && (
-								<FontAwesomeIcon
-									className="cursor-pointer ml-4"
-									icon={faClose}
-									onClick={() => {
-										if (!disabled)
-											setLst(
-												ids.filter(
-													(x: any) =>
-														OM.identifier(x, itemsTable) !== x_ind
-												)
-											);
-									}}
-								/>
-							)}
-						</span>
-					</Link>
+						</Link>
+						{!disabled && (
+							<FontAwesomeIcon
+								className="cursor-pointer ml-4"
+								icon={faClose}
+								onClick={() => {
+									if (!disabled)
+										setLst(
+											ids.filter(
+												(y: any) =>
+													OM.identifier(x, itemsTable) !== y
+											)
+										);
+								}}
+							/>
+						)}
+					</span>
 				</div>
 			))}
 		</div>

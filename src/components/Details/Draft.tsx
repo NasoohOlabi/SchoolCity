@@ -51,6 +51,7 @@ const Draft: ({ table, title }: DraftProps) => JSX.Element = ({
 
 	return (
 		<DetailsNDraftBase
+			table={table}
 			title={title}
 			editing={editing}
 			setEditing={setEditing}

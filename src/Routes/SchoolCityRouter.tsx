@@ -1,10 +1,12 @@
 import { ThemeProvider } from "@material-tailwind/react";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import App from "App";
 // import App from "App"; // dynamic
 import AppMount from "AppMount";
 import Header from "components/Layout/Header";
 import MainContent from "components/Layout/MainContent";
 import SideMenu from "components/Layout/SideMenu";
+import Modal from "components/modals/Modal";
 import type { SchoolCityIDBTable } from "DB/schema";
 // import WeekView  from "Legacy/Components/WeekView"; // dynamic
 import { useUser } from "Model/Auth/hooks/useUser";
@@ -17,7 +19,6 @@ import { Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { ViewModel, ViewModelPubSub } from "../ViewModel/ViewModelStore";
 import {
-	DynamicApp,
 	DynamicLogin,
 	DynamicObjectHome,
 	DynamicObjectInfo,
@@ -72,7 +73,7 @@ const SchoolCityRouter: (args: SchoolCityRouterProps) => JSX.Element = ({}) => {
 						<MainContent>
 							<Suspense fallback={<p>loading</p>}>
 								<Routes>
-									<Route path="/" element={<DynamicApp />} />
+									<Route path="/" element={<App />} />
 									<Route
 										path="/app"
 										element={
@@ -160,6 +161,7 @@ const SchoolCityRouter: (args: SchoolCityRouterProps) => JSX.Element = ({}) => {
 							</Suspense>
 						</MainContent>
 						<SideMenu />
+						<Modal />
 					</ThemeProvider>
 				</ViewModel.Provider>
 			</UserContext.Provider>

@@ -28,17 +28,7 @@ const Details: (obj: DetailsProps) => JSX.Element = ({
 	const navigate = useNavigate();
 	const reRender = useRerender();
 	const [editing, setEditing] = useState(false);
-	const state = useLiveQuery(() => myCrud.get(table, db, selector), []);
-
-	// if (!state) {
-	// 	console.log(`state = `, state);
-	// 	console.log("Details selector = ", selector);
-	// 	console.log(`table = `, table);
-	// 	console.log(`db = `, db);
-	// 	console.log(`myCrud = `, myCrud);
-	// 	console.log(`params.schoolName = `, params.schoolName);
-	// 	return <p>there is an issue</p>;
-	// }
+	const state = useLiveQuery(() => myCrud.get(table, db, selector), [editing]);
 
 	const myInput = myInputFactory({
 		table,
@@ -49,11 +39,13 @@ const Details: (obj: DetailsProps) => JSX.Element = ({
 	});
 	const saveHandler: React.MouseEventHandler<HTMLButtonElement> = (evt) => {
 		db && myCrud.update(table, db, state);
-		navigate("../");
+		if (table === "school") navigate(`/app/school`);
+		else navigate(`/app/school/${params.schoolName}/${table}`);
 	};
 	return (
 		state && (
 			<DetailsNDraftBase
+				table={table}
 				title={title}
 				editing={editing}
 				setEditing={setEditing}
